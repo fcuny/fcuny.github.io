@@ -1,0 +1,35 @@
+baseURL = "http://fcuny.net/"
+languageCode = "en-us"
+title = "Franck Cuny's Website"
+publishDir = "docs"
+
+[params]
+  homeText = "A collection of articles"
+
+[permalinks]
+  articles = "/:section/:slug/"
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "emacs"
+    tabWidth = 2
+
+[mediaTypes."application/atom"]
+suffixes = ["xml"]
+
+[outputFormats.Atom]
+mediaType = "application/atom"
+baseName = "feed"
+isPlainText = false
+
+[outputs]
+home = [ "HTML", "Atom" ]

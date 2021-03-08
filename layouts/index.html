@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<div>
+  <h1>Franck Cuny</h1>
+
+  <ul>
+    <li>Email: <a href="mailto:franck@fcuny.net">franck@fcuny.net</a></li>
+    <li>GitHub: <a href="https://github.com/fcuny">@fcuny</a></li>
+    <li>Twitter: <a href="https://twitter.com/franckcuny">@franckcuny</a></li>
+  </ul>
+
+  <p>I'm currently working as a <a href="https://twitter.com/twittersre">Site Reliability Engineer</a> at Twitter, on the Compute team.</p>
+
+  <h2>Notes</h2>
+  {{ $section := "notes" }}
+  <ul>
+    {{ range (where .Site.RegularPages.ByTitle "Section" $section ) }}
+    <li><a href="{{ .Permalink }}">{{ .Params.title | humanize | title }} ({{ .Date.Format "2021-01" }})</a></li>
+    {{ end }}
+  </ul>
+
+{{ end }}
