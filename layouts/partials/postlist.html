@@ -1,0 +1,30 @@
+<p><a href="/">&larr; Back to Franck's homepage</a></p>
+
+{{ range .GroupByDate "2006-Jan" }}
+  <h2>{{ .Key }}</h2>
+  <ul>
+    {{ range .Pages.ByDate }}
+    <li>
+      <div>
+        <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
+	    {{ if .Params.tags }}
+	    <div>
+	      Tags:
+	      {{ range $idx, $tag := .Params.tags }}
+	      <span class="tags"><a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a></span>
+	      {{ end }}
+	    </div>
+	    {{ else }}
+	    <div></div>
+	    {{ end }}
+      </div>
+      <div>
+	    <p>
+	      {{ .Summary }}
+	      <span><a href="{{ .Permalink }}">Read more →</a></span>
+	    </p>
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+{{ end }}

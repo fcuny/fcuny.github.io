@@ -2,34 +2,26 @@ baseURL = "http://fcuny.net/"
 languageCode = "en-us"
 title = "Franck Cuny's Website"
 publishDir = "docs"
+enableGitInfo = true
+markup = "org"
 
 [params]
-  homeText = "A collection of articles"
+  homeText = "A collection of notes"
+
+[taxonomies]
+  tag = "tags"
 
 [permalinks]
   articles = "/:section/:slug/"
-
-[markup]
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
-    style = "emacs"
-    tabWidth = 2
+  tags = "/tags/:slug/"
 
 [mediaTypes."application/atom"]
-suffixes = ["xml"]
+  suffixes = ["xml"]
 
 [outputFormats.Atom]
-mediaType = "application/atom"
-baseName = "feed"
-isPlainText = false
+  mediaType = "application/atom"
+  baseName = "feed"
+  isPlainText = false
 
 [outputs]
-home = [ "HTML", "Atom" ]
+  home = [ "HTML", "Atom" ]
