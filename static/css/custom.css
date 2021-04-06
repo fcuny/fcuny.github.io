@@ -53,3 +53,19 @@ pre {
     font-family: "Roboto Mono", Monaco, "Lucida Console", monospace;
     overflow: scroll;
 }
+
+.tags {
+    background-color: #eeeeee;
+    border-radius:8px;
+    padding:0 .5rem;
+    font-size: 90%;
+}
+
+.meta_tags a:link,
+.meta_tags a:visited {
+    text-decoration: none;
+}
+
+.meta_date {
+    font-style: italic;
+}
