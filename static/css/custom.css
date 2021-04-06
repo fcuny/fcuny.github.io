@@ -38,10 +38,14 @@ span.published, span.updated {
     font-style: oblique;
 }
 
+code {
+    background-color: #eeeeee;
+}
+
 pre {
-  padding: 1rem 2rem;
-  margin: 0;
-  font-size: 16px;
-  font-family: "Roboto Mono", Monaco, "Lucida Console", monospace;
-  overflow: scroll;
+    padding: 1rem 2rem;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Roboto Mono", Monaco, "Lucida Console", monospace;
+    overflow: scroll;
 }
