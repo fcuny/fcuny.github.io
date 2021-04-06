@@ -18,8 +18,9 @@ body {
 }
 
 a {
-  text-decoration: none;
-  color: #00add8;
+    text-decoration: underline;
+    text-underline-offset:.3rem;
+    color: #007d9c;
 }
 
 p { color: #1a1a19; }
@@ -29,8 +30,11 @@ h1 {
 }
 
 h2 {
-  margin-top: 2rem;
-  line-height: 1.4em;
+    margin-top: 2rem;
+    line-height: 1.4em;
+    border-bottom-color: #000000;
+    border-bottom-style: solid;
+    border-bottom-width: 0.8px;
 }
 
 span.published, span.updated {
