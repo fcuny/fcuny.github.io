@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "Franck Cuny's Website"
 publishDir = "docs"
 enableGitInfo = true
-markup = "org"
 
 [params]
   homeText = "A collection of notes"
@@ -14,6 +13,24 @@ markup = "org"
 [permalinks]
   articles = "/:section/:slug/"
   tags = "/tags/:slug/"
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+    ordered = true
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = false
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = true
+    style = "emacs"
+    tabWidth = 4
 
 [mediaTypes."application/atom"]
   suffixes = ["xml"]
