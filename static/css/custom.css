@@ -6,15 +6,15 @@
 body {
     background-color: #ffffff;
     line-height: 1.5rem;
-    font-size: 18px;
-    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    font-family: "Roboto Slab", sans-serif;
     color: #000;
     padding: 2rem;
 }
 
 .main {
     margin: auto;
-    max-width: 50rem;
+    max-width: 60rem;
 }
 
 a {
@@ -42,7 +42,7 @@ span.published, span.updated {
     font-style: oblique;
 }
 
-code {
+code.verbatim {
     background-color: #eeeeee;
 }
 
@@ -51,7 +51,7 @@ pre {
     margin: 0;
     font-size: 16px;
     font-family: 'Source Code Pro', monospace;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .tags {
@@ -67,5 +67,28 @@ pre {
 }
 
 .meta_date {
+    font-style: italic;
+}
+
+table {
+    border: 1px solid black;
+    width: 100%;
+    border-spacing: 15px;
+    border-collapse: collapse;
+    letter-spacing: 1px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    text-align: left;
+}
+
+thead {
+    background-color: #E0EBF5;
+    font-weight: bold;
+}
+
+blockquote {
+    background-color: #fffff0;
+    border-radius: 5px;
+    padding-left: 5px;
     font-style: italic;
 }
