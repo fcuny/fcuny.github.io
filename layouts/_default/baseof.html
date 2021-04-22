@@ -3,6 +3,7 @@
   {{ partial "head.html" . }}
   <body>
     <div class="main">
+      {{- partial "header.html" . -}}
       <main>
        {{ block "main" . }}{{ end }}
       </main>

@@ -11,12 +11,4 @@
 
   <p>I'm currently working as a <a href="https://twitter.com/twittersre">Site Reliability Engineer</a> at Twitter, on the Compute team.</p>
 
-  <h2>Notes</h2>
-  {{ $section := "notes" }}
-  <ul>
-    {{ range (where .Site.RegularPages.ByTitle "Section" $section ) }}
-    <li><a href="{{ .Permalink }}">{{ .Params.title | humanize | title }} ({{ .Date.Format "2006-01-02" }})</a></li>
-    {{ end }}
-  </ul>
-
 {{ end }}

@@ -1,6 +1,6 @@
 baseURL = "http://fcuny.net/"
 languageCode = "en-us"
-title = "Franck Cuny's Website"
+title = "Franck's rambling"
 publishDir = "docs"
 enableGitInfo = true
 
@@ -11,8 +11,22 @@ enableGitInfo = true
   tag = "tags"
 
 [permalinks]
-  articles = "/:section/:slug/"
+  blog = "/blog/:slug/"
+  notes = "/notes/:slug/"
   tags = "/tags/:slug/"
+
+[menu]
+  [[menu.main]]
+    identifier = "articles"
+    name = "blog"
+    title = "articles"
+    url = "/blog/"
+
+  [[menu.main]]
+    identifier = "notes"
+    name = "notes"
+    title = "notes"
+    url = "/notes/"
 
 [markup]
   [markup.tableOfContents]

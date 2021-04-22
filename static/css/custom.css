@@ -38,7 +38,7 @@ h2 {
 }
 
 span.published, span.updated {
-    display: block;
+    display: center;
     font-style: oblique;
 }
 
@@ -92,3 +92,42 @@ blockquote {
     padding-left: 5px;
     font-style: italic;
 }
+
+nav {
+    display: flex;
+    flex: 2 0px;
+    justify-content: flex-end;
+    padding-left: 1em;
+    margin: 0 auto;
+    line-height: 0.2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0
+}
+
+nav a {
+    padding: 1em;
+    display: inline-block;
+    color: black;
+    font-family: sans-serif;
+    text-decoration: none;
+    transition: all 75ms ease-in;
+}
+
+nav a:hover {
+    color: #fff;
+    background-color: #007d9c;
+}
+
+nav a.menu-active:hover {
+    color: #fff;
+    background-color: #007d9c;
+}
+
+nav a.menu-active {
+    color: #007d9c;
+}
+

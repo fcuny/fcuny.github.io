@@ -1,0 +1,15 @@
+<header>
+  <nav>
+    <a href="{{ .Site.Home.Permalink }}">{{ .Site.Home.Title }}</a>
+    <ul>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+      <li>
+        <a class='{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}menu-active{{ end }}' href="{{ absURL .URL }}">
+          {{ .Title }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>
