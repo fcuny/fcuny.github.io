@@ -1,4 +1,4 @@
-baseURL = "http://fcuny.net/"
+baseURL = "https://fcuny.net/"
 languageCode = "en-us"
 title = "Franck's rambling"
 publishDir = "docs"
