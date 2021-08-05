@@ -4,9 +4,9 @@
 *, *:before, *:after { box-sizing: border-box; }
 
 body {
-    background-color: #ffffff;
-    line-height: 1.5rem;
-    font-size: 16px;
+    background-color: #fffff8;
+    line-height: 1.8rem;
+    font-size: 1.3em;
     font-family: "Roboto Slab", sans-serif;
     color: #000;
     padding: 2rem;
@@ -43,11 +43,21 @@ span.published, span.updated {
 }
 
 code.verbatim {
-    background-color: #eeeeee;
+    background-color: #fffff8;
+}
+
+.highlight pre {
+    background-color: #fffff8 !important;
+}
+
+.highlight {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #eee;
 }
 
 pre {
-    padding: 1rem 2rem;
+    padding: 0.3rem 0.3rem;
     margin: 0;
     font-size: 16px;
     font-family: 'Source Code Pro', monospace;
@@ -55,7 +65,7 @@ pre {
 }
 
 .tags {
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
     border-radius:8px;
     padding:0 .5rem;
     font-size: 90%;
