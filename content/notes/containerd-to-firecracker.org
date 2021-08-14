@@ -14,7 +14,7 @@ They describe the process as follow:
 6. Create a TAP device and configure it
 7. Hand it off to Firecracker and boot that thing
 
-That's pretty detailed, and I'm curious how difficult it is to implement this. I've been meaning to look into Firecracker for a while and into containers'd API, so this is a perfect opportunity to get started.
+That's pretty detailed, and I'm curious how difficult it is to implement this. I've been meaning to look into Firecracker for a while and into containers'd API, so this is a perfect opportunity to get started. The code is available [[https://git.fcuny.net/fcuny/containerd-to-vm][here]].
 
 * #1 Pull a container from a registry with =containerd=
 =containerd= has a pretty [[https://pkg.go.dev/github.com/containerd/containerd][detailed documentation]]. From the main page we can see the following example to create a client.
