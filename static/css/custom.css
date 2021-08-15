@@ -103,7 +103,7 @@ blockquote {
     font-style: italic;
 }
 
-nav {
+nav.menu {
     display: flex;
     flex: 2 0px;
     justify-content: flex-end;
@@ -112,13 +112,13 @@ nav {
     line-height: 0.2rem;
 }
 
-nav ul {
+nav.menu ul {
     display: flex;
     list-style-type: none;
     margin: 0
 }
 
-nav a {
+nav.menu a {
     padding: 1em;
     display: inline-block;
     color: black;
@@ -127,17 +127,16 @@ nav a {
     transition: all 75ms ease-in;
 }
 
-nav a:hover {
+nav.menu a:hover {
     color: #fff;
     background-color: #007d9c;
 }
 
-nav a.menu-active:hover {
+nav.menu a.menu-active:hover {
     color: #fff;
     background-color: #007d9c;
 }
 
-nav a.menu-active {
+nav.menu a.menu-active {
     color: #007d9c;
 }
-
