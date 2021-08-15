@@ -29,6 +29,13 @@
   {{ end }}
 </div>
 
+{{ if .Params.toc }}
+<div class="toc">
+  <strong>Table of Contents</strong>
+  {{ .TableOfContents }}
+</div>
+{{ end }}
+
 {{ .Content }}
 
 {{ end }}

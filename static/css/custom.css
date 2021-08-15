@@ -140,3 +140,15 @@ nav.menu a.menu-active:hover {
 nav.menu a.menu-active {
     color: #007d9c;
 }
+
+.toc {
+    border: 1px solid black;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: black;
+}
+
+.toc a,
+.toc a.visited {
+    color: black;
+}
