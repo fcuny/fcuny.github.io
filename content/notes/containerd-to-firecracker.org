@@ -1,6 +1,7 @@
 #+TITLE: containerd to firecracker
 #+DATE: <2021-05-15 Sat>
-#+TAGS[]: linux, firecracker, containerd
+#+TAGS[]: linux firecracker containerd go
+#+toc: t
 
 fly.io had an [[https://fly.io/blog/docker-without-docker/][interesting article]] about how they use docker images to create VMs for =firecracker=.
 
