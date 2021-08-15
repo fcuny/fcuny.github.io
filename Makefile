@@ -5,16 +5,21 @@ DOCKER_IMAGE_REF := $(shell git rev-parse HEAD)
 DOCKERFILE := Dockerfile
 PROJECT_DIR := $(realpath $(CURDIR))
 
-.PHONY: server deploy docker-build docker-run
+.PHONY: server deploy docker-build docker-run worktree-clean
 
 server:
 	@echo "Running hugo server ..."
 	hugo server
 
-deploy:
+worktree-clean:
+	git diff --exit-code
+	git diff --staged --exit-code
+
+deploy: worktree-clean docker-build
 	@echo "Deploying to fly ..."
 	flyctl deploy \
 		--build-arg IMAGE_REF=$(DOCKER_IMAGE_REF)
+	git tag --message $(shell flyctl info -j |jq '.App | "\(.Name)/v\(.Version)"') $(shell flyctl info -j |jq '.App | "\(.Name)/v\(.Version)"')
 
 docker-build:
 	@echo "Building Docker image ..."
