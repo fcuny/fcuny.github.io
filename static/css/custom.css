@@ -4,7 +4,7 @@
 
 body {
     background-color: #ffffff;
-    line-height: 1.4rem;
+    line-height: 22px;
     font-size: 16px;
     font-family: 'Droid Sans', sans-serif;
     color: #000;
@@ -52,7 +52,7 @@ span.published, span.updated {
 code.verbatim {
     background-color: #f7f7f7;
     white-space: nowrap;
-    border-radius: 2px;
+    border-radius: 8px;
     font-size: 90%;
     padding: 2px 2px;
 }
