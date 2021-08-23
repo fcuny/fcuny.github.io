@@ -74,10 +74,12 @@ pre {
     overflow-x: auto;
 }
 
-.tags {
-    border-radius:8px;
-    padding:0 .5rem;
-    font-size: 90%;
+.meta_tags {
+    border-radius: 8px;
+    padding: 0 .5rem;
+    font-size: 80%;
+    border: 2px solid #eee;
+    background-color: #eee
 }
 
 .meta_tags a:link,
