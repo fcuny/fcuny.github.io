@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+<article class="article">
+
 <h1>{{ .Title }}</h1>
 
 <div class="meta">
@@ -18,9 +20,9 @@
   {{ if .Params.tags }}
   <div>
   {{ if eq (len .Params.tags) 1 }}
-  in tag
+  tag:
   {{ else }}
-  in tags
+  tags:
   {{ end }}
   {{ range $idx, $tag := .Params.tags }}
   <span class="meta_tags"><a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a></span>
@@ -37,5 +39,7 @@
 {{ end }}
 
 {{ .Content }}
+
+<article>
 
 {{ end }}
