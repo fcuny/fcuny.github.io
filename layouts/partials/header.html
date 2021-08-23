@@ -1,15 +1,13 @@
 <header>
   <nav class='menu'>
-    <a href="{{ .Site.Home.Permalink }}">{{ .Site.Home.Title }}</a>
-    <ul>
+    <a href="{{ .Site.Home.Permalink }}"><b>{{ .Site.Home.Title }}</b></a>
+    <div class='navigation'>
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-      <li>
-        <a class='{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}menu-active{{ end }}' href="{{ absURL .URL }}">
-          {{ .Title }}
-        </a>
-      </li>
+      <a class='menu-item {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}menu-active{{ end }}' href="{{ absURL .URL }}">
+        {{ .Title }}
+      </a>
       {{ end }}
-    </ul>
+    </div>
   </nav>
 </header>
