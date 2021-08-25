@@ -1,7 +1,7 @@
 {{ range .GroupByDate "2006" }}
   <h2>{{ .Key }}</h2>
   <ul>
-    {{ range .Pages.ByDate }}
+    {{ range .Pages.ByDate.Reverse }}
     <li>
       <div>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
