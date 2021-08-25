@@ -19,6 +19,7 @@ deploy: worktree-clean docker-build
 	@echo "Deploying to fly ..."
 	flyctl deploy \
 		--build-arg IMAGE_REF=$(DOCKER_IMAGE_REF)
+	@sleep 5
 	git tag --message $(shell flyctl info -j |jq '.App | "\(.Name)/v\(.Version)"') $(shell flyctl info -j |jq '.App | "\(.Name)/v\(.Version)"')
 
 docker-build:
