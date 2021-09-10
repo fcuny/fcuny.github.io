@@ -17,16 +17,13 @@ worktree-clean:
 
 deploy: worktree-clean docker-build
 	@echo "Deploying to fly ..."
-	flyctl deploy \
-		--build-arg IMAGE_REF=$(DOCKER_IMAGE_REF)
-	@sleep 5
-	git tag --message $(shell flyctl info -j |jq '.App | "\(.Name)/v\(.Version)"') $(shell flyctl info -j |jq '.App | "\(.Name)/v\(.Version)"')
+	flyctl deploy
+	@git tag -a --message $$(flyctl info -j |jq -r '.App | "fcuny.net/v\(.Version)"') $$(flyctl info -j |jq -r '.App | "fcuny.net/v\(.Version)"')
 
 docker-build:
 	@echo "Building Docker image ..."
 	$(DOCKER) build $(DOCKER_BUILD_ARGS) \
 		--tag "${DOCKER_IMAGE}:${DOCKER_IMAGE_REF}" \
-	  --build-arg IMAGE_REF=$(DOCKER_IMAGE_REF) \
 		--file "$(DOCKERFILE)" \
 		"$(PROJECT_DIR)"
 
