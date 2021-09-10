@@ -15,13 +15,22 @@ The next time you run =M-x git-link= in a buffer, it will use the URL associated
 #+begin_src elisp
 (use-package git-link
   :ensure t
+  :after magit
+  :bind (("C-c g l" . git-link)
+         ("C-c g a" . git-link-commit))
   :config
   (defun fcuny/get-sg-remote-from-hostname (hostname)
     (format "sourcegraph.<$domain>.<$tld>/%s" hostname))
 
-  (defun fcuny/git-link-work-sourcegraph (hostname dirname filename branch commit start end)
-    (let ((sg-base-url (fcuny/get-sg-remote-from-hostname hostname)))
-      (git-link-sourcegraph sg-base-url dirname filename branch commit start end)))
+  (defun fcuny/git-link-work-sourcegraph (hostname dirname filename _branch commit start end)
+    ;;; For a given repository, build the proper link for sourcegraph.
+    ;;; Use the default branch of the repository instead of the
+    ;;; current one (we might be on a feature branch that is not
+    ;;; available on the remote).
+    (require 'magit-branch)
+    (let ((sg-base-url (fcuny/get-sg-remote-from-hostname hostname))
+          (main-branch (magit-main-branch)))
+      (git-link-sourcegraph sg-base-url dirname filename main-branch commit start end)))
 
   (defun fcuny/git-link-commit-work-sourcegraph (hostname dirname commit)
     (let ((sg-base-url (fcuny/get-sg-remote-from-hostname hostname)))
