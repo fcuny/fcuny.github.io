@@ -29,4 +29,4 @@ docker-build:
 
 docker-run: docker-build
 	@echo "Running Docker image ..."
-	$(DOCKER) run -ti --rm -p 8080:8080 $(DOCKER_IMAGE)
+	$(DOCKER) run -ti --rm -p 8080:8080 "${DOCKER_IMAGE}:${DOCKER_IMAGE_REF}"
