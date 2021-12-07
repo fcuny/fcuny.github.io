@@ -19,6 +19,8 @@ deploy: worktree-clean docker-build
 	@echo "Deploying to fly ..."
 	flyctl deploy
 	@git tag -a --message $$(flyctl info -j |jq -r '.App | "fcuny.net/v\(.Version)"') $$(flyctl info -j |jq -r '.App | "fcuny.net/v\(.Version)"')
+	@git push origin --all
+	@git push origin --tags
 
 docker-build:
 	@echo "Building Docker image ..."
