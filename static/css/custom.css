@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-
 *, *:before, *:after { box-sizing: border-box; }
 
 body {
-    background-color: #ffffff;
+    background-color: #fbf1c7;
     line-height: 22px;
-    font-size: 16px;
-    font-family: 'Droid Sans', sans-serif;
+    font-size: 1.1em;
+    font-family: monospace;
     color: #000;
     padding: 2rem;
 }
@@ -19,10 +17,10 @@ body {
 a {
     text-decoration: underline;
     text-underline-offset:.3rem;
-    color: #007d9c;
+    color: #8f3f71;
 }
 
-p { color: #1a1a19; }
+p { color: #282828; }
 
 article.article h2:before {
     content: '◉';
@@ -37,9 +35,13 @@ article.article h5:before {
     content: '✿';
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: sans-serif;
+}
+
 h2 {
-    margin-top: 2rem;
-    border-bottom-color: #eee;
+    margin-top: 1.3rem;
+    border-bottom-color: #282828;
     border-bottom-style: solid;
     border-bottom-width: 0.8px;
 }
@@ -53,7 +55,6 @@ code.verbatim {
     background-color: #f7f7f7;
     white-space: nowrap;
     border-radius: 8px;
-    font-size: 90%;
     padding: 2px 2px;
 }
 
@@ -69,9 +70,10 @@ code.verbatim {
 pre {
     padding: 0.3rem 0.3rem;
     margin: 0;
-    font-size: 14px;
-    font-family: 'Source Code Pro', monospace;
+    font-size: 1.1em;
+    font-family: monospace;
     overflow-x: auto;
+    border: 1px solid #000;
 }
 
 .meta_tags {
@@ -98,8 +100,8 @@ table {
     border-spacing: 15px;
     border-collapse: collapse;
     letter-spacing: 1px;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 16px;
+    font-family: monospace;
+    font-size: 1.1em;
     text-align: left;
 }
 
@@ -111,8 +113,9 @@ thead {
 blockquote {
     background-color: #fffff0;
     border-radius: 5px;
-    padding-left: 5px;
     font-style: italic;
+    border-left: 6px solid lightgray;
+    margin-left: 10.875px;
 }
 
 nav.menu {
@@ -121,7 +124,7 @@ nav.menu {
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: 1.2em;
 }
 
 .navigation {
@@ -152,13 +155,13 @@ nav.menu a {
     text-decoration: underline;
     text-decoration-thickness: 4px;
     text-underline-offset:.3rem;
-    color: #007d9c;
+    color: #076678;
 }
 
 a.menu-active:hover {
     text-decoration: underline;
     text-underline-offset:.3rem;
-    color: #007d9c;
+    color: #076678;
     font-weight: 700;
 }
 
@@ -166,7 +169,7 @@ a.menu-active {
     text-decoration: underline;
     text-underline-offset:.3rem;
     text-decoration-thickness: 4px;
-    color: #007d9c;
+    color: #076678;
     font-weight: 700;
 }
 
