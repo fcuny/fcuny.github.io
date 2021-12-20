@@ -17,6 +17,13 @@ enableGitInfo = true
 
 [menu]
   [[menu.main]]
+    identifier = "home"
+    name = "home"
+    title = "fcuny.net"
+    url = "/"
+    weight = 130
+
+  [[menu.main]]
     identifier = "articles"
     name = "blog"
     title = "articles"
