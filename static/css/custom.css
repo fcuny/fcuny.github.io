@@ -1,77 +1,56 @@
-*, *:before, *:after { box-sizing: border-box; }
-
 body {
-    background-color: #fbf1c7;
-    line-height: 22px;
-    font-size: 1.1em;
-    font-family: monospace;
-    color: #000;
-    padding: 2rem;
-}
-
-.main {
-    margin: auto;
-    max-width: 60rem;
-}
-
-a {
-    text-decoration: underline;
-    text-underline-offset:.3rem;
-    color: #8f3f71;
-}
-
-p { color: #282828; }
-
-article.article h2:before {
-    content: '◉';
-}
-article.article h3:before {
-    content: '○';
-}
-article.article h4:before {
-    content: '✸';
-}
-article.article h5:before {
-    content: '✿';
-}
-
-h1, h2, h3, h4, h5 {
     font-family: sans-serif;
+    line-height:1.6;
+    font-size:18px;
+    color: #000111;
+    background-color: #fbf1c7;
+    margin:1em auto;
+    max-width:750px;
+    padding:0 0.55em;
 }
 
-h2 {
-    margin-top: 1.3rem;
-    border-bottom-color: #282828;
-    border-bottom-style: solid;
-    border-bottom-width: 0.8px;
+h1, h2, h3, h4, h5 {line-height:1.2}
+h1{margin-top:1em;margin-bottom:0.34em}
+h2{margin-top:1.25em;margin-bottom:0.41em}
+h3{margin-top:1.5em;margin-bottom:0.5em}
+
+hr{
+    color:#000111;
+    background-color:#000111;
+    border:none;
+    height:2px
 }
+
+a {color: #494d7e;}
+a:visited {color: #494d7e;}
 
 span.published, span.updated {
     display: center;
     font-style: oblique;
 }
 
+code {
+    font-family: monospace;
+    font-size: 80%;
+}
 code.verbatim {
-    background-color: #f7f7f7;
-    white-space: nowrap;
-    border-radius: 8px;
-    padding: 2px 2px;
+    background-color: #fffff8;
 }
 
-.highlight pre {
-    background-color: #f7f7f7 !important;
+:not(pre) code{
+    padding-left:0.1em;
+    padding-right:0.1em;
+    border-radius:2px;
 }
 
-.highlight {
-    border-radius: 5px;
-    border: 1px solid #eee;
-}
+.highlight pre {background-color: #fffff8 !important}
+.highlight {border-radius: 5px}
 
 pre {
+    font-family: monospace;
     padding: 0.3rem 0.3rem;
     margin: 0;
-    font-size: 1.1em;
-    font-family: monospace;
+    line-height: 1.1;
     overflow-x: auto;
     border: 1px solid #000;
 }
@@ -81,40 +60,40 @@ pre {
     padding: 0 .5rem;
     font-size: 80%;
     border: 2px solid #eee;
-    background-color: #eee
+    background-color: #eee;
 }
 
-.meta_tags a:link,
-.meta_tags a:visited {
+.meta_tags a:link, .meta_tags a:visited {
     text-decoration: none;
 }
 
 .meta_date {
     font-style: italic;
+    font-size: 80%;
 }
 
 table {
-    border: 1px solid black;
-    border-radius: 2px;
     width: 100%;
-    border-spacing: 15px;
-    border-collapse: collapse;
-    letter-spacing: 1px;
-    font-family: monospace;
-    font-size: 1.1em;
-    text-align: left;
+    border-spacing: 0px;
+    outline: none;
 }
 
-thead {
-    background-color: #E0EBF5;
-    font-weight: bold;
+th, td{
+    padding-left:0.7em;
+    padding-right:0.7em;
+    padding-top:0.4em;
+    padding-bottom:0.4em;
+}
+
+table, th, td {
+    border:1px solid black;
 }
 
 blockquote {
-    background-color: #fffff0;
+    background-color: #fffff8;
     border-radius: 5px;
     font-style: italic;
-    border-left: 6px solid lightgray;
+    border-left: 6px solid black;
     margin-left: 10.875px;
 }
 
@@ -124,63 +103,15 @@ nav.menu {
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0 auto;
-    font-size: 1.2em;
-}
-
-.navigation {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    box-sizing: border-box;
-    flex-basis: auto;
-    flex-grow: 1;
-    align-items: center;
 }
 
 .menu-item {
-    box-sizing: border-box;
-    font-weight: 400;
     padding-right: 8px;
-}
-
-nav.menu a {
-    display: inline-block;
-    color: black;
-    text-decoration: none;
-    transition: all 75ms ease-in;
-}
-
-.navigation a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 4px;
-    text-underline-offset:.3rem;
-    color: #076678;
-}
-
-a.menu-active:hover {
-    text-decoration: underline;
-    text-underline-offset:.3rem;
-    color: #076678;
-    font-weight: 700;
-}
-
-a.menu-active {
-    text-decoration: underline;
-    text-underline-offset:.3rem;
-    text-decoration-thickness: 4px;
-    color: #076678;
-    font-weight: 700;
 }
 
 .toc {
     border: 1px solid black;
     padding: 1rem;
     margin-top: 1rem;
-    color: black;
-}
-
-.toc a,
-.toc a.visited {
     color: black;
 }
