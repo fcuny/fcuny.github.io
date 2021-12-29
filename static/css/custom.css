@@ -92,17 +92,23 @@ th, td{
     padding-top:0.4em;
     padding-bottom:0.4em;
 }
-
+thead {
+    background-color: #ebdbb2;
+}
 table, th, td {
     border:1px solid black;
 }
 
 blockquote {
-    background-color: #fffff8;
-    border-radius: 5px;
+    background-color: #f2e5bc;
     font-style: italic;
-    border-left: 6px solid black;
-    margin-left: 10.875px;
+    border-left: 6px solid #7c6f64;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0.7em;
+    padding-right:0.7em;
+    padding-top:0.2em;
+    padding-bottom:0.2em;
 }
 
 nav.menu {
@@ -119,7 +125,7 @@ nav.menu {
 
 .toc {
     border: 1px solid black;
-    padding: 1rem;
-    margin-top: 1rem;
+    padding: 1em;
+    margin-top: 1em;
     color: black;
 }
