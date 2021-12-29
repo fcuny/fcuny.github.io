@@ -21,8 +21,19 @@ hr{
     height:2px
 }
 
-a {color: #494d7e;}
-a:visited {color: #494d7e;}
+a {
+    color: #023;
+    background-color: #eee;
+}
+a:visited {
+    color: #345;
+    background: #eee;
+}
+a:hover {
+    color: #000;
+    text-decoration: none;
+    background:#ccf;
+}
 
 span.published, span.updated {
     display: center;
