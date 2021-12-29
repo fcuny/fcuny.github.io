@@ -21,19 +21,28 @@ enableGitInfo = true
     name = "home"
     title = "fcuny.net"
     url = "/"
-    weight = 130
+    weight = 100
 
   [[menu.main]]
     identifier = "articles"
     name = "blog"
     title = "articles"
     url = "/blog/"
+    weight = 110
 
   [[menu.main]]
     identifier = "notes"
     name = "notes"
     title = "notes"
     url = "/notes/"
+    weight = 120
+
+  [[menu.main]]
+    identifier = "RSS"
+    name = "RSS"
+    title = "RSS"
+    url = "/feed.xml"
+    weight = 130
 
 [markup]
   [markup.tableOfContents]
