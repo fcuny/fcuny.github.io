@@ -19,18 +19,15 @@ hr{
     height:2px
 }
 
-a {
-    color: #023;
-    background-color: #eee;
-}
-a:visited {
-    color: #345;
-    background: #eee;
-}
 a:hover {
-    color: #000;
     text-decoration: none;
-    background:#ccf;
+    border-bottom: 1px solid;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+    color: black;
 }
 
 span.published, span.updated {
@@ -41,25 +38,25 @@ span.published, span.updated {
 code {
     font-family: monospace;
     font-size: 80%;
-}
-code.verbatim {
-    background-color: #fffff8;
-}
-:not(pre) code{
     padding-left:0.1em;
     padding-right:0.1em;
-    border-radius:2px;
+    border-radius:4px;
+    background-color: #f7f7f7;
 }
 
-.highlight pre {background-color: #fffff8 !important}
-.highlight {border-radius: 5px}
+ol {
+    line-height: 0.8em;
+}
 
 pre {
     font-family: monospace;
+    font-size: 90%;
     padding: 0.3rem 0.3rem;
     margin: 0;
     overflow-x: auto;
     border: 1px solid #000;
+    border-radius: 4px;
+    background-color: #f7f7f7;
 }
 
 .meta_tags {
@@ -70,8 +67,9 @@ pre {
     background-color: #eee;
 }
 
-.meta_tags a:link, .meta_tags a:visited {
+.meta_tags a {
     text-decoration: none;
+    border-bottom: none;
 }
 
 .meta_date {
@@ -83,7 +81,6 @@ table {
     width: 100%;
     border-spacing: 0px;
     outline: none;
-    line-height: 0.9em;
 }
 
 th, td{
@@ -100,15 +97,10 @@ table, th, td {
 }
 
 blockquote {
-    background-color: #f2e5bc;
-    font-style: italic;
-    border-left: 6px solid #7c6f64;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 0.7em;
-    padding-right:0.7em;
-    padding-top:0.2em;
-    padding-bottom:0.2em;
+    page-break-inside:avoid;
+    padding:10px 20px;
+    margin:0 0 20px;
+    border-left:5px solid #eee
 }
 
 nav.menu {
