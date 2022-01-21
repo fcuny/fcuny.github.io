@@ -1,7 +1,12 @@
 <header>
-  <nav class='menu'>
+    <nav class="navbar">
+    <a href="{{ .Site.BaseURL }}">
+      {{ .Site.BaseURL | string }}
+    </a>
+    <ul class="nav-links">
     {{ range .Site.Menus.main }}
-    <a class='menu-item' href="{{ absURL .URL }}">{{ .Title }}</a>
+    <li class="nav-item"><a href="{{ absURL .URL }}">{{ .Title }}</a></li>
     {{ end }}
+    </ul>
   </nav>
 </header>
