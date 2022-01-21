@@ -5,17 +5,17 @@
 <h1>{{ .Title }}</h1>
 
 <div class="meta">
-  {{- $pub := .Date.Format "2006-01-02" -}}
+  {{- $pub := .Date.Format "Jan 2, 2006" -}}
   {{- $mod := "" -}}
   {{- if (not .GitInfo) }}
-  {{- $mod = .Lastmod.Format "2006-01-02" -}}
+  {{- $mod = .Lastmod.Format "Jan 2, 2006" -}}
   {{ else }}
-  {{- $mod = .Page.GitInfo.CommitDate.Format "2006-01-02" -}}
+  {{- $mod = .Page.GitInfo.CommitDate.Format "Jan 2, 2006" -}}
   {{ end -}}
   {{ if eq $pub $mod }}
   <div class="meta_date">published {{ $pub }}</div>
   {{ else }}
-  <div class="meta_date">published {{ $pub }}, last modified {{ $mod }}</div>
+  <div class="meta_date">published {{ $pub }} - last modified {{ $mod }}</div>
   {{ end }}
   {{ if .Params.tags }}
   <div>
