@@ -27,14 +27,14 @@ hr{
 a {border-bottom: .125em dashed #bdbdbd}
 
 a {
-  color:#212121;
+  color:#047bc2;
   text-decoration:none;
   transition:color .1s ease-in-out
 }
 
-a:hover, a:focus, a:active {color:#37474f}
+a:hover, a:focus, a:active {color:#047bc2}
 
-a:hover, a:focus {border-bottom-color: #a6071b}
+a:hover, a:focus {border-bottom-color: #047bc2}
 
 span.published, span.updated {
   display: center;
