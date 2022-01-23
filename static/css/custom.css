@@ -86,16 +86,20 @@ table {
   outline: none;
 }
 
-th, td{
-  padding-left: 0.7em;
+td{
   padding-right: 0.7em;
   padding-top: 0.4em;
   padding-bottom: 0.4em;
 }
 thead {
-  background-color: #ebdbb2;
+    color: #000;
+    font-style: bold;
+    text-align: left;
 }
-table, th, td {border: 1px solid black}
+table, th, td {
+    font-family: monospace;
+    color: #000;
+}
 
 blockquote {
   font-size: 1.125em;
