@@ -43,17 +43,19 @@ For the Alder Lake generation, the supported socket is the [[https://en.wikipedi
 
 For now the only supported chipset for Alder Lake is the [[https://ark.intel.com/content/www/us/en/ark/products/218833/intel-z690-chipset.html][z690]].
 *** Alder Lake (12th generation)
-| model      | p-cores | e-cores | GHz (base)    | GHz (boosted) | PCIe lanes               | memory support | TDP  |
-|------------+---------+---------+---------------+---------------+--------------------------+----------------+------|
-| i9-12900K  | 8 (16)  |       8 | 3.2/2.4       | 5.1/3.9       | 16 PCIe 5.0 + 4 PCIe 4.0 | DDR5-4800      | 241W |
-| i9-12900KF | 8 (16)  |       8 | 3.2/2.4       | 5.1/3.9       | -                        | -              | 241W |
-| i7-12700K  | 8 (16)  |       4 | 3.6/2.7       | 4.9/3.8       | -                        | -              | 190W |
-| i7-12700KF | 8 (16)  |       4 | 3.6/2.7       | 4.9/3.8       | -                        | -              | 190W |
-| i5-12600K  | 6 (12)  |       4 | 3.7/2.8       | 4.9/3.6       | -                        | -              | 150W |
-| i5-12600KF | 6 (12)  |       4 | 3.7/2.8       | 4.9/3.6       | -                        | -              | 150W |
+| model      | p-cores | e-cores | GHz (base) | GHz (boosted) | TDP  |
+|------------+---------+---------+------------+---------------+------|
+| i9-12900K  | 8 (16)  |       8 | 3.2/2.4    | 5.1/3.9       | 241W |
+| i9-12900KF | 8 (16)  |       8 | 3.2/2.4    | 5.1/3.9       | 241W |
+| i7-12700K  | 8 (16)  |       4 | 3.6/2.7    | 4.9/3.8       | 190W |
+| i7-12700KF | 8 (16)  |       4 | 3.6/2.7    | 4.9/3.8       | 190W |
+| i5-12600K  | 6 (12)  |       4 | 3.7/2.8    | 4.9/3.6       | 150W |
+| i5-12600KF | 6 (12)  |       4 | 3.7/2.8    | 4.9/3.6       | 150W |
 
-- support DDR4 and DDR5
-- support PCIe 4.0 and 5.0
+- support DDR4 and DDR5 (up to DDR5-4800)
+- support PCIe 4.0 and 5.0 (16 PCIe 5.0 and 4 PCIe 4.0)
+
+The socket used is the [[https://en.wikipedia.org/wiki/LGA_1700][LGA 1700]].
 
 Alder lake is an hybrid architecture, featuring both P-cores (performance cores) and E-cores (efficient cores). P-cores are based on the [[https://en.wikipedia.org/wiki/Golden_Cove][Golden Cove]] architecture, while the E-cores are based on the [[https://en.wikipedia.org/wiki/Gracemont_(microarchitecture)][Gracemont]] architecture.
 
@@ -107,14 +109,14 @@ There are multiple [[https://en.wikipedia.org/wiki/Socket_AM4#Chipsets][chipset]
 The threadripper processors use the TR4, sTRX4 and sWRX8 sockets.
 ** Zen 3
 Zen 3 was released in November 2020.
-| model         | cores   | GHz (base) | GHz (boosted) | PCIe lanes | memory support | TDP  |
-|---------------+---------+------------+---------------+------------+----------------+------|
-| ryzen 5 5600x | 6 (12)  |        3.7 |           4.6 |         24 | DDR4-3200      | 65W  |
-| ryzen 7 5800  | 8 (16)  |        3.4 |           4.6 |         24 | DDR4-3200      | 65W  |
-| ryzen 7 5800x | 8 (16)  |        3.8 |           4.7 |         24 | DDR4-3200      | 105W |
-| ryzen 9 5900  | 12 (24) |        3.0 |           4.7 |         24 | DDR4-3200      | 65W  |
-| ryzen 9 5900x | 12 (24) |        3.7 |           4.8 |         24 | DDR4-3200      | 105W |
-| ryzen 9 5950x | 16 (32) |        3.4 |           4.9 |         24 | DDR4-3200      | 105W |
+| model         | cores   | GHz (base) | GHz (boosted) | PCIe lanes | TDP  |
+|---------------+---------+------------+---------------+------------+------|
+| ryzen 5 5600x | 6 (12)  |        3.7 |           4.6 |         24 | 65W  |
+| ryzen 7 5800  | 8 (16)  |        3.4 |           4.6 |         24 | 65W  |
+| ryzen 7 5800x | 8 (16)  |        3.8 |           4.7 |         24 | 105W |
+| ryzen 9 5900  | 12 (24) |        3.0 |           4.7 |         24 | 65W  |
+| ryzen 9 5900x | 12 (24) |        3.7 |           4.8 |         24 | 105W |
+| ryzen 9 5950x | 16 (32) |        3.4 |           4.9 |         24 | 105W |
 
 - support PCIe 3.0 and PCIe 4.0 (except for the G series)
-- only support DDR4
+- only support DDR4 (up to DDR4-3200)
