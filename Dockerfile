@@ -1,4 +1,4 @@
-FROM klakegg/hugo:0.83.1-ext-alpine-onbuild AS hugo
+FROM klakegg/hugo:0.91.2-ext-alpine-onbuild AS hugo
 
 FROM pierrezemb/gostatic
 
