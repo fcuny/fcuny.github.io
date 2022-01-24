@@ -19,7 +19,7 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2rem;
   margin-top: 1em;
   margin-bottom: 0.34em;
 }
@@ -119,7 +119,7 @@ table, th, td {
 }
 
 blockquote {
-  font-size: 1em;
+  font-size: 0.95rem;
   font-style: italic;
   margin: 0 0 1.5em;
   padding-left: 1em;
