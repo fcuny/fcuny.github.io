@@ -1,7 +1,7 @@
 #+TITLE: Making sense of Intel and AMD CPUs naming
 #+DATE: <2021-12-29 Wed>
 #+TAGS[]: amd intel cpu
-#+toc: t
+#+toc: headlines 1
 
 * Intel
 ** Core
@@ -41,7 +41,16 @@ A processor with the *K* suffix is made with the an unlocked clock multiplier. W
 *** Sockets/Chipsets
 For the Alder Lake generation, the supported socket is the [[https://en.wikipedia.org/wiki/LGA_1700][LGA_1700]].
 
-For now the only supported chipset for Alder Lake is the [[https://ark.intel.com/content/www/us/en/ark/products/218833/intel-z690-chipset.html][z690]].
+For now only supported chipset for Alder Lake are:
+| feature                     | [[https://ark.intel.com/content/www/us/en/ark/products/218833/intel-z690-chipset.html][z690]]     | [[https://www.intel.com/content/www/us/en/products/sku/218831/intel-h670-chipset/specifications.html][h670]]     | [[https://ark.intel.com/content/www/us/en/ark/products/218832/intel-b660-chipset.html][b660]]    | [[https://www.intel.com/content/www/us/en/products/sku/218829/intel-h610-chipset/specifications.html][h610]] |
+|-----------------------------+----------+----------+---------+------|
+| P and E cores over clocking | yes      | no       | no      | no   |
+| memory over clocking        | yes      | yes      | yes     | no   |
+| DMI 4 lanes                 | 8        | 8        | 4       | 4    |
+| chipset PCIe 4.0 lanes      | up to 12 | up to 12 | up to 6 | none |
+| chipset PCIe 3.0 lanes      | up to 16 | up to 12 | up to 8 | 8    |
+| SATA 3.0 ports              | up to 8  | up to 8  | 4       | 4    |
+
 *** Alder Lake (12th generation)
 | model      | p-cores | e-cores | GHz (base) | GHz (boosted) | TDP  |
 |------------+---------+---------+------------+---------------+------|
