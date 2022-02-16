@@ -21,31 +21,13 @@ enableGitInfo = true
 
 [menu]
   [[menu.main]]
-    identifier = "articles"
-    name = "blog"
-    title = "articles"
-    url = "/blog/"
-    weight = 110
-
-  [[menu.main]]
-    identifier = "notes"
-    name = "notes"
-    title = "notes"
-    url = "/notes/"
-    weight = 120
-
-  [[menu.main]]
     identifier = "RSS"
     name = "RSS"
-    title = "RSS"
+    title = "~/blog/feed"
     url = "/feed.xml"
     weight = 130
 
 [markup]
-  [markup.tableOfContents]
-    startLevel = 1
-    endLevel = 3
-    ordered = true
   [markup.highlight]
     anchorLineNos = false
     codeFences = false
@@ -56,7 +38,7 @@ enableGitInfo = true
     lineNos = false
     lineNumbersInTable = false
     noClasses = true
-    style = "emacs"
+    style = "manni"
     tabWidth = 4
 
 [mediaTypes."application/atom"]
