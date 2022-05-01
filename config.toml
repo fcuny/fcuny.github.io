@@ -5,7 +5,7 @@ publishDir = "docs"
 enableGitInfo = true
 
 [params]
-  homeText = "A collection of notes"
+  homeText = "A collection of posts"
 
 [author]
   name = "Franck Cuny"
@@ -16,16 +16,9 @@ enableGitInfo = true
 
 [permalinks]
   blog = "/blog/:slug/"
-  notes = "/notes/:slug/"
   tags = "/tags/:slug/"
 
 [menu]
-  [[menu.main]]
-    identifier = "RSS"
-    name = "RSS"
-    title = "~/blog/feed"
-    url = "/feed.xml"
-    weight = 130
 
 [markup]
   [markup.highlight]
