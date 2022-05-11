@@ -6,7 +6,7 @@ trigger:
   event:
     - push
   branch:
-    - master
+    - main
 
 steps:
   - name: deploy
