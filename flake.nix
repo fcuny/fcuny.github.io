@@ -22,6 +22,7 @@
             '';
             dontInstall = true;
           };
+
         defaultApp = pkgs.writers.writeBashBin "run-hugo" ''
           set -e
           set -o pipefail
@@ -29,14 +30,15 @@
           hugo server -D
         '';
 
-        deploy = pkgs.writers.writeBashBin "run-deploy" ''
-          set -e
-          set -o pipefile
-          export PATH=${
-            pkgs.lib.makeBinPath [ pkgs.hugo pkgs.git pkgs.jq pkgs.flyctl ]
-          }
-          ./scripts/deploy.sh
-        '';
+        apps = {
+          deploy = pkgs.pkgs.writeShellScriptBin "run-deploy" ''
+            set -euxo pipefail
+            export PATH=${
+              pkgs.lib.makeBinPath [ pkgs.hugo pkgs.git pkgs.jq pkgs.flyctl ]
+            }:$PATH
+            ./scripts/deploy.sh
+          '';
+        };
 
         devShell =
           pkgs.mkShell { buildInputs = with pkgs; [ hugo flyctl git jq ]; };
