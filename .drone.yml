@@ -15,4 +15,4 @@ steps:
         from_secret: FLY_API_TOKEN
     commands:
       - nix develop
-      - ./scripts/deploy.sh
+      - bash ./scripts/deploy.sh
