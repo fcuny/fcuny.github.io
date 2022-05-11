@@ -36,7 +36,7 @@
             export PATH=${
               pkgs.lib.makeBinPath [ pkgs.hugo pkgs.git pkgs.jq pkgs.flyctl ]
             }:$PATH
-            ./scripts/deploy.sh
+            bash ./scripts/deploy.sh
           '';
         };
 
