@@ -18,6 +18,6 @@
         '';
 
         devShell =
-          pkgs.mkShell { buildInputs = with pkgs; [ hugo flyctl git ]; };
+          pkgs.mkShell { buildInputs = with pkgs; [ hugo flyctl git jq ]; };
       });
 }
