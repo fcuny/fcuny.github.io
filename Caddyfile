@@ -1,0 +1,14 @@
+{
+        http_port 8080
+        auto_https off
+}
+
+http://fcunynet.fly.dev {
+        redir https://fcuny.net
+}
+
+http://fcuny.net {
+        root * {$SITE_ROOT}
+        encode gzip
+        file_server
+}

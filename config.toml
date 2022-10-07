@@ -2,7 +2,7 @@ baseURL = "https://fcuny.net/"
 languageCode = "en-us"
 title = "Franck's rambling"
 publishDir = "docs"
-enableGitInfo = true
+enableGitInfo = false
 
 [params]
   homeText = "A collection of posts"
