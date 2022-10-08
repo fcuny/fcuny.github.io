@@ -2,7 +2,7 @@ name: update-flake-lock
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '30 5 * * 7'
 
 jobs:
   update-flake-lock:
@@ -20,3 +20,12 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@v14
         with:
           pr-title: "Update flake.lock"
+          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+      - name: Enable pull request automerge
+        uses: peter-evans/enable-pull-request-automerge@v2
+        if: ${{ steps.update-flake-lock.outputs.pull-request-number }}
+        with:
+          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+          merge-method: rebase
+          pull-request-number: ${{ steps.update-flake-lock.outputs.pull-request-number }}
+
