@@ -4,6 +4,7 @@ body {
   margin: 1em auto;
   padding: 0 0.55em;
   max-width: 49rem;
+  font-family: "sans-serif";
 }
 
 h1,h2,h3,h4 {
@@ -81,7 +82,7 @@ pre {
   overflow-x: auto;
   border: 1px solid #eee;
   border-radius: 3px;
-  background-color: #fafafa;
+  background-color: #eee;
 }
 
 #meta {
