@@ -16,9 +16,23 @@ enableGitInfo = false
 
 [permalinks]
   blog = "/blog/:slug/"
+  notes = "/notes/:slug/"
   tags = "/tags/:slug/"
 
 [menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "blog"
+    title = "~/blog"
+    url = "/blog/"
+    weight = 110
+
+  [[menu.main]]
+    identifier = "notes"
+    name = "notes"
+    title = "~/notes"
+    url = "/notes/"
+    weight = 120
 
 [markup]
   [markup.highlight]
