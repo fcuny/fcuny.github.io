@@ -4,7 +4,7 @@ body {
   margin: 1em auto;
   padding: 0 0.55em;
   max-width: 49rem;
-  font-family: "sans-serif";
+  font-family: "arial";
 }
 
 h1,h2,h3,h4 {
@@ -19,7 +19,12 @@ h1 {
 }
 
 h2, h3 {
-  border-bottom: 1px solid #eee;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #ffc832;
+  text-decoration-thickness: 0.4rem;
+  text-underline-position: under;
+  text-underline-offset: from-font;
   font-style: italic;
 }
 h2 {
@@ -41,17 +46,14 @@ hr{
 }
 
 a {
-  color:#047bc2;
-  transition:color .1s ease-in-out;
+  color:black;
 }
 
 a:link,
 a:hover,
 a:focus,
 a:active {
-  color:#047bc2;
   text-decoration: underline;
-  text-underline-offset:.2rem
 }
 
 span.published, span.updated {
@@ -167,7 +169,6 @@ nav {
 
 .nav-bold {
   font-weight: 700;
-  color: #b72d2d;
   text-decoration: none;
 }
 
