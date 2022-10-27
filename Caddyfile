@@ -3,6 +3,12 @@
         auto_https off
 }
 
+localhost:8080 {
+        root * {$SITE_ROOT}
+        encode gzip
+        file_server
+}
+
 http://fcunynet.fly.dev {
         redir https://fcuny.net
 }

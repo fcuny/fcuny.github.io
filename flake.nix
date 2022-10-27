@@ -19,10 +19,12 @@
               pname = "fcuny.net";
               version = self.lastModifiedDate;
               src = ./.;
-              buildInputs = [ hugo git ];
+              buildInputs = [ hugo git pandoc ];
               buildPhase = ''
                 mkdir -p $out
-                hugo --minify --destination $out
+                ${pkgs.hugo}/bin/hugo --minify --destination $out
+                ${pkgs.pandoc}/bin/pandoc --self-contained --css static/css/resume.css \
+                  --from org --to html --output $out/resume.html content/resume.org
               '';
               dontInstall = true;
             };
