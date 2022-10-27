@@ -6,15 +6,6 @@
 
   <p>My general interests are in building sustainable teams, improving the management and operation of large infrastructure, and work with different teams to implement best practices around reliability and security.</p>
 
-  <h2>Posts</h2>
-  <ul>
-  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{ range $pages }}
-  {{- $fmt := "2006-01-02" }}
-  <li class="post-permalink"><span class="post-date" >{{ .Date.Format $fmt | safeHTML }}</span>, <a href="{{ .Permalink }}">{{ .Title }}</a></li>
-  {{ end }}
-  </ul>
-
 </article>
 
 {{ end }}
