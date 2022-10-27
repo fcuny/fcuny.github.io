@@ -8,14 +8,14 @@ tags:
 
 *This document assumes go version \>= 1.16*.
 
-# Go Modules
+## Go Modules
 
 [Go modules](https://blog.golang.org/using-go-modules) have been added
 in 2019 with Go 1.11. A number of changes were introduced with [Go
 1.16](https://blog.golang.org/go116-module-changes). This document is a
 reference for me so that I can find answers to things I keep forgetting.
 
-## Creating a new module
+### Creating a new module
 
 To create a new module, run `go mod init golang.fcuny.net/m`. This will
 create two files: `go.mod` and `go.sum`.
@@ -26,7 +26,7 @@ In the `go.mod` file you'll find:
 -   the list of dependencies (within `require`)
 -   the version of go to use for the module
 
-## Versioning
+### Versioning
 
 To bump the version of a module:
 
@@ -41,11 +41,11 @@ Then as a user:
 $ go get -d golang.fcuny.net/m@v1.2.3
 ```
 
-## Updating dependencies
+### Updating dependencies
 
 To update the dependencies, run `go mod tidy`
 
-## Editing a module
+### Editing a module
 
 If you need to modify a module, you can check out the module in your
 workspace (`git clone <module URL>`).
@@ -62,13 +62,13 @@ project, the cloned module will be used.
 This is particularly useful when trying to debug an issue with an
 external module.
 
-## Vendor-ing modules
+### Vendor-ing modules
 
 It's still possible to vendor modules by running `go mod vendor`. This
 can be useful in the case of a CI setup that does not have access to
 internet.
 
-## Proxy
+### Proxy
 
 As of version 1.13, the variable `GOPROXY` defaults to
 `https://proxy.golang.org,direct` (see
@@ -151,33 +151,33 @@ require (
 
 # Tooling
 
-## LSP
+### LSP
 
 `gopls` is the default implementation of the language server protocol
 maintained by the Go team. To install the latest version, run
 `go install golang.org/x/tools/gopls@latest`
 
-## `staticcheck`
+### `staticcheck`
 
 [`staticcheck`](https://staticcheck.io/) is a great tool to run against
 your code to find issues. To install the latest version, run
 `go install honnef.co/go/tools/cmd/staticcheck@latest`.
 
-# Emacs integration
+## Emacs integration
 
-## `go-mode`
+### `go-mode`
 
 [This is the mode](https://github.com/dominikh/go-mode.el) to install to
 get syntax highlighting (mostly).
 
-## Integration with LSP
+### Integration with LSP
 
 Emacs has a pretty good integration with LSP, and ["Eglot for better
 programming experience in
 Emacs"](https://whatacold.io/blog/2022-01-22-emacs-eglot-lsp/) is a good
 starting point.
 
-### eglot
+#### eglot
 
 [This is the main mode to install](https://github.com/joaotavora/eglot).
 
@@ -199,9 +199,9 @@ The configuration is straightforward, this is what I use:
 `eglot` integrates well with existing modes for Emacs, mainly xref,
 flymake, eldoc.
 
-# Profiling
+## Profiling
 
-## pprof
+### pprof
 
 [pprof](https://github.com/google/pprof) is a tool to visualize
 performance data. Let's start with the following test:

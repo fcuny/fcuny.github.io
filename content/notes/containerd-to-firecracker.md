@@ -28,7 +28,7 @@ this. I've been meaning to look into Firecracker for a while and into
 containers'd API, so this is a perfect opportunity to get started. The
 code is available [here](https://github.com/fcuny/containerd-to-vm).
 
-# #1 Pull a container from a registry with `containerd`
+## #1 Pull a container from a registry with `containerd`
 
 `containerd` has a pretty [detailed
 documentation](https://pkg.go.dev/github.com/containerd/containerd).
@@ -73,7 +73,7 @@ with:
 docker.io/library/redis:latest
 ```
 
-# #2 Create a loop device to store the container's filesystem on
+## #2 Create a loop device to store the container's filesystem on
 
 This is going to be pretty straightforward. To create a loop device we
 need to:
@@ -132,7 +132,7 @@ if err := command.Run(); err != nil {
 }
 ```
 
-# #3 Unpack the container into the mounted loop device
+## #3 Unpack the container into the mounted loop device
 
 Extracting the container using `containerd` is pretty simple. Here's the
 function that I use:
@@ -166,7 +166,7 @@ making a number of assumptions regarding their type (we should be
 checking the media type first). We read the layers and extract them to
 the mounted path.
 
-# #4 Create a second block device and inject other stuff
+## #4 Create a second block device and inject other stuff
 
 Here I'm going to deviate a bit. I will not create a second loop device,
 and I will not inject a kernel. In their article, they provided a link
@@ -179,7 +179,7 @@ files to container (`/etc/hosts` and `/etc/resolv.conf`).
 Finally, since we've pre-allocated 2GB for that container, and we likely
 don't need that much, we're also going to resize the image.
 
-## Add init
+### Add init
 
 Let's refer to the [specification for the
 config](https://github.com/opencontainers/image-spec/blob/master/config.md).
@@ -247,14 +247,14 @@ We're once again creating a temporary file with `renamio`, and we're
 writing our shell scripts, one line at a time. We only need to make sure
 this executable.
 
-## extra files
+### extra files
 
 Once we have our init file, I also want to add a few extra files:
 `/etc/hosts` and `/etc/resolv.conf`. This files are not always present,
 since they can be injected by other systems. I also want to make sure
 that DNS resolutions are done using my own DNS server.
 
-## resize the image
+### resize the image
 
 We've pre-allocated 2GB for the image, and it's likely we don't need as
 much space. We can do this by running `e2fsck` and `resize2fs` once
@@ -281,7 +281,7 @@ with the following size for the image:
 -rw------- 1 root root 216M Apr 22 14:50 /tmp/fcuny.img
 ```
 
-## Kernel
+### Kernel
 
 We're going to need a kernel to run that VM. In my case I've decided to
 go with version 5.8, and build a custom kernel. If you are not familiar
@@ -301,11 +301,11 @@ make vmlinux -j8
 Note that they also have a pretty [good documentation for
 production](https://github.com/firecracker-microvm/firecracker/blob/main/docs/prod-host-setup.md).
 
-# #5 Attach persistent volumes (if any)
+## #5 Attach persistent volumes (if any)
 
 I'm going to skip that step for now.
 
-# #6 Create a TAP device and configure it
+## #6 Create a TAP device and configure it
 
 We're going to need a network for that VM (otherwise it might be a bit
 boring). There's a few solutions that we can take:
@@ -351,7 +351,7 @@ in `etc/cni/conf.d/50-c2vm.conflist`:
 }
 ```
 
-# #7 Hand it off to Firecracker and boot that thing
+## #7 Hand it off to Firecracker and boot that thing
 
 Now that we have all the components, we need to boot that VM. Since I've
 been working with Go so far, I'll also use the [Go

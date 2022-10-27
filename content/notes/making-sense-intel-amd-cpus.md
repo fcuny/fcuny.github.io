@@ -7,9 +7,9 @@ tags:
   - cpu
 ---
 
-# Intel
+## Intel
 
-## Core
+### Core
 
 The line up for the core family is i3, i5, i7 and i9. As of December
 2021, the current generation is Alder Lake (12th generation).
@@ -51,7 +51,7 @@ List of suffixes:
 > is made with the an unlocked clock multiplier. When used with some
 > specific chipset, it's possible to overclock the processor.
 
-### Sockets/Chipsets
+#### Sockets/Chipsets
 
 For the Alder Lake generation, the supported socket is the
 [LGA<sub>1700</sub>](https://en.wikipedia.org/wiki/LGA_1700).
@@ -101,7 +101,7 @@ performance or efficiency).
 As of December 2021 this is not yet properly supported by the Linux
 kernel.
 
-## Xeon
+### Xeon
 
 Xeon is the brand of Intel processor designed for non-consumer servers
 and workstations. The most recent generations are:
@@ -117,9 +117,9 @@ The following brand identifiers are used:
 -   silver
 -   bronze
 
-# AMD
+## AMD
 
-## Ryzen
+### Ryzen
 
 There are multiple generation for this brand of processors. They are
 based on the [zen micro
@@ -145,14 +145,14 @@ List of suffixes:
 | U      | standard mobile                            |
 | M      | low power mobile                           |
 
-## EPYC
+### EPYC
 
 EPYC is the AMD brand of processors for the server market, based on the
 zen architecture. They use the
 [SP3](https://en.wikipedia.org/wiki/Socket_SP3) socket. The EPYC
 processor is chipset free.
 
-## Threadripper
+### Threadripper
 
 The threadripper is for high performance desktop. It uses the
 [TR4](https://en.wikipedia.org/wiki/Socket_TR4) socket. At the moment
@@ -162,7 +162,7 @@ there's only one chipset that supports this process, the
 The threadripper based on zen3 architecture is not yet released, but
 it's expected to hit the market in the first half of Q1 2022.
 
-## Sockets/Chipsets
+### Sockets/Chipsets
 
 The majority of these processors use the [AM4
 socket](https://en.wikipedia.org/wiki/Socket_AM4). The threadripper line
@@ -174,7 +174,7 @@ socket. The more advanced ones are the B550 and the X570.
 
 The threadripper processors use the TR4, sTRX4 and sWRX8 sockets.
 
-## Zen 3
+### Zen 3
 
 Zen 3 was released in November 2020.
 

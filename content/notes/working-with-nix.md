@@ -6,7 +6,7 @@ tags:
   - nix
 ---
 
-# the `nix develop` command
+## the `nix develop` command
 
 The `nix develop` command is for working on a repository. If our
 repository contains a `Makefile`, it will be used by the various
@@ -26,9 +26,9 @@ they map as follow:
 In the repository, running `nix develop --build` will build the binary
 **using the Makefile**. This is different from running `nix build`.
 
-# the `nix build` and `nix run` commands
+## the `nix build` and `nix run` commands
 
-## for Go
+### for Go
 
 For Go, there's the `buildGoModule`. Looking at the
 [source](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/go-modules/generic/default.nix)
@@ -38,7 +38,7 @@ a result, we don't have to define them ourselves.
 If we run `nix build` in the repository, it will run the default [build
 phase](https://github.com/NixOS/nixpkgs/blob/fb7287e6d2d2684520f756639846ee07f6287caa/pkgs/development/go-modules/generic/default.nix#L171).
 
-# `buildInputs` or `nativeBuildInputs`
+## `buildInputs` or `nativeBuildInputs`
 
 -   `nativeBuildInputs` is intended for architecture-dependent
     build-time-only dependencies

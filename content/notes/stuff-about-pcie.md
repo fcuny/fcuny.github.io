@@ -6,7 +6,7 @@ tags:
   - harwdare
 ---
 
-# Speed
+## Speed
 
 The most common versions are 3 and 4, while 5 is starting to be
 available with newer Intel processors.
@@ -39,7 +39,7 @@ If we apply the formula, for a PCIe version 3 device we can expect
 
     8GT/s * 4 lanes * (1 - 2/130) - 1G = 32G * 0.985 - 1G = ~30Gb/s -> 3750MB/s
 
-# Topology
+## Topology
 
 The easiest way to see the PCIe topology is with `lspci`:
 
@@ -75,12 +75,12 @@ The easiest way to see the PCIe topology is with `lspci`:
                +-18.6  Advanced Micro Devices, Inc. [AMD] Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 6
                \-18.7  Advanced Micro Devices, Inc. [AMD] Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 7
 
-# View a single device
+## View a single device
 
     $ lspci -s 0000:01:00.0
     01:00.0 Non-Volatile memory controller: OCZ Technology Group, Inc. RD400/400A SSD (rev 01)
 
-# Reading `lspci` output
+## Reading `lspci` output
 
     $ sudo lspci -vvv -s 0000:01:00.0
     01:00.0 Non-Volatile memory controller: OCZ Technology Group, Inc. RD400/400A SSD (rev 01) (prog-if 02 [NVM Express])
@@ -165,7 +165,7 @@ A few things to note from this output:
     (here, we can use 4 lanes)
 -   **MaxPayload** is the maximum size of a PCIe packet
 
-# Debugging
+## Debugging
 
 PCI configuration registers can be used to debug various PCI bus issues.
 
