@@ -19,12 +19,14 @@
               pname = "fcuny.net";
               version = self.lastModifiedDate;
               src = ./.;
-              buildInputs = [ hugo git pandoc ];
+              buildInputs = [ hugo git pandoc texlive.combined.scheme-tetex ];
               buildPhase = ''
                 mkdir -p $out
                 ${pkgs.hugo}/bin/hugo --minify --destination $out
                 ${pkgs.pandoc}/bin/pandoc --self-contained --css static/css/resume.css \
                   --from org --to html --output $out/resume.html content/resume.org
+                ${pkgs.pandoc}/bin/pandoc --self-contained --css static/css/resume.css \
+                  --from org --to pdf --output $out/resume.pdf content/resume.org
               '';
               dontInstall = true;
             };
