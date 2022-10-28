@@ -2,9 +2,6 @@
 Author: Franck Cuny
 Contact: franck [at] fcuny.net
 Twitter: @franckcuny
-Location: Berkeley, CA
-
-/* SITE */
-CA: Let's Encrypt
-Host: Fly.io
-Serving: Linux, Go
+GitHub: @fcuny
+Location: Emacs, Berkeley, CA
+Resume: https://fcuny.net/resume.html
