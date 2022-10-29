@@ -1,12 +1,10 @@
-{{ range .GroupByDate "2006" }}
-  <h2>{{ .Key }}</h2>
-  <ul>
-    {{ range .Pages.ByDate.Reverse }}
-    <li>
-      <div>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </div>
-    </li>
-    {{ end }}
-  </ul>
-{{ end }}
+<ul class="list-content">
+  {{ range .GroupByDate "2006" }}
+  {{ range .Pages.ByDate.Reverse }}
+  <li>
+    <span class="content-title"><strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong></span>
+    <span class="content-date"><em>posted on {{ .Date.Format "Jan 2, 2006" }}</em></span>
+  </li>
+  {{ end }}
+  {{ end }}
+</ul>

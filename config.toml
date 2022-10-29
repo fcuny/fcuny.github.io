@@ -23,14 +23,14 @@ enableGitInfo = false
   [[menu.main]]
     identifier = "blog"
     name = "blog"
-    title = "~/blog"
+    title = "blog"
     url = "/blog/"
     weight = 110
 
   [[menu.main]]
     identifier = "notes"
     name = "notes"
-    title = "~/notes"
+    title = "notes"
     url = "/notes/"
     weight = 120
 
@@ -45,7 +45,7 @@ enableGitInfo = false
     lineNos = false
     lineNumbersInTable = false
     noClasses = true
-    style = "manni"
+    style = "pygments"
     tabWidth = 4
 
 [mediaTypes."application/atom"]

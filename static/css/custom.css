@@ -1,41 +1,30 @@
 body {
   font-size: 1em;
-  color: #111;
+  color: #444;
   margin: 1em auto;
   padding: 0 0.55em;
   max-width: 49rem;
   font-family: "arial";
+  line-height: 1.4em;
+  background-color: #f7f7f7;
 }
 
 h1,h2,h3,h4 {
   font-family: monospace;
+  color: #2a3439;
 }
 
 h1 {
-  color: #0e0e0b;
   font-size: 1.4rem;
   margin-top: 1em;
   margin-bottom: 0.34em;
 }
 
-h2, h3 {
-  text-decoration: underline;
-  text-decoration-style: solid;
-  text-decoration-color: #ffc832;
-  text-decoration-thickness: 0.2rem;
-  text-underline-position: under;
-  text-underline-offset: from-font;
-  font-style: italic;
-}
 h2 {
-  margin-top: 1.25em;
-  margin-bottom: 0.41em;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 h3 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 hr{
@@ -46,7 +35,7 @@ hr{
 }
 
 a {
-  color:black;
+  color: #4d76ae;
 }
 
 a:link,
@@ -61,16 +50,21 @@ span.published, span.updated {
   font-style: oblique;
 }
 
+span.content-date {
+  float: right;
+  font-style: oblique;
+}
+
 code {
   font-family: monospace;
   padding-left: 0.2em;
   padding-right: 0.2em;
-  border-radius: 4px;
 }
 
 p code {
   color: black;
-  background-color: #eee;
+  background-color: #f7f7f2;
+  border: 1px solid #e0deca;
   padding: 0 0.2rem;
   font-size: 1.1em;
 }
@@ -82,9 +76,9 @@ pre {
   word-wrap: normal;
   padding: 0.8em;
   overflow-x: auto;
-  border: 1px solid #eee;
+  border: 1px solid #e0deca;
   border-radius: 3px;
-  background-color: #eee;
+  background-color: #f7f7f2;
 }
 
 #meta {
@@ -94,7 +88,7 @@ pre {
 #meta_tags {
   padding: 0 .5rem;
   font-size: 0.9rem;
-  border: 2px solid #eee;
+  border: 1px solid #ccc;
 }
 
 #meta_tags a {
@@ -112,6 +106,11 @@ table {
   width: 100%;
   border-spacing: 0px;
   outline: none;
+  word-break: normal;
+  word-break: keep-all;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: monospace;
 }
 
 td{
@@ -120,16 +119,18 @@ td{
   padding-bottom: 0.4em;
   padding-left: : 0.7em;
 }
+
 thead {
   color: #000;
   font-style: bold;
   text-align: left;
 }
+
 table, th, td {
-  font-family: monospace;
-  border: 1px solid;
   border-collapse: collapse;
   color: #000;
+  border: 1px solid #cdcdcd;
+  padding: 6px 13px;
 }
 
 blockquote {
@@ -142,19 +143,17 @@ blockquote {
 
 nav {
   font-size: 1.4em;
-  display: flex;
   font-family: monospace;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  line-height: 0.6rem;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.nav-item {
-  margin-left: 10px;
+nav .bar {
+  color: #aaa;
+  vertical-align: bottom;
+  padding-left: 1px;
+  padding-right: 1px;
 }
 
 .navbar a {
@@ -162,14 +161,24 @@ nav {
   text-decoration: none;
 }
 
+nav h2 a {
+  color: #3873ad;
+}
+
 .navbar a:hover {
-  color: #000000;
   text-decoration: none;
 }
 
 .nav-bold {
   font-weight: 700;
   text-decoration: none;
+  color: #2a3439;
+}
+
+ul.list-content {
+  list-style: none;
+  padding: 0;
+  line-height: 2em;
 }
 
 article {
@@ -185,23 +194,4 @@ article {
   font-family: monospace;
   font-weight: 400;
   font-size: 1.1em;
-}
-
-footer {
-  border-top: 2px solid #eee;
-  margin-top: 2em;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: left;
-}
-
-footer a, footer a:link, footer a:focus, footer a:active, footer a:hover {
-  color: black;
-  text-decoration: none;
-  padding: 5px;
-}
-
-footer a:not(:first-child) {
-  margin-left: 15px;
 }

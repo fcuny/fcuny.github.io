@@ -13,9 +13,9 @@
   {{- $mod = .Page.GitInfo.CommitDate.Format "Jan 2, 2006" -}}
   {{ end -}}
   {{ if eq $pub $mod }}
-  <div id="meta_date">published {{ $pub }}</div>
+  <div id="meta_date">posted on {{ $pub }}</div>
   {{ else }}
-  <div id="meta_date">published {{ $pub }} - last modified {{ $mod }}</div>
+  <div id="meta_date">posted on {{ $pub }} - last modified {{ $mod }}</div>
   {{ end }}
   {{ if .Params.tags }}
   <div>
