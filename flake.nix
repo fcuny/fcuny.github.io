@@ -44,8 +44,7 @@
             set -euxo pipefail
             export PATH="${pkgs.lib.makeBinPath [(pkgs.docker.override { clientOnly = true; }) pkgs.flyctl]}:$PATH"
             archive=${self.packages.x86_64-linux.container}
-            # load archive, drop all output except last line case of warnings), print image name
-            image=$(docker load < $archive | tail -n1 | awk '{ print $3; }')
+            image=$(docker load < $archive | tail -n1 | ${pkgs.gawk}/bin/awk '{ print $3; }')
             flyctl deploy --image $image --local-only
           '';
           hugo = pkgs.writeShellScriptBin "hugo" ''
