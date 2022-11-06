@@ -1,0 +1,17 @@
+kind: pipeline
+type: exec
+name: deploy
+
+trigger:
+  event:
+    - push
+  branch:
+    - main
+
+steps:
+  - name: deploy
+    environment:
+      FLY_API_TOKEN:
+        from_secret: FLY_API_TOKEN
+    commands:
+      - nix run .#deploy
