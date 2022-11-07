@@ -18,7 +18,7 @@ steps:
 ---
 kind: pipeline
 type: docker
-name: daily-backup
+name: flakes-update
 trigger:
   event:
     - cron
