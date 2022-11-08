@@ -1,8 +1,10 @@
 #+TITLE: fcuny.net
 
-My personal blog.
+[[https://ci.fcuny.net/api/badges/fcuny/fcuny.net/status.svg]]
+
+My personal site.
 
 * Run
 The dependencies are managed with nix. Running =nix run= will start the hugo server.
 * Deploy
-You can deploy the site by running [[file:scripts/deploy.sh][scripts/deploy.sh]]. There's also a [[file:.drone.yml][.drone.yml]] configuration to trigger a build and deploy with drone.
+You can deploy the site by running =nir run .#deploy=. There's also a [[file:.drone.yml][.drone.yml]] configuration to trigger a build and deploy with drone.
