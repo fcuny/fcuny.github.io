@@ -13,21 +13,19 @@
   {{- $mod = .Page.GitInfo.CommitDate.Format "Jan 2, 2006" -}}
   {{ end -}}
   {{ if eq $pub $mod }}
-  <div id="meta_date">posted on {{ $pub }}</div>
+  <span id="meta_date">posted on {{ $pub }}</span>
   {{ else }}
-  <div id="meta_date">posted on {{ $pub }} - last modified {{ $mod }}</div>
+  <span id="meta_date">posted on {{ $pub }} - last modified {{ $mod }}</span>
   {{ end }}
   {{ if .Params.tags }}
-  <div>
   {{ if eq (len .Params.tags) 1 }}
-  tag:
+  with tag:
   {{ else }}
-  tags:
+  with tags:
   {{ end }}
   {{ range $idx, $tag := .Params.tags }}
   <span id="meta_tags"><a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a></span>
   {{ end }}
-  </div>
   {{ end }}
 </div>
 
