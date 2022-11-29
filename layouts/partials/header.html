@@ -1,12 +1,10 @@
 <header>
   <nav class="navbar">
-    <h1 id="header"><a rel="author" href="{{ .Site.BaseURL }}">franck cuny</a></h1>
-    {{ range .Site.Menus.main }}
-    <a class="nav-bold" href="{{ absURL .URL }}">{{ .Title }}</a>
-    <span class="bar">|</span>
-    {{ end }}
-    <a class="nav-bold" href="https://git.fcuny.net/fcuny" title="git" target="_blank">code</a>
-    <span class="bar">|</span>
-    <a class="nav-bold" href="/feed.xml" title="atom feed">feed</a>
+    <a class="nav-bold" href="{{ .Site.BaseURL }}">about</a>
+    <ul class="nav-links">
+      {{ range .Site.Menus.main }}
+      <li class="nav-item"><a href="{{ absURL .URL }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
   </nav>
 </header>

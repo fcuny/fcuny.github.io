@@ -34,6 +34,20 @@ enableGitInfo = false
     url = "/notes/"
     weight = 120
 
+  [[menu.main]]
+    identifier = "code"
+    name = "code"
+    title = "code"
+    url = "https://git.fcuny.net/fcuny/"
+    weight = 130
+
+  [[menu.main]]
+    identifier = "feed"
+    name = "feed"
+    title = "feed"
+    url = "/feed.xml"
+    weight = 140
+
 [markup]
   [markup.highlight]
     anchorLineNos = false

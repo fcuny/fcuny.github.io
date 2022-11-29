@@ -1,11 +1,13 @@
 body {
-  font-size: 1.1em;
-  color: #444;
+  font-size: 1.2em;
+  color: #333;
   margin: 1em auto;
   padding: 0 0.55em;
   max-width: 49rem;
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.4em;
+  font-kerning: auto;
+  font-weight: 400;
   background-color: #fffdfa;
 }
 
@@ -30,15 +32,9 @@ h2 {
   border-left: 5px solid #4d76ae;
   padding-left: 10px;
 }
+
 h3 {
   font-size: 1.15rem;
-}
-
-hr{
-  color:#000111;
-  background-color:#000111;
-  border:none;
-  height:1px
 }
 
 a {
@@ -70,7 +66,6 @@ code {
 
 p code {
   color: black;
-  background-color: #f7f7f2;
   border: 1px solid #e0deca;
   padding: 0 0.2rem;
   font-size: 1.1em;
@@ -84,8 +79,6 @@ pre {
   padding: 0.8em;
   overflow-x: auto;
   border: 1px solid #e0deca;
-  border-radius: 3px;
-  background-color: #f7f7f2;
 }
 
 #meta {
@@ -140,11 +133,26 @@ blockquote {
 }
 
 nav {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-family: monospace;
-  margin-top: 20px;
-  margin-bottom: 30px;
   line-height: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1em solid #3873ad;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 10px;
+  color: #aaa;
+  vertical-align: bottom;
+  padding-left: 1px;
+  padding-right: 1px;
 }
 
 nav .bar {
