@@ -1,5 +1,5 @@
 kind: pipeline
-type: docker
+type: exec
 name: deploy
 
 trigger:
@@ -10,11 +10,11 @@ trigger:
 
 steps:
   - name: deploy
-    image: nixpkgs/nix-flakes:nixos-22.05
     environment:
       FLY_API_TOKEN:
         from_secret: FLY_API_TOKEN
     commands:
+      - nix --version
       - nix run .#deploy
 ---
 kind: pipeline
