@@ -41,7 +41,7 @@ If we apply the formula, for a PCIe version 3 device we can expect
 
 ## Topology
 
-The easiest way to see the PCIe topology is with `lspci`:
+An easy way to see the PCIe topology is with `lspci`:
 
     $ lspci -tv
     -[0000:00]-+-00.0  Advanced Micro Devices, Inc. [AMD] Family 17h (Models 00h-0fh) Root Complex
@@ -75,10 +75,29 @@ The easiest way to see the PCIe topology is with `lspci`:
                +-18.6  Advanced Micro Devices, Inc. [AMD] Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 6
                \-18.7  Advanced Micro Devices, Inc. [AMD] Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 7
 
+Now, how do we read this ?
+```
++-[10000:00]-+-02.0-[01]----00.0  Intel Corporation NVMe Datacenter SSD [3DNAND, Beta Rock Controller]
+|            \-03.0-[02]----00.0  Intel Corporation NVMe Datacenter SSD [3DNAND, Beta Rock Controller]
+```
+
+This is a lot of information, how do we read this ?
+- The first part in brackets (`[10000:00]`) is the domain and the bus.
+- The second part (`02.0` is still unclear to me)
+- The third number (between brackets) is the device on the bus
+
 ## View a single device
 
-    $ lspci -s 0000:01:00.0
-    01:00.0 Non-Volatile memory controller: OCZ Technology Group, Inc. RD400/400A SSD (rev 01)
+```sh
+lspci -v -s 0000:01:00.0
+: 01:00.0 Non-Volatile memory controller: OCZ Technology Group, Inc. RD400/400A SSD (rev 01) (prog-if 02 [NVM Express])
+: 	Subsystem: OCZ Technology Group, Inc. RD400/400A SSD
+: 	Flags: bus master, fast devsel, latency 0, IRQ 41, NUMA node 0
+: 	Memory at ef800000 (64-bit, non-prefetchable) [size=16K]
+: 	Capabilities: <access denied>
+: 	Kernel driver in use: nvme
+: 	Kernel modules: nvme
+```
 
 ## Reading `lspci` output
 
@@ -240,3 +259,7 @@ that have not been completed).
     -   ECRC Check Capable (ChkCap) indicates if set that the function
         is capable of checking ECRC
     -   ECRC Check Enable (ChkEn) indicates if ECRC checking is enabled
+
+## Compute Express Link (CXL)
+
+[Compute Express Link](https://en.wikipedia.org/wiki/Compute_Express_Link) (CXL) is an open standard for high-speed central processing unit (CPU)-to-device and CPU-to-memory connections, designed for high performance data center computers. The standard is built on top of the PCIe physical  interface with protocols for I/O, memory, and cache coherence.
