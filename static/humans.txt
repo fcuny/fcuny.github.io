@@ -1,7 +1,5 @@
 /* TEAM */
 Author: Franck Cuny
 Contact: franck [at] fcuny.net
-Twitter: @franckcuny
-GitHub: @fcuny
 Location: Emacs, Berkeley, CA
 Resume: https://fcuny.net/resume.html

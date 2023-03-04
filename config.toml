@@ -38,7 +38,7 @@ enableGitInfo = false
     identifier = "code"
     name = "code"
     title = "code"
-    url = "https://git.fcuny.net/fcuny/"
+    url = "https://git.fcuny.net/"
     weight = 130
 
   [[menu.main]]
