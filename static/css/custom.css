@@ -1,40 +1,33 @@
 body {
-  font-size: 1.2em;
   color: #333;
   margin: 1em auto;
   padding: 0 0.55em;
-  max-width: 49rem;
-  font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.4em;
+  max-width: 50rem;
+  font-family: sans-serif;
+  line-height: 150%;
   font-kerning: auto;
-  font-weight: 400;
   background-color: #fffdfa;
 }
 
 h1,h2,h3,h4 {
   font-family: monospace;
-  color: #2a3439;
+  color: #333;
 }
 
 h1#header {
-  font-size: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1em;
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-top: 1em;
   margin-bottom: 0.34em;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border-left: 5px solid #4d76ae;
   padding-left: 10px;
-}
-
-h3 {
-  font-size: 1.15rem;
 }
 
 a {
@@ -60,25 +53,25 @@ span.content-date {
 
 code {
   font-family: monospace;
-  padding-left: 0.2em;
-  padding-right: 0.2em;
+  font-size: 95%;
+  padding: 0.2rem;
+  background-color: #eee;
+  color: #000;
+  border-radius: 4px;
 }
 
 p code {
   color: black;
-  border: 1px solid #e0deca;
-  padding: 0 0.2rem;
-  font-size: 1.1em;
 }
 
 pre {
   font-family: monospace;
-  font-size: 1.1em;
+  font-size: 0.9rem;
   margin: 0;
   word-wrap: normal;
   padding: 0.8em;
   overflow-x: auto;
-  border: 1px solid #e0deca;
+  background-color: #f0f0f0;
 }
 
 #meta {
@@ -133,13 +126,14 @@ blockquote {
 }
 
 nav {
-  font-size: 1.3em;
-  font-family: monospace;
-  line-height: 0.6rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 0.1em solid #3873ad;
+  border-bottom: 0.2em solid #047bc2;
+  display: flex;
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  justify-content: space-between;
+  line-height: 0.6rem;
 }
 
 .nav-links {
@@ -149,13 +143,6 @@ nav {
 
 .nav-item {
   margin-left: 10px;
-  color: #aaa;
-  vertical-align: bottom;
-  padding-left: 1px;
-  padding-right: 1px;
-}
-
-nav .bar {
   color: #aaa;
   vertical-align: bottom;
   padding-left: 1px;
@@ -176,7 +163,6 @@ nav h2 a {
 }
 
 .nav-bold {
-  font-weight: 700;
   text-decoration: none;
   color: #2a3439;
 }
@@ -198,6 +184,4 @@ article {
 
 .post-date {
   font-family: monospace;
-  font-weight: 400;
-  font-size: 1.1em;
 }
