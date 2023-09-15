@@ -2,7 +2,7 @@
   description = "Franck Cuny's personal website.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-22.05";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -46,6 +46,6 @@
         defaultPackage = self.packages."${system}".container;
 
         devShell =
-          pkgs.mkShell { buildInputs = with pkgs; [ hugo flyctl git ]; };
+          pkgs.mkShell { buildInputs = with pkgs; [ hugo git ]; };
       });
 }
