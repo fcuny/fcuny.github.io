@@ -3,15 +3,14 @@ body {
   margin: 1em auto;
   padding: 0 0.55em;
   max-width: 50rem;
-  font-family: sans-serif;
-  line-height: 150%;
-  font-kerning: auto;
-  background-color: #fffdfa;
+  line-height: 1.3;
+  font-size: 1.08em;
+  background-color: rgb(255, 248, 231);
 }
 
 h1,h2,h3,h4 {
-  font-family: monospace;
   color: #333;
+  font-family: monospace;
 }
 
 h1#header {
@@ -130,7 +129,7 @@ nav {
   border-bottom: 0.2em solid #047bc2;
   display: flex;
   font-family: monospace;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   font-weight: 700;
   justify-content: space-between;
   line-height: 0.6rem;
@@ -171,6 +170,7 @@ ul.list-content {
   list-style: none;
   padding: 0;
   line-height: 2em;
+  font-family: monospace;
 }
 
 article {
