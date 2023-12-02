@@ -1,6 +1,6 @@
 ---
 title: 1password's ssh agent and nix
-date: 2023-11-13
+date: 2023-12-02
 tags:
 - ssh
 - git
