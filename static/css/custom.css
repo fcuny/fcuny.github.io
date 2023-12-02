@@ -56,7 +56,7 @@ span.content-date {
 
 code {
   font-family: monospace;
-  font-size: 95%;
+  font-size: 14px;
   padding: 0.2rem;
   background-color: #f2f1eb;
   color: #000;
@@ -69,7 +69,7 @@ p code {
 
 pre {
   font-family: monospace;
-  font-size: 0.9rem;
+  font-size: 14px;
   margin: 0;
   word-wrap: normal;
   padding: 0.8em;
@@ -173,7 +173,6 @@ ul.list-content {
   list-style: none;
   padding: 0;
   line-height: 2em;
-  /* font-family: monospace; */
 }
 
 article {
