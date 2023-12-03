@@ -17,11 +17,6 @@ jobs:
         with:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-      # sign commits with a ssh key
-      # https://github.com/webfactory/ssh-agent
-      - uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Update flake.lock
         id: update-flake-lock
         uses: DeterminateSystems/update-flake-lock@v20
