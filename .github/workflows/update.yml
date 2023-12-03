@@ -7,6 +7,8 @@ on:
 jobs:
   update-flake-lock:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,3 +22,6 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@v20
         with:
           pr-title: "Update flake.lock"
+          pr-labels: |
+            dependencies
+            automated
