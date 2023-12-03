@@ -2,20 +2,28 @@
   <title>{{ .Site.Title }}</title>
   <link href="{{ .Permalink }}feed.xml" rel="self"/>
   <link href="{{ .Permalink }}"/>
-  <id>{{ .Permalink }}</id>{{ with .Site.Author.name }}
+  <id>{{ .Permalink }}</id>
+
+  {{ with .Site.Params.Author.name }}
   <author>
-    <name>{{.}}</name>{{ with $.Site.Author.email }}
-    <email>{{.}}</email>{{end}}
-  </author>{{end}}
+    <name>{{.}}</name>
+    {{ with $.Site.Params.Author.email }}
+    <email>{{.}}</email>
+    {{end}}
+  </author>
+  {{end}}
+
   <generator>Hugo -- gohugo.io</generator>
   {{ range where (first 10 (where .Site.Pages "Section" "blog")) "Params.hidden" "ne" "true" }}
   <entry>
     {{ `<title type="html"><![CDATA[` | safeHTML }}{{ .Title }}]]></title>
     <link href="{{ .Permalink }}"/>
-    <id>{{ .Permalink }}</id>{{ with .Site.Params.Author }}
+    <id>{{ .Permalink }}</id>
+    {{ with .Site.Params.Author.name }}
     <author>
       <name>{{.}}</name>
-    </author>{{end}}
+    </author>
+    {{end}}
     {{- $fmt := "2006-01-02T15:04:05-07:00" }}
     <published>{{ .Date.Format $fmt | safeHTML }}</published>
     {{ `<content type="html"><![CDATA[` | safeHTML }}{{ .Content }}]]></content>

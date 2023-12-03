@@ -1,3 +1,4 @@
 /docs/
 /.hugo_build.lock
 /result
+/.pre-commit-config.yaml

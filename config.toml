@@ -5,70 +5,70 @@ publishDir = "docs"
 enableGitInfo = false
 
 [params]
-  homeText = "A collection of posts"
+homeText = "A collection of posts"
 
-[author]
-  name = "Franck Cuny"
-  email = "franck@fcuny.net"
+[params.author]
+name = "Franck Cuny"
+email = "franck@fcuny.net"
 
 [taxonomies]
-  tag = "tags"
+tag = "tags"
 
 [permalinks]
-  blog = "/blog/:slug/"
-  notes = "/notes/:slug/"
-  tags = "/tags/:slug/"
+blog = "/blog/:slug/"
+notes = "/notes/:slug/"
+tags = "/tags/:slug/"
 
 [menu]
-  [[menu.main]]
-    identifier = "blog"
-    name = "blog"
-    title = "blog"
-    url = "/blog/"
-    weight = 110
+[[menu.main]]
+identifier = "blog"
+name = "blog"
+title = "blog"
+url = "/blog/"
+weight = 110
 
-  [[menu.main]]
-    identifier = "notes"
-    name = "notes"
-    title = "notes"
-    url = "/notes/"
-    weight = 120
+[[menu.main]]
+identifier = "notes"
+name = "notes"
+title = "notes"
+url = "/notes/"
+weight = 120
 
-  [[menu.main]]
-    identifier = "code"
-    name = "code"
-    title = "code"
-    url = "https://github.com/fcuny"
-    weight = 130
+[[menu.main]]
+identifier = "code"
+name = "code"
+title = "code"
+url = "https://github.com/fcuny"
+weight = 130
 
-  [[menu.main]]
-    identifier = "feed"
-    name = "feed"
-    title = "feed"
-    url = "/feed.xml"
-    weight = 140
+[[menu.main]]
+identifier = "feed"
+name = "feed"
+title = "feed"
+url = "/feed.xml"
+weight = 140
 
 [markup]
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = false
-    guessSyntax = false
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = false
-    noClasses = true
-    style = "pygments"
-    tabWidth = 4
+[markup.highlight]
+anchorLineNos = false
+codeFences = false
+guessSyntax = false
+hl_Lines = ""
+lineAnchors = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = false
+noClasses = true
+style = "pygments"
+tabWidth = 4
 
 [mediaTypes."application/atom"]
-  suffixes = ["xml"]
+suffixes = ["xml"]
 
 [outputFormats.Atom]
-  mediaType = "application/atom"
-  baseName = "feed"
-  isPlainText = false
+mediaType = "application/atom"
+baseName = "feed"
+isPlainText = false
 
 [outputs]
-  home = [ "HTML", "Atom" ]
+home = ["HTML", "Atom"]

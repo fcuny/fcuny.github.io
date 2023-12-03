@@ -4,16 +4,20 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
     flake-utils.url = "github:numtide/flake-utils";
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, pre-commit-hooks, treefmt-nix, }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
+        treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
+      in {
+        formatter = treefmtEval.config.build.wrapper;
+
         packages = {
-          site = with pkgs;
+          default = with pkgs;
             stdenv.mkDerivation {
               pname = "fcuny.net";
               version = self.lastModifiedDate;
@@ -32,20 +36,30 @@
           '';
         };
 
-        apps = {
-          deploy = {
-            type = "app";
-            program = "${self.packages."${system}".deploy}/bin/deploy";
+        checks = {
+          pre-commit-check = pre-commit-hooks.lib.${system}.run {
+            src = ./.;
+            hooks = {
+              hugo = {
+                enable = true;
+                entry = "${pkgs.hugo}/bin/hugo --panicOnWarning";
+                pass_filenames = false;
+              };
+            };
           };
+          formatting = treefmtEval.config.build.check self;
+        };
+
+        apps = {
           default = {
             type = "app";
             program = "${self.packages."${system}".hugo}/bin/hugo";
           };
         };
 
-        defaultPackage = self.packages."${system}".container;
-
-        devShell =
-          pkgs.mkShell { buildInputs = with pkgs; [ hugo git ]; };
+        devShells.default = pkgs.mkShell {
+          inherit (self.checks.${system}.pre-commit-check) shellHook;
+          buildInputs = with pkgs; [ hugo git treefmt ];
+        };
       });
 }
