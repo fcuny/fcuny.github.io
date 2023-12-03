@@ -13,7 +13,8 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
-      in {
+      in
+      {
         formatter = treefmtEval.config.build.wrapper;
 
         packages = {
