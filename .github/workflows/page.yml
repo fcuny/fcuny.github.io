@@ -24,7 +24,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
-      - run: nix build .#site --print-build-logs
+      - name: flake check
+        run: nix flake check
+      - name: Build the site
+        run: nix build --print-build-logs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
