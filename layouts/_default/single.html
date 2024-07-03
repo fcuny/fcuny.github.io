@@ -1,30 +1,28 @@
 {{ define "main" }}
 
 <div>
+  <h1>{{ .Title }}</h1>
 
-<h1>{{ .Title }}</h1>
+  <div id="meta">
+    {{- $pub := .Date.Format "Jan 2, 2006" -}}
+    {{- $mod := "" -}}
 
-<div id="meta">
-  {{- $pub := .Date.Format "Jan 2, 2006" -}}
-  {{- $mod := "" -}}
-  {{- if (not .GitInfo) }}
-  {{- $mod = .Lastmod.Format "Jan 2, 2006" -}}
-  {{ else }}
-  {{- $mod = .Page.GitInfo.CommitDate.Format "Jan 2, 2006" -}}
-  {{ end -}}
-  {{ if eq $pub $mod }}
-  <span id="meta_date">posted on {{ $pub }}</span>
-  {{ else }}
-  <span id="meta_date">posted on {{ $pub }} - last modified {{ $mod }}</span>
-  {{ end }}
-</div>
+    {{- if (not .GitInfo) }}
+      {{- $mod = .Lastmod.Format "Jan 2, 2006" -}}
+    {{ else }}
+      {{- $mod = .Page.GitInfo.CommitDate.Format "Jan 2, 2006" -}}
+    {{ end -}}
 
-<article>
-{{ .Content }}
-</article>
+    {{ if eq $pub $mod }}
+    <span id="meta_date">posted on {{ $pub }}</span>
+    {{ else }}
+    <span id="meta_date">posted on {{ $pub }} - last modified {{ $mod }}</span>
+    {{ end }}
+  </div>
 
-<a href="/">↑ back home</a>
+  <article>{{ .Content }}</article>
 
+  <a href="/">↑ back home</a>
 </div>
 
 {{ end }}

@@ -1,9 +1,6 @@
 ---
 title: working with nix
 date: 2022-05-10
-tags:
-  - linux
-  - nix
 ---
 
 ## the `nix develop` command
@@ -17,7 +14,7 @@ sub-commands.
 they map as follow:
 
 | phase          | default to     | command                   | note |
-|----------------|----------------|---------------------------|------|
+| -------------- | -------------- | ------------------------- | ---- |
 | configurePhase | `./configure`  | `nix develop --configure` |      |
 | buildPhase     | `make`         | `nix develop --build`     |      |
 | checkPhase     | `make check`   | `nix develop --check`     |      |
@@ -40,7 +37,7 @@ phase](https://github.com/NixOS/nixpkgs/blob/fb7287e6d2d2684520f756639846ee07f62
 
 ## `buildInputs` or `nativeBuildInputs`
 
--   `nativeBuildInputs` is intended for architecture-dependent
-    build-time-only dependencies
--   `buildInputs` is intended for architecture-independent
-    build-time-only dependencies
+- `nativeBuildInputs` is intended for architecture-dependent
+  build-time-only dependencies
+- `buildInputs` is intended for architecture-independent
+  build-time-only dependencies

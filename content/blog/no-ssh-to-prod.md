@@ -1,10 +1,8 @@
 ---
 title: No SSH to production
 date: 2022-11-28
-tags:
-- operation
-- security
 ---
+
 It's not uncommon to hear talk about preventing engineers to SSH to production machines. While I think it's a noble goal, I think most organizations are not ready for it in the short or even medium term.
 
 Why do we usually need to get a shell on a machine ? The most common reason is to investigate a system that is behaving in an unexpected way, and we need to collect information, maybe using `strace`, `tcpdump`, `perf` or one of the BCC tools. Another reason might be to validate that a change deployed to a single machine is applied correctly, before rolling it out to a large portion of the fleet.
@@ -14,12 +12,13 @@ If you end up writing a postmortem after the investigation session, one of the r
 In most cases, I think we would be better off by breaking down the problems in smaller chunk, and focus on iterative improvements. "No one gets to SSH to machines in production" is a poorly framed problem.
 
 What I think is better is to ask the following questions
+
 - who has access to the machines
 - who actually SSH to the machines
 - why do they need to SSH to the machines
 - was the state of the machine altered after someone logged to the machine
 
-For the first question, I'd recommend that we don't create user accounts and don't distribute engineers' SSH public keys on the machines. I'd create an 'infra' user account, and use signed SSH certificates (for example with [vault](https://www.hashicorp.com/products/vault/ssh-with-vault)). Only engineers who *have* to have access should be able to sign their SSH key. That way you've limited the risks to a few engineers, and you have an audit trail of who requested access. You can build reports from these audit logs, to see how frequently engineer request access. For the 'infra' user, I'd limit it's privileges, and make sure it can only run commands required for debugging/troubleshooting.
+For the first question, I'd recommend that we don't create user accounts and don't distribute engineers' SSH public keys on the machines. I'd create an 'infra' user account, and use signed SSH certificates (for example with [vault](https://www.hashicorp.com/products/vault/ssh-with-vault)). Only engineers who _have_ to have access should be able to sign their SSH key. That way you've limited the risks to a few engineers, and you have an audit trail of who requested access. You can build reports from these audit logs, to see how frequently engineer request access. For the 'infra' user, I'd limit it's privileges, and make sure it can only run commands required for debugging/troubleshooting.
 
 Using linux' audit logs, you can also generate reports on which commands are run. You can learn why the engineers needed to get on the host, and it can be used by the SRE organization to build services and tools that will enable new capabilities (for example, a service to collect traces, or do network capture remotely).
 

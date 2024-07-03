@@ -1,11 +1,6 @@
 ---
 title: containerd to firecracker
 date: 2021-05-15
-tags:
-  - linux
-  - firecracker
-  - containerd
-  - go
 ---
 
 fly.io had an [interesting
@@ -34,7 +29,7 @@ code is available [here](https://git.fcuny.net/containerd-to-vm/).
 documentation](https://pkg.go.dev/github.com/containerd/containerd).
 From the main page we can see the following example to create a client.
 
-``` go
+```go
 import (
   "github.com/containerd/containerd"
   "github.com/containerd/containerd/cio"
@@ -49,7 +44,7 @@ func main() {
 
 And pulling an image is also pretty straightforward:
 
-``` go
+```go
 image, err := client.Pull(context, "docker.io/library/redis:latest")
 ```
 
@@ -60,7 +55,7 @@ and there's a few methods associated with it.
 As `containerd` has namespaces, it's possible to specify the namespace
 we want to use when working with the API:
 
-``` go
+```go
 ctx := namespaces.WithNamespace(context.Background(), "c2vm")
 image, err := client.Pull(ctx, "docker.io/library/redis:latest")
 ```
@@ -68,7 +63,7 @@ image, err := client.Pull(ctx, "docker.io/library/redis:latest")
 The image will now be stored in the `c2vm` namespace. We can verify this
 with:
 
-``` bash
+```bash
 ; sudo ctr -n c2vm images ls -q
 docker.io/library/redis:latest
 ```
@@ -89,7 +84,7 @@ There's two commons ways to pre-allocate space to a file: `dd` and
 First, to be safe, we create a temporary file, and use `renameio` to
 handle the renaming (I recommend reading the doc of the module).
 
-``` go
+```go
 f, err := renameio.TempFile("", rawFile)
 if err != nil {
     return err
@@ -101,7 +96,7 @@ Now to do the pre-allocation (we're making an assumption here that 2GB
 is enough, we can likely check what's the size of the container before
 doing this):
 
-``` go
+```go
 command := exec.Command("fallocate", "-l", "2G", f.Name())
 if err := command.Run(); err != nil {
     return fmt.Errorf("fallocate error: %s", err)
@@ -110,7 +105,7 @@ if err := command.Run(); err != nil {
 
 We can now convert that file to ext4:
 
-``` go
+```go
 command = exec.Command("mkfs.ext4", "-F", f.Name())
 if err := command.Run(); err != nil {
     return fmt.Errorf("mkfs.ext4 error: %s", err)
@@ -119,13 +114,13 @@ if err := command.Run(); err != nil {
 
 Now we can rename safely the temporary file to the proper file we want:
 
-``` go
+```go
 f.CloseAtomicallyReplace()
 ```
 
 And to mount that file
 
-``` go
+```go
 command = exec.Command("mount", "-o", "loop", rawFile, mntDir)
 if err := command.Run(); err != nil {
     return fmt.Errorf("mount error: %s", err)
@@ -137,7 +132,7 @@ if err := command.Run(); err != nil {
 Extracting the container using `containerd` is pretty simple. Here's the
 function that I use:
 
-``` go
+```go
 func extract(ctx context.Context, client *containerd.Client, image containerd.Image, mntDir string) error {
     manifest, err := images.Manifest(ctx, client.ContentStore(), image.Target(), platform)
     if err != nil {
@@ -185,10 +180,10 @@ Let's refer to the [specification for the
 config](https://github.com/opencontainers/image-spec/blob/master/config.md).
 The elements that are of interest to me are:
 
--   `Env`, which is array of strings. They contain the environment
-    variables that likely we need to run the program
--   `Cmd`, which is also an array of strings. If there's no entry point
-    provided, this is what is used.
+- `Env`, which is array of strings. They contain the environment
+  variables that likely we need to run the program
+- `Cmd`, which is also an array of strings. If there's no entry point
+  provided, this is what is used.
 
 At this point, for this experiment, I'm going to ignore exposed ports,
 working directory, and the user.
@@ -196,7 +191,7 @@ working directory, and the user.
 First we need to read the config from the container. This is easily
 done:
 
-``` go
+```go
 config, err := images.Config(ctx, client.ContentStore(), image.Target(), platform)
 if err != nil {
     return err
@@ -205,7 +200,7 @@ if err != nil {
 
 This needs to be read and decoded:
 
-``` go
+```go
 configBlob, err := content.ReadBlob(ctx, client.ContentStore(), config)
 var imageSpec ocispec.Image
 json.Unmarshal(configBlob, &imageSpec)
@@ -221,7 +216,7 @@ for now) with the environment variables and the command.
 
 Naively, this can be done like this:
 
-``` go
+```go
 initPath := filepath.Join(mntDir, "init.sh")
 f, err := renameio.TempFile("", initPath)
 if err != nil {
@@ -262,7 +257,7 @@ we're done manipulating the image.
 
 Within a function, we can do the following:
 
-``` go
+```go
 command := exec.Command("/usr/bin/e2fsck", "-p", "-f", rawFile)
 if err := command.Run(); err != nil {
     return fmt.Errorf("e2fsck error: %s", err)
@@ -277,7 +272,7 @@ if err := command.Run(); err != nil {
 I'm using `docker.io/library/redis:latest` for my test, and I end up
 with the following size for the image:
 
-``` bash
+```bash
 -rw------- 1 root root 216M Apr 22 14:50 /tmp/fcuny.img
 ```
 
@@ -289,7 +284,7 @@ with the process, the firecracker team has [documented how to do
 this](https://github.com/firecracker-microvm/firecracker/blob/main/docs/rootfs-and-kernel-setup.md#creating-a-kernel-image).
 In my case all I had to do was:
 
-``` bash
+```bash
 git clone https://github.com/torvalds/linux.git linux.git
 cd linux.git
 git checkout v5.8
@@ -322,7 +317,7 @@ this to work we need to install the `tc-redirect-tap` CNI plugin
 Based on that documentation, I'll start with the following configuration
 in `etc/cni/conf.d/50-c2vm.conflist`:
 
-``` json
+```json
 {
   "name": "c2vm",
   "cniVersion": "0.4.0",
@@ -365,7 +360,7 @@ The first thing is to configure the list of devices. In our case we will
 have a single device, the boot drive that we've created in the previous
 step.
 
-``` go
+```go
 devices := make([]models.Drive, 1)
 devices[0] = models.Drive{
     DriveID:      firecracker.String("1"),
@@ -377,7 +372,7 @@ devices[0] = models.Drive{
 
 The next step is to configure the VM:
 
-``` go
+```go
 fcCfg := firecracker.Config{
     LogLevel:        "debug",
     SocketPath:      firecrackerSock,
@@ -403,7 +398,7 @@ fcCfg := firecracker.Config{
 
 Finally we can create the command to start and run the VM:
 
-``` go
+```go
 command := firecracker.VMCommandBuilder{}.
     WithBin(firecrackerBinary).
     WithSocketPath(fcCfg.SocketPath).
@@ -670,7 +665,7 @@ The end result:
 
 We can do a quick test with the following:
 
-``` bash
+```bash
 ; sudo docker run -it --rm redis redis-cli -h 192.168.128.9
 192.168.128.9:6379> get foo
 (nil)

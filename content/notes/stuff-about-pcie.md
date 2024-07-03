@@ -1,9 +1,6 @@
 ---
 title: Stuff about PCIe
 date: 2022-01-03
-tags:
-  - linux
-  - harwdare
 ---
 
 ## Speed
@@ -12,7 +9,7 @@ The most common versions are 3 and 4, while 5 is starting to be
 available with newer Intel processors.
 
 | ver | encoding  | transfer rate | x1         | x2          | x4         | x8         | x16         |
-|-----|-----------|---------------|------------|-------------|------------|------------|-------------|
+| --- | --------- | ------------- | ---------- | ----------- | ---------- | ---------- | ----------- |
 | 1   | 8b/10b    | 2.5GT/s       | 250MB/s    | 500MB/s     | 1GB/s      | 2GB/s      | 4GB/s       |
 | 2   | 8b/10b    | 5.0GT/s       | 500MB/s    | 1GB/s       | 2GB/s      | 4GB/s      | 8GB/s       |
 | 3   | 128b/130b | 8.0GT/s       | 984.6 MB/s | 1.969 GB/s  | 3.94 GB/s  | 7.88 GB/s  | 15.75 GB/s  |
@@ -76,12 +73,14 @@ An easy way to see the PCIe topology is with `lspci`:
                \-18.7  Advanced Micro Devices, Inc. [AMD] Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 7
 
 Now, how do we read this ?
+
 ```
 +-[10000:00]-+-02.0-[01]----00.0  Intel Corporation NVMe Datacenter SSD [3DNAND, Beta Rock Controller]
 |            \-03.0-[02]----00.0  Intel Corporation NVMe Datacenter SSD [3DNAND, Beta Rock Controller]
 ```
 
 This is a lot of information, how do we read this ?
+
 - The first part in brackets (`[10000:00]`) is the domain and the bus.
 - The second part (`02.0` is still unclear to me)
 - The third number (between brackets) is the device on the bus
@@ -171,18 +170,18 @@ lspci -v -s 0000:01:00.0
 
 A few things to note from this output:
 
--   **GT/s** is the number of transactions supported (here, 8 billion
-    transactions / second). This is gen3 controller (gen1 is 2.5 and
-    gen2 is 5)xs
--   **LNKCAP** is the capabilities which were communicated, and
-    **LNKSTAT** is the current status. You want them to report the same
-    values. If they don't, you are not using the hardware as it is
-    intended (here I'm assuming the hardware is intended to work as a
-    gen3 controller). In case the device is downgraded, the output will
-    be like this: `LnkSta: Speed 2.5GT/s (downgraded), Width x16 (ok)`
--   **width** is the number of lanes that can be used by the device
-    (here, we can use 4 lanes)
--   **MaxPayload** is the maximum size of a PCIe packet
+- **GT/s** is the number of transactions supported (here, 8 billion
+  transactions / second). This is gen3 controller (gen1 is 2.5 and
+  gen2 is 5)xs
+- **LNKCAP** is the capabilities which were communicated, and
+  **LNKSTAT** is the current status. You want them to report the same
+  values. If they don't, you are not using the hardware as it is
+  intended (here I'm assuming the hardware is intended to work as a
+  gen3 controller). In case the device is downgraded, the output will
+  be like this: `LnkSta: Speed 2.5GT/s (downgraded), Width x16 (ok)`
+- **width** is the number of lanes that can be used by the device
+  (here, we can use 4 lanes)
+- **MaxPayload** is the maximum size of a PCIe packet
 
 ## Debugging
 
@@ -213,53 +212,53 @@ that have not been completed).
                     CEMsk:  RxErr- BadTLP- BadDLLP- Rollover- Timeout- NonFatalErr+
                     AERCap: First Error Pointer: 00, GenCap+ CGenEn- ChkCap+ ChkEn-
 
--   The Uncorrectable Error Status (UESta) reports error status of
-    individual uncorrectable error sources (no bits are set above):
-    -   Data Link Protocol Error (DLP)
-    -   Surprise Down Error (SDES)
-    -   Poisoned TLP (TLP)
-    -   Flow Control Protocol Error (FCP)
-    -   Completion Timeout (CmpltTO)
-    -   Completer Abort (CmpltAbrt)
-    -   Unexpected Completion (UnxCmplt)
-    -   Receiver Overflow (RxOF)
-    -   Malformed TLP (MalfTLP)
-    -   ECRC Error (ECRC)
-    -   Unsupported Request Error (UnsupReq)
-    -   ACS Violation (ACSViol)
--   The Uncorrectable Error Mask (UEMsk) controls reporting of
-    individual errors by the device to the PCIe root complex. A masked
-    error (bit set) is not recorded or reported. Above shows no errors
-    are being masked)
--   The Uncorrectable Severity controls whether an individual error is
-    reported as a Non-fatal (clear) or Fatal error (set).
--   The Correctable Error Status reports error status of individual
-    correctable error sources: (no bits are set above)
-    -   Receiver Error (RXErr)
-    -   Bad TLP status (BadTLP)
-    -   Bad DLLP status (BadDLLP)
-    -   Replay Timer Timeout status (Timeout)
-    -   REPLAY NUM Rollover status (Rollover)
-    -   Advisory Non-Fatal Error (NonFatalIErr)
--   The Correctable Erro Mask (CEMsk) controls reporting of individual
-    errors by the device to the PCIe root complex. A masked error (bit
-    set) is not reported to the RC. Above shows that Advisory Non-Fatal
-    Errors are being masked - this bit is set by default to enable
-    compatibility with software that does not comprehend Role-Based
-    error reporting.
--   The Advanced Error Capabilities and Control Register (AERCap)
-    enables various capabilities (The above indicates the device capable
-    of generating ECRC errors but they are not enabled):
-    -   First Error Pointer identifies the bit position of the first
-        error reported in the Uncorrectable Error Status register
-    -   ECRC Generation Capable (GenCap) indicates if set that the
-        function is capable of generating ECRC
-    -   ECRC Generation Enable (GenEn) indicates if ECRC generation is
-        enabled (set)
-    -   ECRC Check Capable (ChkCap) indicates if set that the function
-        is capable of checking ECRC
-    -   ECRC Check Enable (ChkEn) indicates if ECRC checking is enabled
+- The Uncorrectable Error Status (UESta) reports error status of
+  individual uncorrectable error sources (no bits are set above):
+  - Data Link Protocol Error (DLP)
+  - Surprise Down Error (SDES)
+  - Poisoned TLP (TLP)
+  - Flow Control Protocol Error (FCP)
+  - Completion Timeout (CmpltTO)
+  - Completer Abort (CmpltAbrt)
+  - Unexpected Completion (UnxCmplt)
+  - Receiver Overflow (RxOF)
+  - Malformed TLP (MalfTLP)
+  - ECRC Error (ECRC)
+  - Unsupported Request Error (UnsupReq)
+  - ACS Violation (ACSViol)
+- The Uncorrectable Error Mask (UEMsk) controls reporting of
+  individual errors by the device to the PCIe root complex. A masked
+  error (bit set) is not recorded or reported. Above shows no errors
+  are being masked)
+- The Uncorrectable Severity controls whether an individual error is
+  reported as a Non-fatal (clear) or Fatal error (set).
+- The Correctable Error Status reports error status of individual
+  correctable error sources: (no bits are set above)
+  - Receiver Error (RXErr)
+  - Bad TLP status (BadTLP)
+  - Bad DLLP status (BadDLLP)
+  - Replay Timer Timeout status (Timeout)
+  - REPLAY NUM Rollover status (Rollover)
+  - Advisory Non-Fatal Error (NonFatalIErr)
+- The Correctable Erro Mask (CEMsk) controls reporting of individual
+  errors by the device to the PCIe root complex. A masked error (bit
+  set) is not reported to the RC. Above shows that Advisory Non-Fatal
+  Errors are being masked - this bit is set by default to enable
+  compatibility with software that does not comprehend Role-Based
+  error reporting.
+- The Advanced Error Capabilities and Control Register (AERCap)
+  enables various capabilities (The above indicates the device capable
+  of generating ECRC errors but they are not enabled):
+  - First Error Pointer identifies the bit position of the first
+    error reported in the Uncorrectable Error Status register
+  - ECRC Generation Capable (GenCap) indicates if set that the
+    function is capable of generating ECRC
+  - ECRC Generation Enable (GenEn) indicates if ECRC generation is
+    enabled (set)
+  - ECRC Check Capable (ChkCap) indicates if set that the function
+    is capable of checking ECRC
+  - ECRC Check Enable (ChkEn) indicates if ECRC checking is enabled
 
 ## Compute Express Link (CXL)
 
-[Compute Express Link](https://en.wikipedia.org/wiki/Compute_Express_Link) (CXL) is an open standard for high-speed central processing unit (CPU)-to-device and CPU-to-memory connections, designed for high performance data center computers. The standard is built on top of the PCIe physical  interface with protocols for I/O, memory, and cache coherence.
+[Compute Express Link](https://en.wikipedia.org/wiki/Compute_Express_Link) (CXL) is an open standard for high-speed central processing unit (CPU)-to-device and CPU-to-memory connections, designed for high performance data center computers. The standard is built on top of the PCIe physical interface with protocols for I/O, memory, and cache coherence.

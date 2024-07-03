@@ -1,5 +1,7 @@
-#+TITLE: Leaving Twitter
-#+DATE: <2022-01-15 Sat>
+---
+title: Leaving Twitter
+date: 2022-01-15
+---
 
 January 7th 2022 was my last day at Twitter, after more than 7 years at the company.
 

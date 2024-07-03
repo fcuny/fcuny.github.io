@@ -7,4 +7,3 @@ The dependencies are managed with nix. Running `nix run` will start the hugo ser
 ## Deploy
 
 You can deploy the site by running `nir run .#deploy`.
-

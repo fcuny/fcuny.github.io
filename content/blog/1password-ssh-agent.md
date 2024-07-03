@@ -1,11 +1,8 @@
 ---
 title: 1password's ssh agent and nix
 date: 2023-12-02
-tags:
-- ssh
-- git
-- nix
 ---
+
 [A while ago](https://blog.1password.com/1password-ssh-agent/), 1password introduced an SSH agent, and I've been using it for a while now. The following describe how I've configured it with `nix`. All my ssh keys are in 1password, and it's the only ssh agent I'm using at this point.
 
 ## Personal configuration
@@ -13,6 +10,7 @@ tags:
 I have a personal 1password account, and I've created a new SSH key in it that I use for both authenticating to github and to sign commits. I use [nix-darwin](http://daiderd.com/nix-darwin/) and [home-manager](https://github.com/nix-community/home-manager) to configure my personal machine.
 
 This is how I configure ssh:
+
 ```nix
 programs.ssh = {
   enable = true;
@@ -35,6 +33,7 @@ programs.ssh = {
 ```
 
 The configuration for git:
+
 ```nix
 { lib, pkgs, config, ... }:
 let
@@ -66,6 +65,7 @@ in
 In the repository with my nix configuration, I've a file `ssh-pubkeys.toml` that contains all the public ssh keys I keep track of (mine and a few other developers). Keys from that file are used to create the file `~/.ssh/allowed_signers` that is then used by `git` (for example `git log --show-signature`) when I want to ensure commits are signed with a valid key.
 
 `ssh-pubkeys.toml` looks like this:
+
 ```toml
 # yubikey key connected to the laptop
 ykey-laptop="ssh-ed25519 ..."
@@ -76,6 +76,7 @@ op="ssh-ed25519 ..."
 ```
 
 And the following is for `zsh` so that I can use the agent for other commands that I run in the shell:
+
 ```nix
 programs.zsh.envExtra = ''
   # use 1password ssh agent
@@ -93,6 +94,7 @@ The work configuration is slightly different. Here I want to use both my work an
 I've imported my existing keys into 1password, and I keep the public keys on the disk: `$HOME/.ssh/work_gh.pub` and `$HOME/.ssh/personal_gh.pub`. I've removed the private keys from the disk.
 
 This is the configuration I use for work:
+
 ```nix
 programs.ssh = {
   enable = true;
@@ -133,6 +135,7 @@ programs.ssh = {
 ```
 
 I also create a configuration file for the 1password agent, to make sure I can use the keys from all the accounts:
+
 ```nix
  # Generate ssh agent config for 1Password - I want both my personal and work keys
  home.file.".config/1Password/ssh/agent.toml".text = ''
@@ -144,6 +147,7 @@ I also create a configuration file for the 1password agent, to make sure I can u
 ```
 
 Then the ssh configuration:
+
 ```nix
 { config, lib, pkgs, ... }:
 let
@@ -184,6 +188,7 @@ Now, when I clone a repository, instead of doing `git clone git@github.com/$WORK
 I've used yubikey to sign my commits for a while, but I find the 1password ssh agent a bit more convenient. The initial setup for yubikey was not as straightforward (granted, it's a one time thing per key).
 
 On my personal machine, my `$HOME/.ssh` looks as follow:
+
 ```sh
 ➜  ~ ls -l ~/.ssh                                                                                                                           ~
 total 16

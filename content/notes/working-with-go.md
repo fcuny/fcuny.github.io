@@ -1,12 +1,9 @@
 ---
 title: Working with Go
 date: 2021-08-05
-tags:
-  - emacs
-  - go
 ---
 
-*This document assumes go version \>= 1.16*.
+_This document assumes go version \>= 1.16_.
 
 ## Go Modules
 
@@ -22,22 +19,22 @@ create two files: `go.mod` and `go.sum`.
 
 In the `go.mod` file you'll find:
 
--   the module import path (prefixed with `module`)
--   the list of dependencies (within `require`)
--   the version of go to use for the module
+- the module import path (prefixed with `module`)
+- the list of dependencies (within `require`)
+- the version of go to use for the module
 
 ### Versioning
 
 To bump the version of a module:
 
-``` bash
+```bash
 $ git tag v1.2.3
 $ git push --tags
 ```
 
 Then as a user:
 
-``` bash
+```bash
 $ go get -d golang.fcuny.net/m@v1.2.3
 ```
 
@@ -52,7 +49,7 @@ workspace (`git clone <module URL>`).
 
 Edit the `go.mod` file to add
 
-``` go
+```go
 replace <module URL> => <path of the local checkout>
 ```
 
@@ -85,14 +82,14 @@ There's a few special URLs (better documentation
 [here](https://golang.org/ref/mod#goproxy-protocol)):
 
 | path                  | description                                                                              |
-|-----------------------|------------------------------------------------------------------------------------------|
+| --------------------- | ---------------------------------------------------------------------------------------- |
 | $mod/@v/list          | Returns the list of known versions - there's one version per line and it's in plain text |
 | $mod/@v/$version.info | Returns metadata about a version in JSON format                                          |
 | $mod/@v/$version.mod  | Returns the `go.mod` file for that version                                               |
 
 For example, looking at the most recent versions for `gopls`:
 
-``` bash
+```bash
 ; curl -s -L https://proxy.golang.org/golang.org/x/tools/gopls/@v/list|sort -r|head
 v0.7.1-pre.2
 v0.7.1-pre.1
@@ -108,7 +105,7 @@ v0.6.8-pre.1
 
 Let's check the details for the most recent version
 
-``` bash
+```bash
 ; curl -s -L https://proxy.golang.org/golang.org/x/tools/gopls/@v/list|sort -r|head
 v0.7.1-pre.2
 v0.7.1-pre.1
@@ -124,7 +121,7 @@ v0.6.8-pre.1
 
 And let's look at the content of the `go.mod` for that version too:
 
-``` bash
+```bash
 ; curl -s -L https://proxy.golang.org/golang.org/x/tools/gopls/@v/v0.7.1-pre.2.mod
 module golang.org/x/tools/gopls
 
@@ -183,7 +180,7 @@ starting point.
 
 The configuration is straightforward, this is what I use:
 
-``` elisp
+```elisp
 ;; for go's LSP I want to use staticcheck and placeholders for completion
 (customize-set-variable 'eglot-workspace-configuration
                         '((:gopls .
@@ -206,7 +203,7 @@ flymake, eldoc.
 [pprof](https://github.com/google/pprof) is a tool to visualize
 performance data. Let's start with the following test:
 
-``` go
+```go
 package main
 
 import (
@@ -228,7 +225,7 @@ func BenchmarkStringJoin(b *testing.B) {
 Let's run a benchmark with
 `go test . -bench=. -cpuprofile cpu_profile.out`:
 
-``` go
+```go
 goos: linux
 goarch: amd64
 pkg: golang.fcuny.net/m
@@ -241,7 +238,7 @@ ok      golang.fcuny.net/m      1.327s
 And let's take a look at the profile with
 `go tool pprof cpu_profile.out`
 
-``` bash
+```bash
 File: m.test
 Type: cpu
 Time: Aug 15, 2021 at 3:01pm (PDT)
@@ -265,7 +262,7 @@ Showing top 10 nodes out of 41
 
 We can get a breakdown of the data for our module:
 
-``` bash
+```bash
 (pprof) list golang.fcuny.net
 Total: 1.17s
 ROUTINE ======================== golang.fcuny.net/m.BenchmarkStringJoin in /home/fcuny/workspace/gobench/app_test.go
