@@ -1,6 +1,0 @@
-{{ define "main" }}
-
-  {{ $pgs := where .Data.Pages "Params.hidden" "ne" "true" }}
-  {{ partial "postlist" $pgs }}
-
-{{ end }}

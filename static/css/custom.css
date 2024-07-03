@@ -1,41 +1,41 @@
+html {
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: 'Gentium';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/gentium-basic-v11-latin-ext_latin-regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Argon';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/MonaspaceArgon-Light.woff) format('woff');
+}
+
 body {
-  color: #333;
   margin: 1em auto;
-  padding: 0 0.55em;
-  max-width: 50rem;
-  line-height: 1.5;
-  font-family: sans-serif;
-  font-size: 16px;
-  background-color: rgb(255, 252, 246);
-}
-
-h1,h2,h3,h4 {
-  color: #333;
-  font-family: monospace;
-}
-
-h1#header {
-  margin-bottom: 1.1em;
+  max-width: 48rem;
+  line-height: 1.3;
+  font-family: Gentium, serif;
 }
 
 h1 {
-  font-size: 30px;
-  margin-bottom: 2px;
+  font-size: 1.2rem;
 }
 
 h2 {
   font-size: 1.1rem;
   border-left: 5px solid #4d76ae;
-  padding-left: 10px;
+  padding-left: 0.2em;
 }
 
 a {
-    color: rgb(16, 16, 16);
+    color: #473A2F;
 }
-
-/* a:link { */
-/*     text-decoration: none; */
-/* } */
 
 a:link,
 a:hover,
@@ -44,37 +44,27 @@ a:active {
   text-decoration: underline;
 }
 
-span.published, span.updated {
-  display: center;
-  font-style: oblique;
-}
-
-span.content-date {
-  float: right;
-  font-style: oblique;
-}
-
 code {
-  font-family: monospace;
-  font-size: 14px;
-  padding: 0.2rem;
   background-color: #f2f1eb;
-  color: #000;
   border-radius: 4px;
+  color: #000;
+  font-family: Argon, monospace;
+  margin: 0;
+  overflow-x: auto;
+  word-wrap: normal;
+    font-size: 0.8rem;
 }
 
 p code {
-  color: black;
+  color: #000;
 }
 
 pre {
-  font-family: monospace;
-  font-size: 14px;
   margin: 0;
   word-wrap: normal;
-  padding: 0.8em;
   overflow-x: auto;
   background-color: #f2f1eb;
+  padding: 0.2em;
 }
 
 #meta {
@@ -83,10 +73,9 @@ pre {
   font-size: 0.9rem;
 }
 
-#meta_tags a {
-  text-decoration: none;
-  border-bottom: none;
-  color: #005a9c;
+span.content-date {
+  float: right;
+  font-style: oblique;
 }
 
 table {
@@ -97,10 +86,10 @@ table {
   word-break: keep-all;
   margin-left: auto;
   margin-right: auto;
-  font-family: monospace;
+  font-family: Argon, monospace;
 }
 
-td{
+td {
   padding-right: 0.7em;
   padding-top: 0.4em;
   padding-bottom: 0.4em;
@@ -114,59 +103,22 @@ thead {
 }
 
 table, th, td {
+    font-size: 0.8em;
   border-collapse: collapse;
   color: #000;
   border: 1px solid #cdcdcd;
-  padding: 6px 13px;
+  padding: 0.7em;
 }
 
 blockquote {
-  font-size: 0.95rem;
   font-style: italic;
   margin: 0 0 1.5em;
   padding-left: 1em;
   border-left: .2em solid #bdbdbd
 }
 
-nav {
-  align-items: center;
-  display: flex;
-  font-family: monospace;
-  font-size: 1.1em;
-  font-weight: 700;
-  justify-content: space-between;
-  line-height: 0.6rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.nav-item {
-  margin-left: 10px;
-  color: #aaa;
-  vertical-align: bottom;
-  padding-left: 1px;
-  padding-right: 1px;
-}
-
-.navbar a {
-  display: inline-block;
-  text-decoration: none;
-}
-
-nav h2 a {
-  color: #3873ad;
-}
-
-.navbar a:hover {
-  text-decoration: none;
-}
-
-.nav-bold {
-  text-decoration: none;
-  color: rgb(16, 16, 16);
+ul {
+    list-style-type: disc;
 }
 
 ul.list-content {
@@ -177,13 +129,4 @@ ul.list-content {
 
 article {
     text-align: justify;
-}
-
-.post-permalink {
-  list-style: none;
-  margin-left: -20px;
-}
-
-.post-date {
-  font-family: monospace;
 }

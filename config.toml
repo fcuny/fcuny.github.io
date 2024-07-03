@@ -11,43 +11,6 @@ homeText = "A collection of posts"
 name = "Franck Cuny"
 email = "franck@fcuny.net"
 
-[taxonomies]
-tag = "tags"
-
-[permalinks]
-blog = "/blog/:slug/"
-notes = "/notes/:slug/"
-tags = "/tags/:slug/"
-
-[menu]
-[[menu.main]]
-identifier = "blog"
-name = "blog"
-title = "blog"
-url = "/blog/"
-weight = 110
-
-[[menu.main]]
-identifier = "notes"
-name = "notes"
-title = "notes"
-url = "/notes/"
-weight = 120
-
-[[menu.main]]
-identifier = "code"
-name = "code"
-title = "code"
-url = "https://github.com/fcuny"
-weight = 130
-
-[[menu.main]]
-identifier = "feed"
-name = "feed"
-title = "feed"
-url = "/feed.xml"
-weight = 140
-
 [markup]
 [markup.highlight]
 anchorLineNos = false

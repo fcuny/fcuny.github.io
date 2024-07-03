@@ -17,36 +17,14 @@
   {{ else }}
   <span id="meta_date">posted on {{ $pub }} - last modified {{ $mod }}</span>
   {{ end }}
-  {{ if .Params.tags }}
-  {{ if eq (len .Params.tags) 1 }}
-  with tag:
-  {{ else }}
-  with tags:
-  {{ end }}
-  {{ range $idx, $tag := .Params.tags }}
-  <span id="meta_tags"><a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a></span>
-  {{ end }}
-  {{ end }}
 </div>
-
-{{ if .Params.toc }}
-<div id="toc_small">
-  <summary>Table of contents</summary>
-  {{ .TableOfContents }}
-</div>
-{{ end }}
 
 <article>
 {{ .Content }}
 </article>
 
-</div>
+<a href="/">↑ back home</a>
 
-{{ if .Params.toc }}
-<div id="toc">
-  <strong>Table of contents</strong>
-  {{ .TableOfContents }}
 </div>
-{{ end }}
 
 {{ end }}

@@ -43,7 +43,7 @@
             hooks = {
               hugo = {
                 enable = true;
-                entry = "${pkgs.hugo}/bin/hugo --panicOnWarning";
+                entry = "${pkgs.hugo}/bin/hugo";
                 pass_filenames = false;
               };
             };

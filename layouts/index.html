@@ -1,13 +1,44 @@
 {{ define "main" }}
 
+<p>My name is Franck Cuny and this is my little corner on the web.</p>
+
+<p>I currently work as a <a href="https://en.wikipedia.org/wiki/Site_reliability_engineering">Site Reliability Engineer</a> (SRE) at <a href="https://www.roblox.com/" target="_blank">Roblox</a>. Previously I worked as a SRE at <a href="https://twitter.com/TwitterEng" target="_blank">Twitter</a>, and my focus was on the infrastructure.</p>
+
+<p>I'm interested in building sustainable teams, improving the management and operation of large infrastructure, and to work with different teams to implement best practices around reliability and security.</p>
+
+<ul>
+  <li>Some of my code is shared on <a href="https://github.com/fcuny">GitHub</a></li>
+  <li>Email: <a href="mailto:franck@fcuny.net" title="franck@fcuny.net">franck@fcuny.net</a></li>
+</ul>
+
+<h2>Articles</h2>
+
 <article>
+  <ul>
+  {{ range (where .Site.Pages "Section" "blog") }}
+  {{ range .Pages }}
+  <li>
+    <span class="content-title"><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+    <span class="content-date"><em>posted on {{ .Date.Format "Jan 2, 2006" }}</em></span>
+  </li>
+  {{ end }}
+  {{ end }}
+  </ul>
+</article>
 
-  <p>I'm a Site Reliability Engineer, currently working at <a href="https://www.roblox.com/" target="_blank">Roblox</a>. Previously I worked at <a href="https://twitter.com/TwitterEng" target="_blank">Twitter</a> for over 7 years, and my main focus was on Twitter's compute platform.</p>
+<h2>Notes</h2>
 
-  <p>My general interests are in building sustainable teams, improving the management and operation of large infrastructure, and work with different teams to implement best practices around reliability and security.</p>
-
-  <p>You can reach out to me at <a href="mailto:franck@fcuny.net" title="franck@fcuny.net">franck@fcuny.net</a>.</p>
-
+<article>
+  <ul>
+  {{ range (where .Site.Pages "Section" "notes") }}
+  {{ range .Pages }}
+  <li>
+    <span class="content-title"><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+    <span class="content-date"><em>posted on {{ .Date.Format "Jan 2, 2006" }}</em></span>
+  </li>
+  {{ end }}
+  {{ end }}
+  </ul>
 </article>
 
 {{ end }}
