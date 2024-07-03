@@ -11,8 +11,8 @@ As stated above, I want to access some of my services that are running as docker
 
 The [tailscale documentation](https://tailscale.com/kb/1054/dns/) has two suggestions for this:
 
--   use their magicDNS feature / split DNS
--   setup a subdomain on a public domain
+- use their magicDNS feature / split DNS
+- setup a subdomain on a public domain
 
 Since I already have a public domain that I use for my home network, I decided to go with the second option (I'm also uncertain how to achieve my goal using magicDNS without running tailscale inside the container).
 
@@ -40,38 +40,38 @@ For routing the traffic I use [traefik](https://traefik.io/). The configuration 
 
 The important bit here is the `certificatesResolvers` part. I'll be using the [dnsChallenge](https://doc.traefik.io/traefik/user-guides/docker-compose/acme-dns/) instead of the [httpChallenge](https://doc.traefik.io/traefik/user-guides/docker-compose/acme-http/) to obtain the certificate from let's encrypt. For this to work, I need to specify the `provider` to be [gcloud](https://go-acme.github.io/lego/dns/gcloud/). I'll also need a service account (see [this doc](https://cloud.google.com/docs/authentication/production#providing_credentials_to_your_application) to create it). I run `traefik` in a docker container, and the `systemd` unit file is below. The required bits for using the `dnsChallenge` with `gcloud` are:
 
--   the environment variable `GCP_SERVICE_ACCOUNT_FILE`: it contains the credentials so that `traefik` can update the DNS record for the challenge
--   the environment variable `GCP_PROJECT`: the name of the GCP project
--   mounting the service account file inside the container (I store it on the host under `/data/containers/traefik/config/sa.json`)
+- the environment variable `GCP_SERVICE_ACCOUNT_FILE`: it contains the credentials so that `traefik` can update the DNS record for the challenge
+- the environment variable `GCP_PROJECT`: the name of the GCP project
+- mounting the service account file inside the container (I store it on the host under `/data/containers/traefik/config/sa.json`)
 
-    [Unit]
-    Description=traefik proxy
-    Documentation=https://doc.traefik.io/traefik/
-    After=docker.service
-    Requires=docker.service
+  [Unit]
+  Description=traefik proxy
+  Documentation=https://doc.traefik.io/traefik/
+  After=docker.service
+  Requires=docker.service
 
-    [Service]
-    Restart=on-failure
-    ExecStartPre=-/usr/bin/docker kill traefik
-    ExecStartPre=-/usr/bin/docker rm traefik
-    ExecStartPre=/usr/bin/docker pull traefik:latest
+  [Service]
+  Restart=on-failure
+  ExecStartPre=-/usr/bin/docker kill traefik
+  ExecStartPre=-/usr/bin/docker rm traefik
+  ExecStartPre=/usr/bin/docker pull traefik:latest
 
-    ExecStart=/usr/bin/docker run \
-      -p 80:80 \
-      -p 9080:8080 \
-      -p 443:443 \
-      --name=traefik \
-      -e GCE_SERVICE_ACCOUNT_FILE=/var/run/gcp-service-account.json \
-      -e GCE_PROJECT= gcp-super-project \
-      --volume=/data/containers/traefik/config/acme.json:/acme.json \
-      --volume=/data/containers/traefik/config/traefik.yml:/etc/traefik/traefik.yml:ro \
-      --volume=/data/containers/traefik/config/sa.json:/var/run/gcp-service-account.json \
-      --volume=/var/run/docker.sock:/var/run/docker.sock:ro \
-      traefik:latest
-    ExecStop=/usr/bin/docker stop traefik
+  ExecStart=/usr/bin/docker run \
+   -p 80:80 \
+   -p 9080:8080 \
+   -p 443:443 \
+   --name=traefik \
+   -e GCE_SERVICE_ACCOUNT_FILE=/var/run/gcp-service-account.json \
+   -e GCE_PROJECT= gcp-super-project \
+   --volume=/data/containers/traefik/config/acme.json:/acme.json \
+   --volume=/data/containers/traefik/config/traefik.yml:/etc/traefik/traefik.yml:ro \
+   --volume=/data/containers/traefik/config/sa.json:/var/run/gcp-service-account.json \
+   --volume=/var/run/docker.sock:/var/run/docker.sock:ro \
+   traefik:latest
+  ExecStop=/usr/bin/docker stop traefik
 
-    [Install]
-    WantedBy=multi-user.target
+  [Install]
+  WantedBy=multi-user.target
 
 As an example, I run [grafana](https://grafana.com/) on my home network to view metrics from the various containers / hosts. Let's pretend I use `example.net` as my domain. I want to be able to access `grafana` via <https://dash.example.net>. Here's the `systemd` unit configuration I use for this:
 

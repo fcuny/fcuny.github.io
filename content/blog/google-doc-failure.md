@@ -57,11 +57,11 @@ One of the thing that I think are critical, is that all of that is done using th
 
 There's obviously challenges with this approach too:
 
--   **it's more heavy handed**: not every one likes to write in a text editor using a markup language. It can requires some time to learn or get used to the syntax
--   **it's harder to integrate schema / visuals**: but having them checked in in the repository also improves the discoverability
+- **it's more heavy handed**: not every one likes to write in a text editor using a markup language. It can requires some time to learn or get used to the syntax
+- **it's harder to integrate schema / visuals**: but having them checked in in the repository also improves the discoverability
 
 It's also true that no all documents suffer the same challenges for discoverability:
 
--   meeting notes are usually linked to meeting invites (however if you were not part of the meeting, you end up with the same challenges to discover them)
--   drafts for communications are usually not relevant once the communication has been sent
--   interview notes are usually transferred to some tools for HR when the feedback is submitted
+- meeting notes are usually linked to meeting invites (however if you were not part of the meeting, you end up with the same challenges to discover them)
+- drafts for communications are usually not relevant once the communication has been sent
+- interview notes are usually transferred to some tools for HR when the feedback is submitted

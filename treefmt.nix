@@ -6,4 +6,11 @@
     yamlfmt.enable = true; # yaml
     prettier.enable = true; # css
   };
+  settings.formatter = {
+    prettier = {
+      includes = [ "*.css" "*.md" ];
+      excludes = [ "*.html" ];
+      options = [ "-w" ];
+    };
+  };
 }
