@@ -26,7 +26,7 @@
               buildInputs = [ zola git ];
               buildPhase = ''
                 mkdir -p $out
-                ${pkgs.zola}/bin/zola -o $out
+                ${pkgs.zola}/bin/zola build -o $out
               '';
               dontInstall = true;
             };
