@@ -1,9 +1,8 @@
-name: 'Update flake.lock'
+name: "Update flake.lock"
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 5 * * 0'
-
+    - cron: "30 5 * * 0"
 # you need to grant permissions to create PR:
 # https://github.com/DeterminateSystems/update-flake-lock/issues/75
 jobs:
