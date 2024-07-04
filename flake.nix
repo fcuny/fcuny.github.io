@@ -26,7 +26,7 @@
               buildInputs = [ zola git ];
               buildPhase = ''
                 mkdir -p $out
-                ${pkgs.zola}/bin/zola build -o $out
+                ${pkgs.zola}/bin/zola build -o $out -f
               '';
               dontInstall = true;
             };
@@ -42,6 +42,10 @@
             src = ./.;
             hooks = {
               nixpkgs-fmt.enable = true;
+              check-toml.enable = true;
+              check-yaml.enable = true;
+              check-merge-conflicts.enable = true;
+              end-of-file-fixer.enable = true;
             };
           };
           formatting = treefmtEval.config.build.check self;

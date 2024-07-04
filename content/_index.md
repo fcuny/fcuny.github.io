@@ -1,7 +1,6 @@
-+++
-title = "home"
-template = "index.html"
-+++
+---
+title: "home"
+---
 
 My name is Franck Cuny and this is my little corner on the web.
 
