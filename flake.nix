@@ -46,6 +46,7 @@
               check-yaml.enable = true;
               check-merge-conflicts.enable = true;
               end-of-file-fixer.enable = true;
+              actionlint.enable = true;
             };
           };
           formatting = treefmtEval.config.build.check self;
