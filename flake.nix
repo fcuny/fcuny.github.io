@@ -23,17 +23,17 @@
               pname = "fcuny.net";
               version = self.lastModifiedDate;
               src = ./.;
-              buildInputs = [ hugo git ];
+              buildInputs = [ zola git ];
               buildPhase = ''
                 mkdir -p $out
-                ${pkgs.hugo}/bin/hugo --minify --destination $out
+                ${pkgs.zola}/bin/zola -o $out
               '';
               dontInstall = true;
             };
-          hugo = pkgs.writeShellScriptBin "hugo" ''
+          zola = pkgs.writeShellScriptBin "zola" ''
             set -euo pipefail
-            export PATH=${pkgs.lib.makeBinPath [ pkgs.hugo pkgs.git ]}
-            hugo server -D
+            export PATH=${pkgs.lib.makeBinPath [ pkgs.zola pkgs.git ]}
+            zola serve
           '';
         };
 
@@ -41,11 +41,7 @@
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
             hooks = {
-              hugo = {
-                enable = true;
-                entry = "${pkgs.hugo}/bin/hugo";
-                pass_filenames = false;
-              };
+              nixpkgs-fmt.enable = true;
             };
           };
           formatting = treefmtEval.config.build.check self;
@@ -54,13 +50,13 @@
         apps = {
           default = {
             type = "app";
-            program = "${self.packages."${system}".hugo}/bin/hugo";
+            program = "${self.packages."${system}".zola}/bin/zola";
           };
         };
 
         devShells.default = pkgs.mkShell {
           inherit (self.checks.${system}.pre-commit-check) shellHook;
-          buildInputs = with pkgs; [ hugo git treefmt ];
+          buildInputs = with pkgs; [ zola git treefmt ];
         };
       });
 }

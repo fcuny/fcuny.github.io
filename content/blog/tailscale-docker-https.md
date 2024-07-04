@@ -44,34 +44,36 @@ The important bit here is the `certificatesResolvers` part. I'll be using the [d
 - the environment variable `GCP_PROJECT`: the name of the GCP project
 - mounting the service account file inside the container (I store it on the host under `/data/containers/traefik/config/sa.json`)
 
-  [Unit]
-  Description=traefik proxy
-  Documentation=https://doc.traefik.io/traefik/
-  After=docker.service
-  Requires=docker.service
+```systemd
+[Unit]
+Description=traefik proxy
+Documentation=https://doc.traefik.io/traefik/
+After=docker.service
+Requires=docker.service
 
-  [Service]
-  Restart=on-failure
-  ExecStartPre=-/usr/bin/docker kill traefik
-  ExecStartPre=-/usr/bin/docker rm traefik
-  ExecStartPre=/usr/bin/docker pull traefik:latest
+[Service]
+Restart=on-failure
+ExecStartPre=-/usr/bin/docker kill traefik
+ExecStartPre=-/usr/bin/docker rm traefik
+ExecStartPre=/usr/bin/docker pull traefik:latest
 
-  ExecStart=/usr/bin/docker run \
-   -p 80:80 \
-   -p 9080:8080 \
-   -p 443:443 \
-   --name=traefik \
-   -e GCE_SERVICE_ACCOUNT_FILE=/var/run/gcp-service-account.json \
-   -e GCE_PROJECT= gcp-super-project \
-   --volume=/data/containers/traefik/config/acme.json:/acme.json \
-   --volume=/data/containers/traefik/config/traefik.yml:/etc/traefik/traefik.yml:ro \
-   --volume=/data/containers/traefik/config/sa.json:/var/run/gcp-service-account.json \
-   --volume=/var/run/docker.sock:/var/run/docker.sock:ro \
-   traefik:latest
-  ExecStop=/usr/bin/docker stop traefik
+ExecStart=/usr/bin/docker run \
+ -p 80:80 \
+ -p 9080:8080 \
+ -p 443:443 \
+ --name=traefik \
+ -e GCE_SERVICE_ACCOUNT_FILE=/var/run/gcp-service-account.json \
+ -e GCE_PROJECT= gcp-super-project \
+ --volume=/data/containers/traefik/config/acme.json:/acme.json \
+ --volume=/data/containers/traefik/config/traefik.yml:/etc/traefik/traefik.yml:ro \
+ --volume=/data/containers/traefik/config/sa.json:/var/run/gcp-service-account.json \
+ --volume=/var/run/docker.sock:/var/run/docker.sock:ro \
+ traefik:latest
+ExecStop=/usr/bin/docker stop traefik
 
-  [Install]
-  WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
+```
 
 As an example, I run [grafana](https://grafana.com/) on my home network to view metrics from the various containers / hosts. Let's pretend I use `example.net` as my domain. I want to be able to access `grafana` via <https://dash.example.net>. Here's the `systemd` unit configuration I use for this:
 

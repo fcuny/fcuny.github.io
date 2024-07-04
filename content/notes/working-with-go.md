@@ -180,7 +180,7 @@ starting point.
 
 The configuration is straightforward, this is what I use:
 
-```elisp
+```lisp
 ;; for go's LSP I want to use staticcheck and placeholders for completion
 (customize-set-variable 'eglot-workspace-configuration
                         '((:gopls .

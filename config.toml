@@ -1,37 +1,13 @@
-baseURL = "https://fcuny.net/"
-languageCode = "en-us"
+base_url = "https://fcuny.net/"
+default_language = "en"
 title = "Franck's rambling"
-publishDir = "docs"
-enableGitInfo = false
+output_dir = "docs"
 
-[params]
-homeText = "A collection of posts"
+author = "Franck Cuny"
+description = "Franck's website, with articles about computers stuff."
 
-[params.author]
-name = "Franck Cuny"
-email = "franck@fcuny.net"
-
-[markup]
-[markup.highlight]
-anchorLineNos = false
-codeFences = false
-guessSyntax = false
-hl_Lines = ""
-lineAnchors = ""
-lineNoStart = 1
-lineNos = false
-lineNumbersInTable = false
-noClasses = true
-style = "pygments"
-tabWidth = 4
-
-[mediaTypes."application/atom"]
-suffixes = ["xml"]
-
-[outputFormats.Atom]
-mediaType = "application/atom"
-baseName = "feed"
-isPlainText = false
-
-[outputs]
-home = ["HTML", "Atom"]
+[markdown]
+highlight_code = true
+highlight_theme = "idle"
+render_emoji = true
+smart_punctuation = true

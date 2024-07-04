@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{%- block content -%}
+<section id="blog" class="times">
+
+{% if section.content %}
+<section id="introduction">
+  {{ section.content | safe }}
+</section>
+{% endif %}
+
+<h2>articles</h2>
+{%- set blog = get_section(path="blog/_index.md") -%}
+{%- set post_count = blog.pages | length -%}
+<ul>
+{%- for post in blog.pages %}
+<li><article>
+    <h3><a href="{{- post.path|safe -}}">{{- post.title -}}</a></h3>
+    <time datetime="{{ post.date | date(format="%+")}}">{{ post.date | date(format="%B %m, %Y")}}</time>
+</article></li>
+{%- endfor %}
+</ul>
+
+<h2>notes</h2>
+{%- set notes = get_section(path="notes/_index.md") -%}
+{%- set post_count = notes.pages | length -%}
+<ul>
+{%- for post in notes.pages %}
+<li><article>
+    <h3><a href="{{- post.path|safe -}}">{{- post.title -}}</a></h3>
+    <time datetime="{{ post.date | date(format="%+")}}">{{ post.date | date(format="%B %m, %Y")}}</time>
+</article></li>
+{%- endfor %}
+</ul>
+
+</section>
+
+{%- endblock content -%}

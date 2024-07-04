@@ -18,7 +18,7 @@ html {
 
 body {
   margin: 1em auto;
-  max-width: 48rem;
+  max-width: 50rem;
   line-height: 1.3;
   font-family: Gentium, serif;
 }
@@ -29,12 +29,17 @@ h1 {
 
 h2 {
   font-size: 1.1rem;
-  border-left: 5px solid #4d76ae;
+  border-left: 5px solid #ffc832;
   padding-left: 0.2em;
 }
 
+h3 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 a {
-  color: #473a2f;
+  color: rgb(56, 115, 173);
 }
 
 a:link,
@@ -45,37 +50,43 @@ a:active {
 }
 
 code {
-  background-color: #f2f1eb;
-  border-radius: 4px;
-  color: #000;
   font-family: Argon, monospace;
-  margin: 0;
-  overflow-x: auto;
-  word-wrap: normal;
-  font-size: 0.8rem;
-}
-
-p code {
   color: #000;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
+  border: 1px solid #e1e1e1;
+  background: rgb(245, 245, 245);
+  border-radius: 4px;
 }
 
 pre {
-  margin: 0;
-  word-wrap: normal;
+  overflow: auto;
+  font-size: 0.8rem;
   overflow-x: auto;
-  background-color: #f2f1eb;
-  padding: 0.2em;
+  margin: 0 0.2rem;
 }
 
-#meta {
+pre > code {
+  display: block;
+  background: rgb(245, 245, 245);
+}
+
+section.times time {
+  font-style: oblique;
+  float: right;
+}
+
+section.times h3 {
+  display: inline;
+  font-size: 1em;
+}
+
+p.date {
   display: row;
   font-style: italic;
   font-size: 0.9rem;
-}
-
-span.content-date {
-  float: right;
-  font-style: oblique;
 }
 
 table {
@@ -120,15 +131,10 @@ blockquote {
 }
 
 ul {
+  display: block;
   list-style-type: disc;
 }
 
-ul.list-content {
-  list-style: none;
-  padding: 0;
-  line-height: 2em;
-}
-
-article {
-  text-align: justify;
+li {
+  display: list-item;
 }

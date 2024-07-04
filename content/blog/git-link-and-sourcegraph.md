@@ -13,33 +13,35 @@ git remote add sourcegraph https://sourcegraph.com/github.com/sshaw/copy-as-form
 
 The next time you run `M-x git-link` in a buffer, it will use the URL associated with that remote. That's works great, except that now you need to add this for every repository. Instead, for my usage, I came up with the following solution:
 
-    (use-package git-link
-      :ensure t
-      :after magit
-      :bind (("C-c g l" . git-link)
-             ("C-c g a" . git-link-commit))
-      :config
-      (defun fcuny/get-sg-remote-from-hostname (hostname)
-        (format "sourcegraph.<$domain>.<$tld>/%s" hostname))
+```lisp
+(use-package git-link
+  :ensure t
+  :after magit
+  :bind (("C-c g l" . git-link)
+         ("C-c g a" . git-link-commit))
+  :config
+  (defun fcuny/get-sg-remote-from-hostname (hostname)
+    (format "sourcegraph.<$domain>.<$tld>/%s" hostname))
 
-      (defun fcuny/git-link-work-sourcegraph (hostname dirname filename _branch commit start end)
-        ;;; For a given repository, build the proper link for sourcegraph.
-        ;;; Use the default branch of the repository instead of the
-        ;;; current one (we might be on a feature branch that is not
-        ;;; available on the remote).
-        (require 'magit-branch)
-        (let ((sg-base-url (fcuny/get-sg-remote-from-hostname hostname))
-              (main-branch (magit-main-branch)))
-          (git-link-sourcegraph sg-base-url dirname filename main-branch commit start end)))
+  (defun fcuny/git-link-work-sourcegraph (hostname dirname filename _branch commit start end)
+    ;;; For a given repository, build the proper link for sourcegraph.
+    ;;; Use the default branch of the repository instead of the
+    ;;; current one (we might be on a feature branch that is not
+    ;;; available on the remote).
+    (require 'magit-branch)
+    (let ((sg-base-url (fcuny/get-sg-remote-from-hostname hostname))
+          (main-branch (magit-main-branch)))
+      (git-link-sourcegraph sg-base-url dirname filename main-branch commit start end)))
 
-      (defun fcuny/git-link-commit-work-sourcegraph (hostname dirname commit)
-        (let ((sg-base-url (fcuny/get-sg-remote-from-hostname hostname)))
-          (git-link-commit-sourcegraph sg-base-url dirname commit)))
+  (defun fcuny/git-link-commit-work-sourcegraph (hostname dirname commit)
+    (let ((sg-base-url (fcuny/get-sg-remote-from-hostname hostname)))
+      (git-link-commit-sourcegraph sg-base-url dirname commit)))
 
-      (add-to-list 'git-link-remote-alist '("twitter" fcuny/git-link-work-sourcegraph))
-      (add-to-list 'git-link-commit-remote-alist '("twitter" fcuny/git-link-commit-work-sourcegraph))
+  (add-to-list 'git-link-remote-alist '("twitter" fcuny/git-link-work-sourcegraph))
+  (add-to-list 'git-link-commit-remote-alist '("twitter" fcuny/git-link-commit-work-sourcegraph))
 
-      (setq git-link-open-in-browser 't))
+  (setq git-link-open-in-browser 't))
+```
 
 We use different domains to host various git repositories at work (e.g. `git.$work`, `gitfoo.$work`, etc). Each of them map to a different URI for sourcegraph (e.g. `sourcegraph.$work/gitfoo`).
 

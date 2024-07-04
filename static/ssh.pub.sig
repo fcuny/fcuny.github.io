@@ -1,2 +1,0 @@
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdlm/qoR/dnMjZhVSTtqFzkgN3Yf9eQ3pgKMiipg+dl fcuny@aptos
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIItMKXWzH00xS7kYJzDCIr/PM9DaZw+imK/byjrY5WNv franck@fcuny.net

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
+
+{% block content -%}
+<main>
+<h1>{{ page.title }}</h1>
+<p class="date">
+	<time datetime="{{ page.date | date(format="%+") }}">
+		{{- page.date | date(format="%B %m, %Y") -}}
+	</time>
+	{%- if page.updated %}
+	•
+	updated <time datetime="{{ page.updated | date(format="%+") }}">
+		{{- page.updated | date(format="%B %m, %Y") -}}
+	</time>
+	{%- endif %}
+</p>
+
+{{ page.content | safe -}}
+</main>
+
+<hr>
+<p>
+<b><a href="/">↑ back home</a></b>
+</p>
+
+{%- endblock content %}
