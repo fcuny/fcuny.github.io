@@ -28,7 +28,7 @@ In the repository, running `nix develop --build` will build the binary
 ### for Go
 
 For Go, there's the `buildGoModule`. Looking at the
-[source](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/go-modules/generic/default.nix)
+[source](https://github.com/NixOS/nixpkgs/blob/fb7287e6d2d2684520f756639846ee07f6287caa/pkgs/development/go-modules/generic/default.nix)
 we can see there's a definition of what will be done for each phases. As
 a result, we don't have to define them ourselves.
 
