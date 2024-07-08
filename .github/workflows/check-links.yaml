@@ -16,7 +16,7 @@ jobs:
       - name: Build the site
         run: nix build --print-build-logs
       - name: Restore lychee cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .lycheecache
           key: cache-lychee-${{ hashFiles('**/*.md') }}
