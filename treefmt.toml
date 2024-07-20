@@ -1,0 +1,16 @@
+[formatter.nix]
+command = "nixpkgs-fmt"
+includes = ["*.nix"]
+
+[formatter.toml]
+command  = "taplo"
+options  = ["format", "$@"]
+includes = ["*.toml"]
+
+[formatter.prettier]
+command = "prettier"
+options = ["--write"]
+includes = [
+  "*.css",
+  "*.md",
+]
