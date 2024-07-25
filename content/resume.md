@@ -3,9 +3,22 @@ title: Resume
 template: orphan.html
 ---
 
-I'm a seasoned Site Reliability Engineer with experience in large scale distributed systems. I'm invested in mentoring junior and senior engineers to help them increase their impact. I'm always looking to learn from those around me.
+# Senior Principal Site Reliability Engineer
 
-**Specializations**: distributed systems, containerization, debugging, software development, reliability.
+Results-driven Site Reliability Engineering leader with extensive experience in architecting, scaling, and optimizing large-scale distributed systems. Proven track record of driving reliability improvements, fostering cross-functional collaboration, and mentoring engineering talent. Dedicated to building resilient infrastructures and cultivating a strong reliability culture.
+
+## Core Competencies:
+
+- Technical leadership and mentorship
+- Cross-team collaboration and communication
+- Large-scale distributed systems architecture
+- Reliability engineering and disaster recovery
+- Infrastructure optimization and cost reduction
+- Production readiness and failure testing methodologies
+
+## Career Focus:
+
+Seeking opportunities to lead transformative reliability initiatives, mentor the next generation of SREs, and drive architectural decisions that significantly enhance system resilience and performance at scale.
 
 # Experience
 
@@ -32,64 +45,42 @@ I'm a seasoned Site Reliability Engineer with experience in large scale distribu
 </tbody>
 </table>
 
-I'm a Team Lead for the Site Reliability group that was started at the end of 2021.
+As a Team Lead for the Site Reliability group, I define the road-map and identify areas where SREs can partner with different teams to improve overall reliability of our infrastructure and services. Key projects and responsibilities include:
 
-I define the road-map and identify areas where SREs can partner with different team to improve overall reliability of our infrastructure and services.
+- **Active/Passive Reliability Lead**: Orchestrated the failover strategy across multiple teams, developing detailed action plans and validation procedures. Conducted comprehensive tests to ensure plan effectiveness.
+
+- **Cell Architecture Implementation**: Led the SRE effort to transition from monolithic Compute clusters to a Cell architecture, significantly enhancing Roblox's infrastructure resilience and efficiency. Developed migration plans, identified necessary automation, and drove production readiness for this critical reliability improvement.
+
+- **Edge Infrastructure Migration**: Spearheaded the migration from HAproxy to Envoy at the edge, aimed at reducing failure domains, improving performance by streamlining the proxy chain, and enabling user traffic steering to specific cells from the edge.
+
+- **Reliability Culture Champion**: Mentored engineers of various levels (both SREs and SWEs), established a model for production readiness, and popularized the practice of running failure exercises for new large infrastructure projects.
+
+- **Technical Leadership**: Acted as tech lead on numerous projects, demonstrating strong cross-team collaboration skills. Provided technical guidance and mentorship to the SRE team, fostering a culture of reliability and continuous improvement.
+
+Key strengths include driving complex infrastructure projects, mentoring, setting reliability standards, and facilitating effective cross-team collaboration.
 
 ## Twitter, San Francisco
 
-### Compute
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
 <colgroup>
 <col  class="org-left" />
-
 <col  class="org-left" />
-
 <col  class="org-left" />
-
 <col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
 <td class="org-left">Software Engineer</td>
 <td class="org-left">Senior Staff</td>
-<td class="org-left">Compute Info</td>
+<td class="org-left">Compute</td>
 <td class="org-left">Aug 2021 - Jan 2022</td>
 </tr>
-
 <tr>
 <td class="org-left">Site Reliability Engineer</td>
 <td class="org-left">Senior Staff</td>
 <td class="org-left">Compute SREs</td>
 <td class="org-left">Jan 2018 - Aug 2021</td>
 </tr>
-</tbody>
-</table>
-
-Initially the Tech Lead of a team of 6 SREs supporting the Compute infrastructure. In August 2021 I changed to be a Software Engineer and was leading one of the effort to adopt Kubernetes for our on-premise infrastructure. As a Tech Lead I helped define number of internal processes for the team, from on-call rotations to postmortem processes.
-
-Twitter's Compute is one of the largest Mesos cluster in the world (XXX thousands of nodes across multiple data centers). The team defined KPIs, improved automation to mange the large fleet of bare metal machines, defined APIs for maintenance with partner teams.
-
-In addition to supporting Aurora/Mesos, I also lead a number of effort related to Kubernetes, both on-premise and in the cloud.
-
-Finally, I've helped Twitter save XX of millions of dollar in hardware by designing and implementing strategies to significantly improve the hardware utilization of our bare metal infrastructure.
-
-### Storage
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<tbody>
 <tr>
 <td class="org-left">Site Reliability Engineer</td>
 <td class="org-left">Staff</td>
@@ -99,7 +90,26 @@ Finally, I've helped Twitter save XX of millions of dollar in hardware by design
 </tbody>
 </table>
 
-For 4 years I supported the Messaging and Manhattan teams. I moved all the pub-sub systems from bare-metal deployment to Aurora/Mesos, being the first storage team to adopt the Compute orchestration platform. This helped reducing operations, time to deploy, and improve overall reliability. I pushed for adopting 10Gb+ networking in our data center to help our team to scale. I was the SRE Tech Lead for the Manhattan team, helping with performance, operation and automation.
+### Key Achievements and Responsibilities:
+
+- **Large-Scale Infrastructure Management**: Led SRE efforts for one of the world's largest Mesos clusters, spanning hundred of thousands of nodes across multiple data centers. Defined KPIs and improved automation for managing a massive fleet of bare metal machines.
+
+- **Kubernetes Adoption**: Spearheaded the initiative to adopt Kubernetes for on-premise infrastructure, driving architectural decisions and implementation strategies.
+
+- **Cost Optimization**: Designed and implemented strategies that significantly improved hardware utilization, resulting in tens of millions of dollars in savings on hardware costs.
+
+- **Tech Leadership**: Served as Tech Lead for a team of 6 SREs supporting Compute infrastructure. Established critical team processes including on-call rotations and postmortem procedures.
+
+- **Cloud and On-Premise Expertise**: Led multiple efforts related to Kubernetes deployment and management, both in cloud environments and on-premise infrastructure.
+
+- **Storage Systems Migration**: Successfully migrated all pub-sub systems from bare-metal deployment to Aurora/Mesos, pioneering the adoption of the Compute orchestration platform among storage teams. This transition reduced operational overhead, decreased deployment times, and enhanced overall system reliability.
+
+- **Network Infrastructure Improvement**: Advocated for and implemented the adoption of 10Gb+ networking in data centers, enabling significant scaling improvements for storage systems.
+
+- **Cross-Functional Leadership**: Served as the SRE Tech Lead for the Manhattan team, driving improvements in performance, operations, and automation across storage systems.
+
+Throughout my tenure at Twitter, I consistently demonstrated the ability to lead complex technical initiatives, optimize large-scale systems, and drive cross-functional collaboration to achieve significant improvements in infrastructure reliability, efficiency, and cost-effectiveness.
+
 
 ## Senior Software Engineer - Say Media, San Francisco
 
@@ -151,10 +161,3 @@ During my time at Say Media, I worked on two different teams. I started as a sof
 
 I was one of the early engineers joining Linkfluence in 2007. I led the development of the company's crawler (web, feeds). I was responsible for defining the early architecture of the company, and designed the internal platforms (Service Oriented Architecture).
 I helped the company to contribute to open source projects; contributed to open source projects on behalf of the company; represented the company at numerous open sources conferences in Europe.
-
-# Technical Skills
-
-- **Languages** Python, Go, Ruby, Perl
-- **Frameworks** Kubernetes, Aurora, Mesos
-- **Databases** RDBMS, NOSql
-- **Dev tools** Git
