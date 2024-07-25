@@ -22,7 +22,6 @@
               check-yaml.enable = true;
               check-merge-conflicts.enable = true;
               end-of-file-fixer.enable = true;
-              actionlint.enable = true;
             };
           };
         };
