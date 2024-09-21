@@ -28,7 +28,16 @@
 
         devShells.default = pkgs.mkShell {
           inherit (self.checks.${system}.pre-commit-check) shellHook;
-          buildInputs = with pkgs; [ zola git treefmt lychee just taplo nodePackages.prettier ];
+          buildInputs = with pkgs; [
+            zola
+            git
+            treefmt
+            lychee
+            just
+            taplo
+            nodePackages.prettier
+            awscli
+          ];
         };
       });
 }
