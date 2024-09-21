@@ -8,8 +8,8 @@ output_dir = "docs"
 
 default_language = "en"
 
-generate_feed = true
-feed_filename = "feed.xml"
+generate_feeds = true
+feed_filenames = ["feed.xml"]
 
 [markdown]
 highlight_code = true
