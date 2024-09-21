@@ -2,25 +2,11 @@ html {
   font-size: 20px;
 }
 
-@font-face {
-  font-family: "Gentium";
-  font-style: normal;
-  font-weight: 400;
-  src: url(/fonts/gentium-basic-v11-latin-ext_latin-regular.woff) format("woff");
-}
-
-@font-face {
-  font-family: "Argon";
-  font-style: normal;
-  font-weight: 400;
-  src: url(/fonts/MonaspaceArgon-Light.woff) format("woff");
-}
-
 body {
   margin: 1em auto;
   max-width: 50rem;
   line-height: 1.3;
-  font-family: Gentium, serif;
+  font-family: sans-serif;
 }
 
 h1 {
@@ -50,7 +36,7 @@ a:active {
 }
 
 code {
-  font-family: Argon, monospace;
+  font-family: monospace;
   color: #000;
   font-size: 0.8rem;
   overflow-x: auto;
@@ -97,7 +83,7 @@ table {
   word-break: keep-all;
   margin-left: auto;
   margin-right: auto;
-  font-family: Argon, monospace;
+  font-family: monospace;
 }
 
 td {
