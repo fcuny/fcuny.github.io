@@ -1,14 +1,17 @@
 run:
-  zola serve
+	zola serve
 
 build:
-  zola build
+	zola build
 
 fmt:
-  treefmt
+	treefmt
 
 check-links: build
-  lychee ./docs/**/*.html
+	lychee ./docs/**/*.html
 
 update-deps:
-  nix flake update --commit-lock-file
+	nix flake update --commit-lock-file
+
+publish: build
+	rsync -a docs/ fcuny@fcuny.net:/srv/www/fcuny.net
