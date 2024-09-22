@@ -53,7 +53,12 @@ body {
   margin-top: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: 0.5em;
   line-height: 1.25;
@@ -133,10 +138,10 @@ h1 {
   font-size: 1.4rem;
 }
 h2 {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
-h3{
-    font-size: 1.2rem
+h3 {
+  font-size: 1.2rem;
 }
 
 a {
@@ -151,8 +156,8 @@ a:active {
 }
 
 code {
-    font-family: monospace;
-    font-size: 90%;
+  font-family: monospace;
+  font-size: 90%;
   overflow-x: auto;
 
   border-radius: 4px;
@@ -162,17 +167,16 @@ pre {
   padding: 0.2rem 0.5rem;
   overflow: auto;
   overflow-x: auto;
-    font-size: 90%;
+  font-size: 90%;
 }
 
 pre > code {
   display: block;
 }
 
-
 p > code {
-    background: #eee;
-};
+  background: #eee;
+}
 
 section.times time {
   font-style: oblique;
@@ -196,19 +200,20 @@ table {
   word-break: normal;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 th {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 tr:nth-child(odd) {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 thead {
   color: #000;
@@ -232,31 +237,35 @@ li {
   display: list-item;
 }
 
+/* Note layout */
+.note-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 60rem; /* Keep this for overall container max-width */
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.note-content {
+  flex: 0 0 736px; /* Set a fixed width */
+  max-width: 736px; /* Ensure it doesn't exceed this width */
+  width: 100%; /* Allow it to shrink on smaller screens */
+}
 
 /* Table of Contents styles */
 .toc-container {
-  margin-bottom: 2em;
-}
-
-.toc-toggle {
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
   border: 1px solid #ccc;
-  color: #333;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: background-color 0.3s;
 }
 
-.toc-toggle:hover {
-  background-color: #e0e0e0;
+.toc-header {
+  background-color: #f0f0f0;
+  padding: 0.5em 1em;
+  font-weight: bold;
 }
 
 .toc {
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
   padding: 1em;
-  margin-top: 0.5em;
 }
 
 .toc ul {
@@ -281,4 +290,56 @@ li {
 
 .toc a:hover {
   color: #ffc832;
+}
+
+/* Desktop styles */
+.desktop-toc {
+  flex: 0 0 200px;
+  margin-left: 2em;
+  position: sticky;
+  top: 1em;
+  align-self: flex-start;
+  max-height: calc(100vh - 2em);
+  overflow-y: auto;
+}
+
+/* Mobile styles */
+.mobile-toc {
+  display: none;
+  margin-bottom: 2em;
+}
+
+.mobile-toc .toc-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-toc .toc-arrow {
+  margin-right: 0.5em;
+  transition: transform 0.3s;
+}
+
+.mobile-toc .toc {
+  display: none;
+}
+
+/* Responsive layout */
+@media (max-width: 968px) {
+  .note-container {
+    flex-direction: column;
+  }
+
+  .note-content {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .desktop-toc {
+    display: none;
+  }
+
+  .mobile-toc {
+    display: block;
+  }
 }
