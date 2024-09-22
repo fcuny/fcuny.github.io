@@ -6,11 +6,11 @@
 <h1>{{ section.title }}</h1>
 <ul>
 {% for post in section.pages %}
-	<li>
-		<a href="{{ post.permalink }}">{{ post.title }}</a>
-		<br>
-		<small>{{ post.date | date(format="%d %h %Y") }}</small>
-	</li>
+<li>
+  <a href="{{ post.permalink }}">{{ post.title }}</a>
+  <br>
+  <small>{{ post.date | date(format="%d %h %Y") }}</small>
+</li>
 {% endfor %}
 </ul>
 {% endblock content %}
