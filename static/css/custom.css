@@ -1,12 +1,9 @@
-html {
-  font-size: 20px;
-}
-
 body {
   margin: 1em auto;
-  max-width: 50rem;
-  line-height: 1.3;
+  max-width: 46rem;
+  line-height: 1.6;
   font-family: sans-serif;
+  font-size: 1rem;
 }
 
 h1 {
@@ -37,13 +34,10 @@ a:active {
 
 code {
   font-family: monospace;
-  color: #000;
   font-size: 0.8rem;
   overflow-x: auto;
   padding: 0.2rem 0.5rem;
   margin: 0 0.2rem;
-  border: 1px solid #e1e1e1;
-  background: rgb(245, 245, 245);
   border-radius: 4px;
 }
 
@@ -56,7 +50,6 @@ pre {
 
 pre > code {
   display: block;
-  background: rgb(245, 245, 245);
 }
 
 section.times time {
@@ -77,36 +70,28 @@ p.date {
 
 table {
   width: 100%;
-  border-spacing: 0px;
-  outline: none;
+  border-collapse: collapse;
   word-break: normal;
-  word-break: keep-all;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: monospace;
 }
 
-td {
-  padding-right: 0.7em;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
-  padding-left: 0.7em;
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
-
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
 thead {
   color: #000;
   font-style: bold;
   text-align: left;
-}
-
-table,
-th,
-td {
-  font-size: 0.8em;
-  border-collapse: collapse;
-  color: #000;
-  border: 1px solid #cdcdcd;
-  padding: 0.7em;
 }
 
 blockquote {

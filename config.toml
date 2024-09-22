@@ -13,7 +13,7 @@ feed_filenames = ["feed.xml"]
 
 [markdown]
 highlight_code = true
-highlight_theme = "idle"
+highlight_theme = "zenburn"
 render_emoji = true
 smart_punctuation = true
 
