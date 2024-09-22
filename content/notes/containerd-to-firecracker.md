@@ -1,6 +1,7 @@
 ---
 title: containerd to firecracker
 date: 2021-05-15
+template: note.html
 ---
 
 fly.io had an [interesting

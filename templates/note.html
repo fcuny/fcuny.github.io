@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
+
+{% block content -%}
+<main>
+  <h1>{{ page.title }}</h1>
+
+  {% if page.toc %}
+ <div class="toc-container">
+    <button id="toggle-toc" class="toc-toggle">Table of Contents</button>
+    <div id="toc" class="toc">
+      <ul>
+      {% for h1 in page.toc %}
+        <li>
+          <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+          {% if h1.children %}
+            <ul>
+            {% for h2 in h1.children %}
+              <li>
+                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+    
+  {{ page.content | safe -}}
+</main>
+
+<script>
+  document.getElementById('toggle-toc').addEventListener('click', function() {
+    var toc = document.getElementById('toc');
+    toc.style.display = toc.style.display === 'none' ? 'block' : 'none';
+    this.textContent = toc.style.display === 'none' ? 'Show Table of Contents' : 'Hide Table of Contents';
+  });
+</script>
+
+{%- endblock content %}

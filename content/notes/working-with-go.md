@@ -1,6 +1,7 @@
 ---
 title: Working with Go
 date: 2021-08-05
+template: note.html
 ---
 
 _This document assumes go version \>= 1.16_.

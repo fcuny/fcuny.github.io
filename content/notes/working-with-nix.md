@@ -1,6 +1,7 @@
 ---
 title: working with nix
 date: 2022-05-10
+template: note.html
 ---
 
 ## the `nix develop` command

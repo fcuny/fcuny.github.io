@@ -1,6 +1,7 @@
 ---
 title: Stuff about PCIe
 date: 2022-01-03
+template: note.html
 ---
 
 ## Speed
