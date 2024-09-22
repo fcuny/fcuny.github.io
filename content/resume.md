@@ -3,7 +3,11 @@ title: Resume
 template: orphan.html
 ---
 
-# Senior Principal Site Reliability Engineer
+# Franck Cuny
+
+Technical Director Site Reliability Engineer
+
+Email: franck@fcuny.net | Phone: 415-617-5129
 
 Results-driven Site Reliability Engineering leader with extensive experience in architecting, scaling, and optimizing large-scale distributed systems. Proven track record of driving reliability improvements, fostering cross-functional collaboration, and mentoring engineering talent. Dedicated to building resilient infrastructures and cultivating a strong reliability culture.
 
@@ -38,20 +42,26 @@ Seeking opportunities to lead transformative reliability initiatives, mentor the
 <tbody>
 <tr>
 <td class="org-left">Site Reliability Engineer</td>
-<td class="org-left">Principal (IC6)</td>
+<td class="org-left">Technical Directory (IC7)</td>
 <td class="org-left">SRE Group</td>
-<td class="org-left">Feb 2022 - to date</td>
+<td class="org-left">August 2024 - to date</td>
+</tr>
+<tr>
+<td class="org-left">Site Reliability Engineer</td>
+<td class="org-left">Principal II (IC6)</td>
+<td class="org-left">SRE Group</td>
+<td class="org-left">Feb 2022 - August 2024</td>
 </tr>
 </tbody>
 </table>
 
-As a Team Lead for the Site Reliability group, I define the road-map and identify areas where SREs can partner with different teams to improve overall reliability of our infrastructure and services. Key projects and responsibilities include:
-
-- **Active/Passive Reliability Lead**: Orchestrated the failover strategy across multiple teams, developing detailed action plans and validation procedures. Conducted comprehensive tests to ensure plan effectiveness.
+As a Team Lead for the Site Reliability group, I define road-maps, milestones, and identify areas where SREs can partner with different teams to improve overall reliability of our infrastructure and services. Key projects and responsibilities include:
 
 - **Cell Architecture Implementation**: Led the SRE effort to transition from monolithic Compute clusters to a Cell architecture, significantly enhancing Roblox's infrastructure resilience and efficiency. Developed migration plans, identified necessary automation, and drove production readiness for this critical reliability improvement.
 
 - **Edge Infrastructure Migration**: Spearheaded the migration from HAproxy to Envoy at the edge, aimed at reducing failure domains, improving performance by streamlining the proxy chain, and enabling user traffic steering to specific cells from the edge.
+
+- **Active/Passive Reliability Lead**: Orchestrated the failover strategy across multiple teams, developing detailed action plans and validation procedures. Conducted comprehensive tests to ensure plan effectiveness. This work reduced the amount of time for a fail-over from days to hours.
 
 - **Reliability Culture Champion**: Mentored engineers of various levels (both SREs and SWEs), established a model for production readiness, and popularized the practice of running failure exercises for new large infrastructure projects.
 
@@ -70,21 +80,15 @@ Key strengths include driving complex infrastructure projects, mentoring, settin
 </colgroup>
 <tbody>
 <tr>
-<td class="org-left">Software Engineer</td>
-<td class="org-left">Senior Staff</td>
-<td class="org-left">Compute</td>
-<td class="org-left">Aug 2021 - Jan 2022</td>
-</tr>
-<tr>
 <td class="org-left">Site Reliability Engineer</td>
 <td class="org-left">Senior Staff</td>
-<td class="org-left">Compute SREs</td>
-<td class="org-left">Jan 2018 - Aug 2021</td>
+<td class="org-left">Compute SRE</td>
+<td class="org-left">Jan 2018 - Jan 2022</td>
 </tr>
 <tr>
 <td class="org-left">Site Reliability Engineer</td>
 <td class="org-left">Staff</td>
-<td class="org-left">Storage SREs</td>
+<td class="org-left">Storage SRE</td>
 <td class="org-left">Aug 2014 - Jan 2018</td>
 </tr>
 </tbody>
@@ -92,7 +96,7 @@ Key strengths include driving complex infrastructure projects, mentoring, settin
 
 ### Key Achievements and Responsibilities:
 
-- **Large-Scale Infrastructure Management**: Led SRE efforts for one of the world's largest Mesos clusters, spanning hundred of thousands of nodes across multiple data centers. Defined KPIs and improved automation for managing a massive fleet of bare metal machines.
+- **Large-Scale Infrastructure Management**: Led SRE efforts for one of the world's largest compute clusters (Mesos), spanning hundred of thousands of nodes across multiple data centers. Defined KPIs and improved automation for managing a massive fleet of bare metal machines.
 
 - **Kubernetes Adoption**: Spearheaded the initiative to adopt Kubernetes for on-premise infrastructure, driving architectural decisions and implementation strategies.
 
@@ -106,12 +110,12 @@ Key strengths include driving complex infrastructure projects, mentoring, settin
 
 - **Network Infrastructure Improvement**: Advocated for and implemented the adoption of 10Gb+ networking in data centers, enabling significant scaling improvements for storage systems.
 
-- **Cross-Functional Leadership**: Served as the SRE Tech Lead for the Manhattan team, driving improvements in performance, operations, and automation across storage systems.
+- **Cross-Functional Leadership**: Served as the SRE Tech Lead for the real time storage team, driving improvements in performance, operations, and automation across storage systems.
 
-Throughout my tenure at Twitter, I consistently demonstrated the ability to lead complex technical initiatives, optimize large-scale systems, and drive cross-functional collaboration to achieve significant improvements in infrastructure reliability, efficiency, and cost-effectiveness.
+I consistently demonstrated the ability to lead complex technical initiatives, deliver impactful projects on-time, optimize large-scale systems, and drive cross-functional collaboration to achieve significant improvements in infrastructure reliability, efficiency, and cost-effectiveness.
 
 
-## Senior Software Engineer - Say Media, San Francisco
+## Say Media, San Francisco
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -134,9 +138,9 @@ Throughout my tenure at Twitter, I consistently demonstrated the ability to lead
 </tbody>
 </table>
 
-During my time at Say Media, I worked on two different teams. I started as a software engineer in the platform team building the various APIs; I then transitioned to the operation team, to develop tooling to increase the effectiveness of the engineering organization.
+During my time at Say Media, I worked on two different teams. I started as a software engineer in the platform team building APIs then I then transitioned to the operation team to develop tooling in order to increase the effectiveness of the engineering organization.
 
-## Senior Software Engineer - Linkfluence, Paris
+## Linkfluence, Paris
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -160,4 +164,4 @@ During my time at Say Media, I worked on two different teams. I started as a sof
 </table>
 
 I was one of the early engineers joining Linkfluence in 2007. I led the development of the company's crawler (web, feeds). I was responsible for defining the early architecture of the company, and designed the internal platforms (Service Oriented Architecture).
-I helped the company to contribute to open source projects; contributed to open source projects on behalf of the company; represented the company at numerous open sources conferences in Europe.
+I contributed to multiple open source projects on behalf of the company and represented the company at numerous open source conferences in Europe.
