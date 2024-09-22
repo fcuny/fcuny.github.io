@@ -37,6 +37,8 @@
             taplo
             nodePackages.prettier
             awscli
+            imagemagick
+            exiftool
           ];
         };
       });
