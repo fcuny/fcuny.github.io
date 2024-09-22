@@ -1,48 +1,48 @@
 /* File: carousel.css */
 
 .carousel {
-    width: 100%;
-    max-width: 46rem; /* As per your specification */
-    margin: 0 auto;
+  width: 100%;
+  max-width: 46rem; /* As per your specification */
+  margin: 0 auto;
 }
 
 .carousel-main-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .carousel-main-image img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .carousel-vignettes {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    overflow-x: auto;
-    padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
 }
 
 .vignette {
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    flex: 0 0 auto;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  flex: 0 0 auto;
 }
 
 .vignette:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .vignette.active {
-    border: 2px solid #007bff;
+  border: 2px solid #007bff;
 }
 
 .vignette img {
-    display: block;
-    width: 120px;
-    height: 80px;
-    object-fit: cover;
+  display: block;
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
 }
