@@ -9,29 +9,29 @@
 </section>
 {% endif %}
 
-<h2>articles</h2>
+<h2>articles ⇢</h2>
 {%- set blog = get_section(path="blog/_index.md") -%}
 {%- set post_count = blog.pages | length -%}
-<ul>
 {%- for post in blog.pages %}
-<li><article>
+<article>
     <h3><a href="{{- post.path|safe -}}">{{- post.title -}}</a></h3>
     <time datetime="{{ post.date | date(format="%+")}}">{{ post.date | date(format="%B %m, %Y")}}</time>
-</article></li>
+</article>
 {%- endfor %}
-</ul>
 
-<h2>notes</h2>
+<h2>notes ⇢</h2>
 {%- set notes = get_section(path="notes/_index.md") -%}
 {%- set post_count = notes.pages | length -%}
-<ul>
 {%- for post in notes.pages %}
-<li><article>
+<article>
     <h3><a href="{{- post.path|safe -}}">{{- post.title -}}</a></h3>
     <time datetime="{{ post.date | date(format="%+")}}">{{ post.date | date(format="%B %m, %Y")}}</time>
-</article></li>
+</article>
 {%- endfor %}
-</ul>
+
+<h2>contact</h2>
+
+Email: <a href="mailto:franck@fcuny.net">franck@fcuny.net</a>
 
 </section>
 
