@@ -114,7 +114,6 @@ Key strengths include driving complex infrastructure projects, mentoring, settin
 
 I consistently demonstrated the ability to lead complex technical initiatives, deliver impactful projects on-time, optimize large-scale systems, and drive cross-functional collaboration to achieve significant improvements in infrastructure reliability, efficiency, and cost-effectiveness.
 
-
 ## Say Media, San Francisco
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
