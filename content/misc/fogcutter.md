@@ -43,8 +43,8 @@ You can contact me <a href="mailto:franck@fcuny.net?subject=SOMA%20fog%20cutter"
 ## Part list
 
 | part                 | model                                                                                                                                                                                                                 |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Frame                | [SOMA Fog Cutter](https://www.somafab.com/archives/product/fog-cutter-frame-set) 58cm in blue                                                                                                                                    |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Frame                | [SOMA Fog Cutter](https://www.somafab.com/archives/product/fog-cutter-frame-set) 58cm in blue                                                                                                                         |
 | Fork                 | [Soma Fork Fog Cutter Carbon Cerulean Blue (Thru-Axle)](https://www.somafabshop.com/shop/231007-soma-fork-fog-cutter-carbon-cerulean-blue-thru-axle-5617?search=cerulean&product=product.template%285617%2C%29#attr=) |
 | Headset              |                                                                                                                                                                                                                       |
 | Front and rear wheel | [DT Swiss XR 331 29 20 mm DB VI](https://www.dtswiss.com/en/support/product-support?matnr=RTXR3329N28S011223)                                                                                                         |
