@@ -15,15 +15,23 @@ main {
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0 0 0.5em;
   line-height: 1.25;
   font-weight: 600;
 }
 
-h1 { font-size: 1.4rem; }
-h2 { font-size: 1.3rem; }
-h3 { font-size: 1.2rem; }
+h1 {
+  font-size: 1.4rem;
+}
+h2 {
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
 
 p {
   margin: 0 0 1em;
@@ -35,7 +43,9 @@ a {
   text-decoration: underline;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   text-decoration: underline;
 }
 
@@ -74,7 +84,8 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
