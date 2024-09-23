@@ -2,32 +2,8 @@
 
 {%- block content -%}
 
-<div class="content">
-  <div id="blog" class="section times">
-    <b>articles ⇢</b>
-    {%- set blog = get_section(path="blog/_index.md") -%}
-    {%- set post_count = blog.pages | length -%}
-    <ul class="post-list">
-      {%- for post in blog.pages %}
-      <li>
-        <a href="{{ post.path | safe }}">{{ post.title }}</a>
-        <span class="post-date">{{ post.date | date(format="%B %d, %Y")}}</span>
-      </li>
-      {%- endfor %}
-    </ul>
-
-    <b>notes ⇢</b>
-    {%- set notes = get_section(path="notes/_index.md") -%}
-    {%- set post_count = notes.pages | length -%}
-    <ul class="post-list">
-      {%- for post in notes.pages %}
-      <li>
-        <a href="{{ post.path | safe }}">{{ post.title }}</a>
-        <span class="post-date">{{ post.date | date(format="%B %d, %Y")}}</span>
-      </li>
-      {%- endfor %}
-    </ul>
-  </div>
-</div>
+{% if section.content %}
+  {{ section.content | safe }}
+{% endif %}
 
 {%- endblock content -%}

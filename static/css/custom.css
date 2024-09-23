@@ -159,7 +159,7 @@ blockquote {
 /* Responsive layout */
 @media (max-width: 768px) {
   .main-nav {
-    padding: 0.5em 1em;
+    padding: 0.5em 0em;
   }
 
   .main-nav li {
