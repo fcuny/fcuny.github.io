@@ -3,9 +3,8 @@
 {% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
 
 {% block content -%}
-<main>
-  <h1>{{- page.title -}}</h1>
+<h1>{{- page.title -}}</h1>
 
-  {{ page.content | safe -}}
-</main>
+{{ page.content | safe -}}
+
 {%- endblock content -%}

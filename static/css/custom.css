@@ -1,75 +1,103 @@
+/* Base styles */
 body {
   margin: 0;
   font-family: sans-serif;
   font-size: 1rem;
   line-height: 1.6;
+  color: black;
+  background-color: white;
 }
 
-.container {
-  display: flex;
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 1em;
-}
-
-.menu {
-  flex: 0 0 auto;
-  margin-right: 2em;
-}
-
-.content {
-  flex: 1;
+main {
   max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
-.menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu li:first-child {
-  margin-top: 0;
-}
-
-.menu li {
-  margin-bottom: 0.3em;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #333;
-  padding: 0.2em 0.5em;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.menu a:hover {
-  text-decoration: underline;
-  background-color: #f0f0f0;
-}
-
-.section {
-  margin-top: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
+/* Typography */
+h1, h2, h3 {
+  margin: 0 0 0.5em;
   line-height: 1.25;
   font-weight: 600;
 }
 
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.2rem; }
+
 p {
-  margin-top: 0;
-  margin-bottom: 1em;
+  margin: 0 0 1em;
 }
 
+/* Links */
+a {
+  color: #047bc2;
+  text-decoration: underline;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: underline;
+}
+
+/* Lists */
+ul {
+  display: block;
+  padding-left: 1em;
+}
+
+/* Code blocks */
+code {
+  font-family: monospace;
+  font-size: 90%;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 0.2rem 0.5rem;
+  overflow-x: auto;
+  font-size: 90%;
+  background-color: #f5f5f5;
+}
+
+pre > code {
+  display: block;
+}
+
+p > code {
+  background: #f5f5f5;
+  padding: 0.1em 0.3em;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Blockquotes */
+blockquote {
+  font-style: italic;
+  margin: 0 0 1.5em;
+  padding-left: 1em;
+  border-left: 0.2em solid #bdbdbd;
+}
+
+/* Post list */
 .post-list {
   list-style-type: none;
   padding: 0;
@@ -84,12 +112,12 @@ p {
 }
 
 .post-list a {
-  text-decoration: none;
-  color: #333;
+  color: black;
   max-width: 70%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
 }
 
 .post-list a:hover {
@@ -101,26 +129,41 @@ p {
   color: #666;
 }
 
+/* Navigation */
+.main-nav {
+  padding: 1em 0;
+  margin-bottom: 2em;
+}
+
+.main-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-nav li {
+  margin: 0 1.5em 0.5em 0;
+}
+
+.main-nav a {
+  color: #047bc2;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #035891;
+}
+
+/* Responsive layout */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+  .main-nav {
+    padding: 0.5em 1em;
   }
 
-  .menu {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 1em;
-  }
-
-  .menu ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .menu li {
+  .main-nav li {
     margin-right: 1em;
-    margin-bottom: 0.5em;
   }
 
   .post-list li {
@@ -131,215 +174,5 @@ p {
   .post-list a {
     max-width: 100%;
     margin-bottom: 0.2em;
-  }
-}
-
-h1 {
-  font-size: 1.4rem;
-}
-h2 {
-  font-size: 1.3rem;
-}
-h3 {
-  font-size: 1.2rem;
-}
-
-a {
-  color: rgb(56, 115, 173);
-}
-
-a:link,
-a:hover,
-a:focus,
-a:active {
-  text-decoration: underline;
-}
-
-code {
-  font-family: monospace;
-  font-size: 90%;
-  overflow-x: auto;
-
-  border-radius: 4px;
-}
-
-pre {
-  padding: 0.2rem 0.5rem;
-  overflow: auto;
-  overflow-x: auto;
-  font-size: 90%;
-}
-
-pre > code {
-  display: block;
-}
-
-p > code {
-  background: #eee;
-}
-
-section.times time {
-  font-style: oblique;
-  float: right;
-}
-
-section.times h3 {
-  display: inline;
-  font-size: 1em;
-}
-
-p.date {
-  display: row;
-  font-style: italic;
-  font-size: 0.9rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  word-break: normal;
-}
-
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-th {
-  background-color: #f2f2f2;
-}
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-tr:nth-child(odd) {
-  background-color: #ffffff;
-}
-thead {
-  color: #000;
-  font-style: bold;
-  text-align: left;
-}
-
-blockquote {
-  font-style: italic;
-  margin: 0 0 1.5em;
-  padding-left: 1em;
-  border-left: 0.2em solid #bdbdbd;
-}
-
-ul {
-  display: block;
-  list-style-type: disc;
-}
-
-li {
-  display: list-item;
-}
-
-/* Note layout */
-.note-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 60rem; /* Keep this for overall container max-width */
-  margin: 0 auto;
-  padding: 1em;
-}
-
-.note-content {
-  flex: 0 0 736px; /* Set a fixed width */
-  max-width: 736px; /* Ensure it doesn't exceed this width */
-  width: 100%; /* Allow it to shrink on smaller screens */
-}
-
-/* Table of Contents styles */
-.toc-container {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-}
-
-.toc-header {
-  background-color: #f0f0f0;
-  padding: 0.5em 1em;
-  font-weight: bold;
-}
-
-.toc {
-  padding: 1em;
-}
-
-.toc ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.toc ul ul {
-  padding-left: 1.5em;
-}
-
-.toc li {
-  margin-bottom: 0.5em;
-}
-
-.toc a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
-}
-
-.toc a:hover {
-  color: #ffc832;
-}
-
-/* Desktop styles */
-.desktop-toc {
-  flex: 0 0 200px;
-  margin-left: 2em;
-  position: sticky;
-  top: 1em;
-  align-self: flex-start;
-  max-height: calc(100vh - 2em);
-  overflow-y: auto;
-}
-
-/* Mobile styles */
-.mobile-toc {
-  display: none;
-  margin-bottom: 2em;
-}
-
-.mobile-toc .toc-header {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.mobile-toc .toc-arrow {
-  margin-right: 0.5em;
-  transition: transform 0.3s;
-}
-
-.mobile-toc .toc {
-  display: none;
-}
-
-/* Responsive layout */
-@media (max-width: 968px) {
-  .note-container {
-    flex-direction: column;
-  }
-
-  .note-content {
-    flex: 1;
-    max-width: 100%;
-  }
-
-  .desktop-toc {
-    display: none;
-  }
-
-  .mobile-toc {
-    display: block;
   }
 }

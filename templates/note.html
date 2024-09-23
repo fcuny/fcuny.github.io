@@ -1,79 +1,12 @@
 {% extends "base.html" %}
+
 {% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
+
 {% block content -%}
-
-<div class="note-container">
-  <main role="main" class="note-content">
-    <h1>{{ page.title }}</h1>
+<h1>{{ page.title }}</h1>
     
-    {% if page.toc %}
-    <div class="toc-container mobile-toc">
-      <div class="toc-header" id="mobile-toc-toggle">
-        <span class="toc-arrow">&#9656;</span> Table of Contents
-      </div>
-      <div id="mobile-toc" class="toc">
-        <ul>
-        {% for h1 in page.toc %}
-          <li>
-            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-            {% if h1.children %}
-              <ul>
-              {% for h2 in h1.children %}
-                <li>
-                  <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                </li>
-              {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-        </ul>
-      </div>
-    </div>
-    {% endif %}
+{{ page.content | safe }}
 
-    {{ page.content | safe }}
-
-    <p class="date">{{ page.date | date(format="%B %d, %Y") }}</p>
-  </main>
-
-  {% if page.toc %}
-  <aside class="toc-container desktop-toc">
-    <div class="toc-header">Table of Contents</div>
-    <div class="toc">
-      <ul>
-      {% for h1 in page.toc %}
-        <li>
-          <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-          {% if h1.children %}
-            <ul>
-            {% for h2 in h1.children %}
-              <li>
-                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-              </li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
-      </ul>
-    </div>
-  </aside>
-  {% endif %}
-</div>
-
-<script>
-  document.getElementById('mobile-toc-toggle').addEventListener('click', function() {
-    var toc = document.getElementById('mobile-toc');
-    var arrow = this.querySelector('.toc-arrow');
-    if (toc.style.display === 'none' || toc.style.display === '') {
-      toc.style.display = 'block';
-      arrow.innerHTML = '&#9662;'; // Down-pointing triangle
-    } else {
-      toc.style.display = 'none';
-      arrow.innerHTML = '&#9656;'; // Right-pointing triangle
-    }
-  });
-</script>
+<p class="date">{{ page.date | date(format="%B %d, %Y") }}</p>
 
 {%- endblock content %}
