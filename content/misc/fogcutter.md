@@ -6,7 +6,9 @@ template: orphan.html
 
 A [SOMA](https://www.somafab.com/archives/product/fog-cutter-frame-set) [Fog Cutter](https://www.somafab.com/archives/product/fog-cutter-frame-set) road bike, build by [Blue Heron Bike](https://www.blueheronbikesberkeley.com/bike-accessories) in Berkeley. The size of the frame is 58cm and the color is blue. It comes with a carbon fork.
 
-**Asking price is $2800.**
+**Asking price is $2600** or best offer. To pick up in Berkeley.
+
+The bike is in great condition.
 
 You can contact me <a href="mailto:franck@fcuny.net?subject=SOMA%20fog%20cutter">by email</a>.
 
@@ -43,12 +45,12 @@ You can contact me <a href="mailto:franck@fcuny.net?subject=SOMA%20fog%20cutter"
 ## Part list
 
 | part                 | model                                                                                                                                                                                                                 |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Frame                | [SOMA Fog Cutter](https://www.somafab.com/archives/product/fog-cutter-frame-set) 58cm in blue                                                                                                                         |
 | Fork                 | [Soma Fork Fog Cutter Carbon Cerulean Blue (Thru-Axle)](https://www.somafabshop.com/shop/231007-soma-fork-fog-cutter-carbon-cerulean-blue-thru-axle-5617?search=cerulean&product=product.template%285617%2C%29#attr=) |
-| Headset              |                                                                                                                                                                                                                       |
+| Headset              | White Industries                                                                                                                                                                                                      |
 | Front and rear wheel | [DT Swiss XR 331 29 20 mm DB VI](https://www.dtswiss.com/en/support/product-support?matnr=RTXR3329N28S011223)                                                                                                         |
-| Tire                 |                                                                                                                                                                                                                       |
+| Tire                 | trevail rampart 38                                                                                                                                                                                                    |
 | Front hub            | [SP dynamo PL7](https://www.sp-dynamo.com/series7-pl7)                                                                                                                                                                |
 | Rear hub             | [Shimano Tiagra rs740](https://bike.shimano.com/en-US/product/component/tiagra-4700/FH-RS470.html)                                                                                                                    |
 | Rear derailleur      | [Shimano Ultegra RX 11 speed](https://bike.shimano.com/en-US/product/component/ultegra-rx/RD-RX800-GS.html)                                                                                                           |
@@ -58,9 +60,8 @@ You can contact me <a href="mailto:franck@fcuny.net?subject=SOMA%20fog%20cutter"
 | Saddle               | [Brooks C15 black](https://www.brooksengland.com/en_us/c15.html)                                                                                                                                                      |
 | Seat post            | [SIM Works Beatnik post (black)](https://www.sim.works/products/beatnik-post-1)                                                                                                                                       |
 | Front light          | [Busch & Müller Lumotec IQ-X Headlamp](https://www.bumm.de/en/products/dynamo-scheinwerfer/produkt/164rtsndi-01-schwarz-164rtsndi-silber%20.html)                                                                     |
-| Brake                |                                                                                                                                                                                                                       |
+| Brake calipers       | [Shimano rs785](https://bike.shimano.com/en-EU/product/component/ultegra-6870-di2/BR-RS785.html)                                                                                                                      |
 | Crank                | [White Industries Square Taper road cranks](https://www.whiteind.com/product/square-taper-road-cranks/)                                                                                                               |
 | Chain ring           | [White Industries 52/32](https://www.whiteind.com/product/vbc-chainring-sets/)                                                                                                                                        |
-| Pedal                |                                                                                                                                                                                                                       |
+| Pedal                | Shimano PD-R550 SPD-SL (black) - can change for SPD if preferred                                                                                                                                                      |
 | Bar tape             | [Lizzard Skin (brown)](https://www.lizardskins.com/cycling)                                                                                                                                                           |
-| Bottle cage          |                                                                                                                                                                                                                       |
