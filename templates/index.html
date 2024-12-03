@@ -6,4 +6,10 @@
   {{ section.content | safe }}
 {% endif %}
 
+<h2>Tags</h2>
+{% set blogtags = get_taxonomy(kind="tags") %}
+{% for tag in blogtags.items %}
+<a href="{{ get_taxonomy_url(kind="tags", name=tag.name) }}">#{{ tag.name }}</a>  
+{% endfor %}
+
 {%- endblock content -%}

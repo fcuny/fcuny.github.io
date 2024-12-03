@@ -5,6 +5,14 @@
 {% block content -%}
 <h1>{{ page.title }}</h1>
 
+{% if page.taxonomies.tags %}
+<div class="tags">
+    {% for tag in page.taxonomies.tags %}
+    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">#{{ tag }}</a>
+    {% endfor %}
+</div>
+{% endif %}
+
 {{ page.content | safe -}}
 
 <p class="date">{{ page.date | date(format="%B %d, %Y") }}</p>

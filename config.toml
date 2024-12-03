@@ -11,9 +11,13 @@ default_language = "en"
 generate_feeds = true
 feed_filenames = ["feed.xml"]
 
+taxonomies = [
+    {name = "tags", feed = false},
+]
+
 [markdown]
 highlight_code = true
-highlight_theme = "zenburn"
+highlight_theme = "one-dark"
 render_emoji = true
 smart_punctuation = true
 
