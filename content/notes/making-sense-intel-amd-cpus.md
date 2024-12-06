@@ -1,7 +1,9 @@
----
-title: Making sense of Intel and AMD CPUs naming
-date: 2021-12-29
----
++++
+title = "Making sense of Intel and AMD CPUs naming"
+date = 2021-12-29
+[taxonomies]
+tags = ["hardware"]
++++
 
 ## Intel
 

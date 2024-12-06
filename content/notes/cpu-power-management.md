@@ -1,7 +1,9 @@
----
-title: CPU power management
-date: 2023-01-22
----
++++
+title = "CPU power management"
+date = 2023-01-22
+[taxonomies]
+tags = ["hardware"]
++++
 
 ## Maximum power consumption of a processor
 

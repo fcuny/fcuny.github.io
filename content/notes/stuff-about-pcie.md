@@ -1,7 +1,9 @@
----
-title: Stuff about PCIe
-date: 2022-01-03
----
++++
+title = "Stuff about PCIe"
+date = 2022-01-03
+[taxonomies]
+tags = ["hardware"]
++++
 
 ## Speed
 

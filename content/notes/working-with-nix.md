@@ -1,7 +1,9 @@
----
-title: working with nix
-date: 2022-05-10
----
++++
+title = "working with nix"
+date = 2022-05-10
+[taxonomies]
+tags = ["nix"]
++++
 
 ## the `nix develop` command
 

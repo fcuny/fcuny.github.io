@@ -1,7 +1,9 @@
----
-title: Google Doc Failures
-date: 2021-04-11
----
++++
+title = "Google Doc Failures"
+date = 2021-04-11
+[taxonomies]
+tags = ["practices"]
++++
 
 In most use cases, Google Doc is an effective tool to create "write once, read never" documents.
 

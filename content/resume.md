@@ -1,7 +1,10 @@
----
-title: Resume
-template: orphan.html
----
++++
+title = "Resume"
+template = "orphan.html"
+date = 2024-08-10
+[taxonomies]
+tags = ["work"]
++++
 
 # Franck Cuny
 

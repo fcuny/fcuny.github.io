@@ -1,14 +1,16 @@
----
-title: SOMA Fog Cutter
-date: 2024-09-22
-template: orphan.html
----
++++
+title = "SOMA Fog Cutter"
+date = 2024-09-22
+template = "orphan.html"
+[taxonomies]
+tags = ["bike"]
++++
 
 A [SOMA](https://www.somafab.com/archives/product/fog-cutter-frame-set) [Fog Cutter](https://www.somafab.com/archives/product/fog-cutter-frame-set) road bike, build by [Blue Heron Bike](https://www.blueheronbikesberkeley.com/bike-accessories) in Berkeley. The size of the frame is 58cm and the color is blue. It comes with a carbon fork.
 
 **Asking price is $2600** or best offer. To pick up in Berkeley.
 
-The bike is in great condition.
+the bike is in great condition.
 
 You can contact me <a href="mailto:franck@fcuny.net?subject=SOMA%20fog%20cutter">by email</a>.
 

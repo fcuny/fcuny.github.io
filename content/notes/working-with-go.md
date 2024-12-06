@@ -1,7 +1,9 @@
----
-title: Working with Go
-date: 2021-08-05
----
++++
+title = "Working with Go"
+date = 2021-08-05
+[taxonomies]
+tags = ["go"]
++++
 
 _This document assumes go version \>= 1.16_.
 
