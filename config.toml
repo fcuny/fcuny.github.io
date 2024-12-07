@@ -8,8 +8,7 @@ output_dir = "docs"
 
 default_language = "en"
 
-generate_feeds = true
-feed_filenames = ["feed.xml"]
+generate_feeds = false
 
 taxonomies = [
     {name = "tags", feed = false},

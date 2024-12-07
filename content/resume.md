@@ -1,6 +1,6 @@
 +++
 title = "Resume"
-template = "orphan.html"
+template = "resume.html"
 date = 2024-08-10
 [taxonomies]
 tags = ["work"]
