@@ -9,9 +9,10 @@ body {
 }
 
 main {
-  max-width: 46rem;
+  max-width: 50rem;
   margin: 0 auto;
   padding: 0 1em;
+  padding-top: 2em;
 }
 
 /* Typography */
@@ -49,6 +50,17 @@ a:active {
   text-decoration: underline;
 }
 
+div.metadata {
+  font-size: 90%;
+  margin-bottom: 0.4em;
+}
+
+span.tag {
+}
+
+span.date {
+}
+
 /* Lists */
 ul {
   display: block;
@@ -61,7 +73,8 @@ p code {
   font-size: 90%;
   border-radius: 0.3rem;
   padding: 0.025rem 0.3rem;
-  border: 2px solid #52576f;
+  border: 1px solid #52576f;
+  background-color: #eeeaaa;
 }
 
 pre {
@@ -76,7 +89,6 @@ pre > code {
 }
 
 p > code {
-  background: #f5f5f5;
   padding: 0.1em 0.3em;
 }
 
@@ -125,12 +137,10 @@ blockquote {
 }
 
 .post-list a {
-  color: black;
   max-width: 70%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-decoration: none;
 }
 
 .post-list a:hover {
