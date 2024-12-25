@@ -1,4 +1,4 @@
-base_url = "https://fcuny.net/"
+base_url = "https://test.fcuny.net/"
 
 title = "@fcuny"
 author = "Franck Cuny"
@@ -10,9 +10,7 @@ default_language = "en"
 
 generate_feeds = false
 
-taxonomies = [
-    {name = "tags", feed = false},
-]
+taxonomies = [{ name = "tags", feed = false }]
 
 [markdown]
 highlight_code = true
