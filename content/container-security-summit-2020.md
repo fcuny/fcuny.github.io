@@ -19,24 +19,25 @@ The "un-conference" part was more interesting. There was two sessions that inter
 
 Overall, I think we are doing the right things in term of security: we have PSPs, we have our some controllers to ensure policies, etc. We are also looking at automatically upgrade containers using workflows (having a robust CI/CD pipeline is key here).
 
-
 <a id="org4ab3e9d"></a>
 
 # Some notes to followup / read
 
 - twitcher / host network / follow up on that
 - <https://github.com/cruise-automation/k-rail>
- - better error message for failures
+- better error message for failures
 - it's not a replacement to PSPs ?
 - <https://cloud.google.com/binary-authorization>
 - [falco](https://github.com/falcosecurity/falco)
 
 conversation about isolation:
+
 - <https://katacontainers.io/>
   - could kata be a use case for collocation of storage ?
 - <https://github.com/google/gvisor>
 
 talk about beyondprod (brandon baker)
+
 - <https://cloud.google.com/security/beyondprod/>
 - binary authorization for borg
 - security infra design white paper
@@ -45,9 +46,11 @@ talk about beyondprod (brandon baker)
   - <https://cloud.google.com/security/encryption-in-transit/application-layer-transport-security>
 
 panels:
+
 - small adoption of OPAh
 
 kubernetes audit logging:
+
 - <https://kubernetes.io/docs/tasks/debug-application-cluster/audit/>
 - <https://github.com/google/docker-explorer>
 - <https://github.com/google/turbinia>
