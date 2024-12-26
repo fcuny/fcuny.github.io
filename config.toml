@@ -1,16 +1,14 @@
-base_url = "https://test.fcuny.net/"
+base_url = "https://fcuny.net/"
 
 title = "@fcuny"
 author = "Franck Cuny"
-description = "Franck's website, with articles about computers stuff."
+description = "random stuff about computers."
 
 output_dir = "docs"
 
 default_language = "en"
 
 generate_feeds = false
-
-taxonomies = [{ name = "tags", feed = false }]
 
 [markdown]
 highlight_code = true
@@ -19,4 +17,4 @@ render_emoji = true
 smart_punctuation = true
 
 [extra]
-license = { name = "CC BY-SA 4.0", href = "https://creativecommons.org/licenses/by-sa/4.0/" }
+license = { name = "CC BY-SA 4.0", href = "https://creativecommons.org/licenses/by-sa/4.0/" }
