@@ -1,0 +1,19 @@
+name: ❄️ Flake Checker
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '42 0 * * 6'
+  workflow_dispatch:
+
+jobs:
+  flake-checker:
+    name: Flake Checker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v14
+      - uses: DeterminateSystems/magic-nix-cache-action@v8
+      - uses: DeterminateSystems/flake-checker-action@v9
