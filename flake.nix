@@ -90,10 +90,6 @@
             type = "app";
             program = "${self.packages."${system}".zola}/bin/zola";
           };
-          check-links = pkgs.writeShellScriptBin "check-links" ''
-            ${pkgs.lychee}/bin/lychee --quiet --no-progress --base="${self.packages.default}/public" "${self.packages.default}/public"
-          '';
-
         };
         formatter = treefmt;
 
