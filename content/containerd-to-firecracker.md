@@ -21,7 +21,7 @@ They describe the process as follow:
 That's pretty detailed, and I'm curious how difficult it is to implement
 this. I've been meaning to look into Firecracker for a while and into
 containers'd API, so this is a perfect opportunity to get started. The
-code is available [here](https://git.fcuny.net/containerd-to-vm/).
+code is available [here](https://github.com/fcuny/containerd-to-vm).
 
 ## #1 Pull a container from a registry with `containerd`
 
