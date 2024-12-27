@@ -1,22 +1,32 @@
-# Run the local HTTP server
+default:
+    @just --list
+
+[group('site')]
+[doc('Run the local HTTP server')]
 run:
     zola serve
 
-# Generate the content of the site under ./docs
+[group('site')]
+[doc('Build the site')]
 build:
     nix build
 
-# Format files
+[group('nix')]
+[doc('Format all the files')]
 fmt:
     nix fmt
 
+[group('nix')]
+[doc('Check the flake')]
 check:
     nix flake check
 
-# Check that all the links are valid
-check-links: build
+[group('site')]
+[doc('Validate the site')]
+validate: build
     lychee ./result/**/*.html
 
-# Update flake dependencies
+[group('nix')]
+[doc('Update the dependencies')]
 update-deps:
     nix flake update --commit-lock-file
