@@ -1,4 +1,4 @@
-name: Check links
+name: 🌐 Check Links
 
 "on":
   pull_request:
@@ -26,7 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@v16
-      - uses: DeterminateSystems/magic-nix-cache-action@v8
       - name: Build the site
         run: nix build --print-build-logs
       - name: Restore lychee cache
