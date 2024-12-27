@@ -1,8 +1,6 @@
 +++
 title = "No SSH to production"
 date = 2022-11-28
-[taxonomies]
-tags = ["practices"]
 +++
 
 It's not uncommon to hear talk about preventing engineers to SSH to production machines. While I think it's a noble goal, I think most organizations are not ready for it in the short or even medium term.

@@ -1,8 +1,6 @@
 +++
 title = "1password's ssh agent and nix"
 date = 2023-12-02
-[taxonomies]
-tags = ["nix"]
 +++
 
 [A while ago](https://blog.1password.com/1password-ssh-agent/), 1password introduced an SSH agent, and I've been using it for a while now. The following describe how I've configured it with `nix`. All my ssh keys are in 1password, and it's the only ssh agent I'm using at this point.

@@ -18,12 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
-      - name: flake check
+      - uses: DeterminateSystems/nix-installer-action@v16
+      - uses: DeterminateSystems/magic-nix-cache-action@v8
+      - name: nix check
         run: nix flake check
+      - name: nix fmt
+        run: nix fmt
       - name: Build the site
-        run: nix build --print-build-logs
+        run: nix build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

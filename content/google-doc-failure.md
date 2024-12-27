@@ -1,8 +1,6 @@
 +++
 title = "Google Doc Failures"
 date = 2021-04-11
-[taxonomies]
-tags = ["practices"]
 +++
 
 In most use cases, Google Doc is an effective tool to create "write once, read never" documents.
@@ -27,7 +25,7 @@ The second reason, and it's the most important one, I know that if I need to rea
 
 In 'the old days', you'd start a new document in Word or LibreOffice, and as you hit "save" for the first time, you've two decisions to make: how am I going to name that file, and where am I going to save it on disk.
 
-With GDoc these questions don't have to be answered, you don't have to name the file, and it does not matter where it lives. I've likely hundreds of docs named 'untitled' in my "drive". I also don't have to think about where they will live, because they are saved automatically for me. I'm sure there's hundreds of studies that show that these two simple steps are actually complex for many users and creates useless friction (in which folder do I store it; should I organize the docuemnts by team, years, projects; do I name it with the date and the current project; etc.).
+With GDoc these questions don't have to be answered, you don't have to name the file, and it does not matter where it lives. I've likely hundreds of docs named 'untitled' in my "drive". I also don't have to think about where they will live, because they are saved automatically for me. I'm sure there's hundreds of studies that show that these two simple steps are actually complex for many users and creates useless friction (in which folder do I store it; should I organize the documents by team, years, projects; do I name it with the date and the current project; etc.).
 
 GDoc being a Google product, it seems pretty obvious that they would come up with a better solution: let's not organize in a strict hierarchy these files, and let's instead search for them.
 

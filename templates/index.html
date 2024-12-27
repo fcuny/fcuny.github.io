@@ -1,14 +1,15 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {%- block content -%} {% if section.content %} {{
+section.content | safe }} {% endif %}
 
-{%- block content -%}
+<hr />
 
-{% if section.content %}
-  {{ section.content | safe }}
-{% endif %}
-
-{% set blogtags = get_taxonomy(kind="tags") %}
-{% for tag in blogtags.items %}
-  <a href="{{ get_taxonomy_url(kind="tags", name=tag.name) }}">#{{ tag.name }}</a>
-{% endfor %}
-
-{%- endblock content -%}
+{%- for post in section.pages -%}
+<section>
+  <ul class="post-list">
+    <li>
+      <a href="{{- post.path|safe -}}">{{- post.title -}}</a>
+      <span class="post-date">{{ post.date | date(format="%d %h %Y")}}</span>
+    </li>
+  </ul>
+</section>
+{%- endfor -%} {%- endblock content -%}

@@ -1,17 +1,9 @@
-{% extends "base.html" %}
-
-{% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
-
-{% block content -%}
+{% extends "base.html" %} {% block title %}{{ page.title }} - {{ config.title
+}}{% endblock title %} {% block content -%}
 <h1>{{ page.title }}</h1>
 
 <div class="metadata">
   <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-  {%- if page.taxonomies.tags -%}
-     &nbsp;/ {% for tag in page.taxonomies.tags %}
-    <span class="tag"><a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">#{{ tag }}</a></span>
-    {% endfor %}
-  {%- endif -%}
 </div>
 
 {{ page.content | safe -}}

@@ -1,8 +1,6 @@
 +++
 title = "emacs' git-link and sourcegraph"
 date = 2021-08-24
-[taxonomies]
-tags = ["emacs"]
 +++
 
 I use [sourcegraph](https://sourcegraph.com/) for searching code, and I sometimes need to share a link to the source code I'm looking at in a buffer. For this, the package [`git-link`](https://github.com/sshaw/git-link) is great.

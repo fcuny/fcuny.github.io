@@ -4,8 +4,6 @@ title: "home"
 
 👋 My name is Franck Cuny and this is my little corner on the web.
 
-I currently work as a [Site Reliability Engineer](https://en.wikipedia.org/wiki/Site_reliability_engineering) (SRE) at [Roblox](https://www.roblox.com). Previously, I worked as a SRE at [Twitter](https://twitter.com/TwitterEng). My focus is on Platform and large infrastructure.
+I'm a Technical Director at [Roblox](https://www.roblox.com), where I'm focusing on Reliability. Previously, I worked at [Twitter](https://twitter.com/TwitterEng) for close to 8 years, where I was a Sr Staff Site Reliability Engineer. My focus is on Platform and Compute infrastructure.
 
-I'm interested in building sustainable teams, improving the management and operation of large infrastructure, and to work with different teams to implement best practices around reliability and security.
-
-The simplest way to contact me is via <a href="mailto:franck@fcuny.net">email</a>. Some of my code is hosted <a href="https://git.fcuny.net">there</a>.
+The simplest way to contact me is via <a href="mailto:franck@fcuny.net">email</a>.

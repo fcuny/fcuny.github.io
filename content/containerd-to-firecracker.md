@@ -1,8 +1,6 @@
 +++
 title = "containerd to firecracker"
 date = 2021-05-15
-[taxonomies]
-tags = ["containers"]
 +++
 
 fly.io had an [interesting
@@ -571,12 +569,12 @@ The end result:
     [    0.079206] PTP clock support registered
     [    0.079741] NetLabel: Initializing
     [    0.080111] NetLabel:  domain hash size = 128
-    [    0.080529] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+    [    0.080529] NetLabel:  protocols = UNLABELED CHIPSOv4 CALIPSO
     [    0.081113] NetLabel:  unlabeled traffic allowed by default
     [    0.082072] clocksource: Switched to clocksource kvm-clock
     [    0.082715] VFS: Disk quotas dquot_6.6.0
     [    0.083123] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
-    [    0.083855] pnp: PnP ACPI: disabled
+    [    0.083855] pnp: OnP ACPI: disabled
     [    0.084510] NET: Registered protocol family 2
     [    0.084718] tcp_listen_portaddr_hash hash table entries: 256 (order: 0, 4096 bytes, linear)
     [    0.085602] TCP established hash table entries: 4096 (order: 3, 32768 bytes, linear)

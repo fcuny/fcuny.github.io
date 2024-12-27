@@ -1,8 +1,6 @@
 +++
 title = "Tailscale, Docker and HTTPS"
 date = "2021-12-29"
-[taxonomies]
-tags = ["containers"]
 +++
 
 I run a number of services in my home network. For the majority of these services, I don't want to make them available on the internet, I want to only be able to access them when I'm on my home network. However, sometimes I'm not at home and I still want to access them. So far I've been using plain [wireguard](https://www.wireguard.com/) to achieve this. While the initial configuration for wireguard is pretty simple, it starts to be a bit more cumbersome as I add more hosts/containers. It's also not easy to share keys with other folks if I want to give access to some of the machines or services. For that reason I decided to give a look at [tailscale](https://tailscale.com/).

@@ -1,8 +1,6 @@
 +++
 title = "Workaround md raid boot issue in NixOS 22.11"
 date = 2023-01-10
-[taxonomies]
-tags = ["nix"]
 +++
 
 For about a year now I've been running [NixOS](https://nixos.org/ "NixOS") on my personal machines. Yesterday I decided to go ahead and upgrade my NAS from NixOS 22.05 to [22.11](https://nixos.org/blog/announcements.html#nixos-22.11). On that machine, all the disks are encrypted, and there are two RAID0 devices. To unlock the drives, I log into the [SSH daemon running in `initrd`](https://nixos.wiki/wiki/Remote_LUKS_Unlocking), where I can type my passphrase. This time however, instead of a prompt to unlock the disk, I see the following message:
