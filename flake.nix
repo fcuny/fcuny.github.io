@@ -49,7 +49,6 @@
         );
       in
       {
-
         packages = {
           default =
             with pkgs;
@@ -69,12 +68,6 @@
             };
         };
 
-        apps = {
-          default = {
-            type = "app";
-            program = "${self.packages."${system}".zola}/bin/zola";
-          };
-        };
         formatter = treefmt;
 
         checks = {
@@ -99,7 +92,6 @@
             treefmt
             lychee
             just
-            treefmt
           ];
           devshell.startup.pre-commit.text = self.checks.${system}.pre-commit-check.shellHook;
           env = [
