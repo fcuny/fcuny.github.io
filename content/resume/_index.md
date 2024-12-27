@@ -1,3 +1,8 @@
++++
+title = "Resume"
+template = "resume.html"
++++
+
 # Franck Cuny
 
 Technical Director Site Reliability Engineer

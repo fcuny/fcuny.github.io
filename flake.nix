@@ -60,29 +60,13 @@
               buildInputs = [
                 zola
                 git
-                texlive.combined.scheme-small
               ];
               buildPhase = ''
                 mkdir -p $out
                 ${pkgs.zola}/bin/zola build -o $out -f
-                ${pkgs.pandoc}/bin/pandoc --self-contained --css static/css/resume.css \
-                  --from markdown --to html --output $out/resume.html resume/resume.md
-                ${pkgs.pandoc}/bin/pandoc --self-contained --css static/css/resume.css \
-                  --from markdown --to pdf --output $out/resume.pdf resume/resume.md
               '';
               dontInstall = true;
             };
-
-          zola = pkgs.writeShellScriptBin "zola" ''
-            set -euo pipefail
-            export PATH=${
-              pkgs.lib.makeBinPath [
-                pkgs.zola
-                pkgs.git
-              ]
-            }
-            zola serve
-          '';
         };
 
         apps = {
@@ -103,13 +87,12 @@
               };
               check-merge-conflicts.enable = true;
               end-of-file-fixer.enable = true;
-              actionlint.enable = true;
             };
           };
         };
 
         devShells.default = pkgs.devshell.mkShell {
-          name = "python-scripts";
+          name = "zola";
           packages = with pkgs; [
             zola
             git
