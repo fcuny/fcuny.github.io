@@ -2,7 +2,7 @@
   description = "Franck Cuny's personal website.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     flake-utils.url = "github:numtide/flake-utils";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     devshell.url = "github:numtide/devshell";
@@ -116,8 +116,6 @@
             treefmt
             lychee
             just
-            taplo
-            nodePackages.prettier
             treefmt
           ];
           devshell.startup.pre-commit.text = self.checks.${system}.pre-commit-check.shellHook;
