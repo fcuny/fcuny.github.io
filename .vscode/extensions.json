@@ -1,6 +1,3 @@
 {
-  "recommendations": [
-    "mkhl.direnv",
-    "nefrob.vscode-just-syntax",
-  ]
+  "recommendations": ["mkhl.direnv", "nefrob.vscode-just-syntax"]
 }

@@ -1,32 +1,32 @@
 default:
     @just --list
 
-[group('site')]
 [doc('Run the local HTTP server')]
+[group('site')]
 run:
     zola serve
 
-[group('site')]
 [doc('Build the site')]
+[group('site')]
 build:
     nix build
 
-[group('nix')]
 [doc('Format all the files')]
+[group('nix')]
 fmt:
     nix fmt
 
-[group('nix')]
 [doc('Check the flake')]
+[group('nix')]
 check:
     nix flake check
 
-[group('site')]
 [doc('Validate the site')]
+[group('site')]
 validate: build
     lychee ./result/**/*.html
 
-[group('nix')]
 [doc('Update the dependencies')]
+[group('nix')]
 update-deps:
     nix flake update --commit-lock-file

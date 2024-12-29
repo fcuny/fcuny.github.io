@@ -7,6 +7,7 @@ Running `just run` will start the `zola` server.
 ## Build
 
 Running `just build` will build the site, and the content will be available under `result/`.
+
 ## Deploy
 
 The site is deployed by a [GHA](.github/workflows/page.yml).
