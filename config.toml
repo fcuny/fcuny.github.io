@@ -2,7 +2,7 @@ base_url = "https://fcuny.net/"
 
 title = "@fcuny"
 author = "Franck Cuny"
-description = "random stuff about computers."
+description = "Franck Cuny"
 
 output_dir = "docs"
 
@@ -11,8 +11,6 @@ default_language = "en"
 generate_feeds = false
 
 [markdown]
-highlight_code = true
-highlight_theme = "one-dark"
 render_emoji = true
 smart_punctuation = true
 
