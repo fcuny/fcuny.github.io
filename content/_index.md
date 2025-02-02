@@ -9,4 +9,4 @@ title: "home"
 - I focus on Compute Infrastructure and Reliability
 - I live in Berkeley, and I'm married to the multi-talented artist [Felicia Martinez](https://www.feliciamartinez.com/about-1)
 
-The simplest way to contact me is via <a href="mailto:franck@fcuny.net">email</a>.
+The simplest way to contact me is via <a href="mailto:franck.cuny@gmail.com">email</a>.
